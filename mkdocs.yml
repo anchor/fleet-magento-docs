@@ -1,0 +1,49 @@
+site_name: Magento on Anchor Fleet
+theme: readthedocs
+
+pages:
+- Introduction: 'index.md'
+- What is Fleet?: 'what-is-fleet/what-is-fleet.md'
+- Configuring Magento for Fleet:
+  - 'Introduction': 'configuring-magento-for-fleet/introduction.md'
+  - 'Architecture Overview': 'configuring-magento-for-fleet/architecture-overview.md'
+  - 'Database Setup': 'configuring-magento-for-fleet/database-setup.md'
+  - 'Disable Redirects': 'configuring-magento-for-fleet/disable-redirects.md'
+  - 'Configure cache and sessions': 'configuring-magento-for-fleet/configure-cache-and-sessions.md'
+  - 'Unset cookie domain': 'configuring-magento-for-fleet/unset-cookie-domain.md'
+  - 'Store media in the database': 'configuring-magento-for-fleet/media-in-database.md'
+  - 'Configure Varnish': 'configuring-magento-for-fleet/varnish.md'
+  - 'Service Hostnames': 'configuring-magento-for-fleet/service-hostnames.md'
+  - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
+  - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
+- Getting Started:
+  - 'Getting Started': 'getting-started/getting-started.md'
+  - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'
+  - 'First Deployment': 'getting-started/first-deployment.md'
+  - 'Pushing Out a Change': 'getting-started/pushing-a-change.md'
+  - 'Cleaning Up Environments': 'getting-started/cleaning-up-environments.md'
+  - 'Cleaning Up Releases': 'getting-started/cleaning-up-releases.md'
+- How To:
+  - 'Manage Environments': 'how-to/manage-environments.md'
+  - 'Manage Databases': 'how-to/manage-databases.md'
+  - 'Manage Database Snapshots': 'how-to/manage-snapshots.md'
+  - 'Manage IP Whitelists': 'how-to/manage-whitelists.md'
+  - 'Manage Log Files': 'how-to/manage-logs.md'
+  - 'Manage Releases': 'how-to/manage-releases.md'
+  - 'Manage SSH Keys': 'how-to/manage-keys.md'
+  - 'Manage SSL Certificates': 'how-to/manage-certificates.md'
+  - 'Manage SQL Scripts': 'how-to/manage-sql-scripts.md'
+  - 'Manage Notifications': 'how-to/manage-notifications.md'
+- FAQ:
+  - 'Cache and Sessions': 'faq/cache-and-sessions.md'
+  - 'Media': 'faq/media.md'
+- Imagine Trial:
+  - 'Introduction': 'trial/introduction.md'
+  - 'Walkthrough with Portal': 'trial/walkthrough-portal.md'
+  - 'Walkthrough with CLI': 'trial/walkthrough-cli.md'
+- Tutorial:
+  - 'Introduction': 'tutorial/introduction.md'
+  - 'Configuration': 'tutorial/configuration.md'
+  - 'Create a release': 'tutorial/create-release.md'
+  - 'Staging environment': 'tutorial/staging-environment.md'
+  - 'Production environment': 'tutorial/production-environment.md'
