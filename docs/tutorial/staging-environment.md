@@ -7,14 +7,11 @@ Before creating a staging environment you may want to limit access via IP addres
 ```bash
 $ fleet whitelist create staging
 Created whitelist staging
-Connection to aux.ancora.f.nchr.io closed.
 
 $ fleet whitelist allow staging xx.xx.xx.xx # replace xx with your IP address
-Connection to aux.ancora.f.nchr.io closed.
 
 $ fleet whitelist describe staging
  - xx.xx.xx.xx/32
-Connection to aux.ancora.f.nchr.io closed.
 ```
 
 ## Create
@@ -24,7 +21,6 @@ With the following command will create an *exact replica of the highly available
 ```bash
 $ fleet env create staging --source-environment prod --whitelist staging
 Environment staging is now being created
-Connection to aux.ancora.f.nchr.io closed.
 ```
 
 ![](/tutorial/fleet-new-env.png)
@@ -54,7 +50,6 @@ previous release
 autoscaling min   2
 autoscaling max   2
 ----------------  -------------------------
-Connection to aux.ancora.f.nchr.io closed.
 
 ```
 
@@ -92,7 +87,6 @@ Or instead the preferred method automatically with Fleet using [SQL script(s)](/
 ```bash
 $ fleet config sql list
 update-data-config
-Connection to aux.ancora.f.nchr.io closed.
 
 $ fleet config sql show update-data-config
 ----------%<-----------
@@ -110,7 +104,6 @@ Now load the latest code release from your release library into staging like so:
 $ fleet env load staging 8ef9d2f
 
 Release 8ef9d2f is now being loaded into environment staging
-Connection to aux.ancora.f.nchr.io closed.
 ```
 
 ![](/tutorial/fleet-load-release.png)
@@ -148,7 +141,6 @@ Now activate your release so you can view it.
 ```bash
 $ fleet env activate staging 8ef9d2f
 Release 8ef9d2f is now being activated for environment staging
-Connection to aux.ancora.f.nchr.io closed.
 ```
 
 Now that your release has been activated Fleet has attached URL endpoints so you can preview your staging environment:
@@ -181,7 +173,6 @@ admin     admin.staging.ancora.f.nchr.io
 adminssh  adminssh.staging.ancora.f.nchr.io
 www       www.staging.ancora.f.nchr.io
 --------  ---------------------------------
-Connection to aux.ancora.f.nchr.io closed.
 ```
 Fleet has attached an www URL End point of [www.staging.ancora.f.nchr.io](http://www.staging.ancora.f.nchr.io) for your staging environment.
 
@@ -234,5 +225,4 @@ www       www.staging.ancora.f.nchr.io
 Enter the environments name to proceed or anything else to abort
 > staging
 Environment staging is now being destroyed
-Connection to aux.ancora.f.nchr.io closed.
 ```

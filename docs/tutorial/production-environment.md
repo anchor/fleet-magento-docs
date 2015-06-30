@@ -6,12 +6,10 @@ Rolling out your new release into production is as simple as loading the release
 $ fleet env prod load 8ef9d2f
 
 Release 8ef9d2f is now being loaded into environment prod
-Connection to aux.ancora.f.nchr.io closed.
 
 $ fleet env prod activate 8ef9d2f
 
 Release 8ef9d2f is now being activated for environment prod
-Connection to aux.ancora.f.nchr.io closed.
 ```
 
 You will notice that within your environment it lists *autoscaling min/max server of 2/10* which means elastic computing is built into Fleet by default.
@@ -51,12 +49,10 @@ admin     admin.prod.ancora.f.nchr.io
 adminssh  adminssh.prod.ancora.f.nchr.io
 www       www.prod.ancora.f.nchr.io
 --------  ------------------------------
-Connection to aux.ancora.f.nchr.io closed.
 ```
 Then simply activate the previous release:
 ```bash
 $ fleet env activate prod 037205f
 Release 037205f is now being activated for environment prod
-Connection to aux.ancora.f.nchr.io closed.
 ```
 There you have it you've completed using continuous delivery with Fleet for a Magento store.
