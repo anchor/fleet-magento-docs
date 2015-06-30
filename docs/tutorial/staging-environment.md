@@ -1,31 +1,38 @@
-Fleet allows you to create *on demand* [environments](/how-to/manage-environments/) and restrict access using IP whitelists.
+Fleet allows you to create and destroy *on demand*
+[environments](/how-to/manage-environments/) and optionally restrict access
+using IP whitelists.
 
 ## Whitelist
 
-Before creating a staging environment you may want to limit access via IP addresses using a *IP whitelist* like so:
+You may optionally decide to limit access to a non-production environment.
 
 ```bash
-$ fleet whitelist create staging
-Created whitelist staging
+$ fleet whitelist create office
+Created whitelist office
 
-$ fleet whitelist allow staging xx.xx.xx.xx # replace xx with your IP address
+$ fleet whitelist allow office xx.xx.xx.xx # replace xx with your IP address
 
-$ fleet whitelist describe staging
+$ fleet whitelist describe office
  - xx.xx.xx.xx/32
 ```
 
 ## Create
 
-With the following command will create an *exact replica of the highly available production environment* taking the latest snapshot of the database and limiting access to the staging IP white list:
+The following command will create an exact replica of the production
+environment.  The latest database snapshot from the production environment will
+be automatically loaded and a whitelist applied to restrict access to the
+environment by IP.
 
 ```bash
-$ fleet env create staging --source-environment prod --whitelist staging
+$ fleet env create staging --source-environment prod --whitelist office
 Environment staging is now being created
 ```
 
 ![](/tutorial/fleet-new-env.png)
 
-Now you can list your environments and describe the staging environment - when you first create an environment no code releases are loaded  hence there are no URL endpoints:
+You can now list the environments available to you and describe them.  Newly
+created environments do not contain a release on first creation.  As such,
+there are no public endpoint URLs to access.
 
 ```bash
 $ fleet env list
@@ -40,7 +47,7 @@ $ fleet env describe staging
 ----------------  -------------------------
 name              staging
 status            RUNNING
-whitelist         staging
+whitelist         office
 ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:10:35+00:00
@@ -55,7 +62,13 @@ autoscaling max   2
 
 ## SQL Scripts
 
-Everytime you create a new environment you may want to make some automatic changes in the database such as changing the Magento base URLs. Now you could connect to the database directly and update it manually like so:
+Upon environment instantiation, requirement may exist to make updates to the
+database to reflect the new environment.  For example, the Magento base URL
+needs to be updated when you are accessing the application via a different
+address.
+
+Manual changes can be effected by connecting to the environment's database as
+follows:
 ```bash
 
 $ fleet database connect staging
@@ -82,7 +95,12 @@ mysql> UPDATE core_config_data SET value = 'http://www.staging.ancora.f.nchr.io/
 
 ```
 
-Or instead the preferred method automatically with Fleet using [SQL script(s)](/how-to/manage-sql-scripts/) passing the {{environment}} variable which in this case we had already pre-configured for you:
+An alternative method makes use of Fleet's automatic [SQL
+script](/how-to/manage-sql-scripts/) functionality.  When an environment is
+instantiated, custom SQL can be automatically executed with templated
+variables.  The `{{environment}}` variable is utilised in the following
+example.  Use of the automated scripting mechanism is the preferred approach
+and saves having to make manual changes with each new environment.
 
 ```bash
 $ fleet config sql list
@@ -98,7 +116,8 @@ UPDATE core_config_data SET value = 'http://www.{{environment}}.ancora.f.nchr.io
 
 ## Load Release
 
-Now load the latest code release from your release library into staging like so:
+After an environment is created, a code revision can be loaded into it from the
+release library.
 
 ```bash
 $ fleet env load staging 8ef9d2f
@@ -108,7 +127,7 @@ Release 8ef9d2f is now being loaded into environment staging
 
 ![](/tutorial/fleet-load-release.png)
 
-Describe the staging environment to see that your release has been loaded:
+The environment can be described to verify the release is loaded:
 
 ```bash
 $ fleet env describe staging
@@ -116,7 +135,7 @@ $ fleet env describe staging
 ----------------  -------------------------
 name              staging
 status            RUNNING
-whitelist         staging
+whitelist         office
 ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:10:35+00:00
@@ -132,18 +151,19 @@ name     status    loaded                     updated                      front
 -------  --------  -------------------------  -------------------------  -----------
 8ef9d2f  RUNNING   2015-06-09 01:16:22+00:00  2015-06-09 01:22:52+00:00            2
 ```
-*Everytime you load a release into an environment we build a new front-end cluster of servers (typically two)*.
+*A new cluster of servers is provisioned from an immutable artefact whenever a release is loaded.*
 
 ## Activate Release
 
-Now activate your release so you can view it.
+A release must finally be activated such that it receives external traffic.
 
 ```bash
 $ fleet env activate staging 8ef9d2f
 Release 8ef9d2f is now being activated for environment staging
 ```
 
-Now that your release has been activated Fleet has attached URL endpoints so you can preview your staging environment:
+Post activation, the environment description will expose URL endpoints that can
+be utilised to view the active release.
 
 ```bash
 $ fleet env describe staging
@@ -151,7 +171,7 @@ $ fleet env describe staging
 ----------------  -------------------------
 name              staging
 status            UPDATING
-whitelist         staging
+whitelist         office
 ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:33:02+00:00
@@ -174,23 +194,35 @@ adminssh  adminssh.staging.ancora.f.nchr.io
 www       www.staging.ancora.f.nchr.io
 --------  ---------------------------------
 ```
-Fleet has attached an www URL End point of [www.staging.ancora.f.nchr.io](http://www.staging.ancora.f.nchr.io) for your staging environment.
+
+Fleet exposes a www endpoint for your staging environment.  In this case:
+[www.staging.ancora.f.nchr.io](http://www.staging.ancora.f.nchr.io)
 
 ## Unit/User/Load Testing
 
 Given *environents are all built off the same infrastructure template and machine image* you are guaranteed any unit/user or loading testing performed in staging will behave ecactly the same as in
 production. Further to that each environment is totally independent of one another and you can create/destroy them on demand so testing seamlessly becomes part of the deployment process.
 
+Fleet instantiates environments using an identical blueprint to that of
+production.  Likewise, releases represent immutable build artefacts that can be
+used between environments.
+
+Functional or load testing performed in a non-production environment will
+operate to the same specification of the production environment.  Each
+environment is independent and can be easily created or destroyed at will.
+
 ![](/tutorial/fleet-summary.png)
 
-Our recommendations for tooling to use to test your store are: 
+Anchor recommends the following tooling to facilitate load testing:
 
  * [https://blazemeter.com/](https://blazemeter.com/)
  * [https://www.blitz.io/](https://www.blitz.io/)
 
 ## Destroy
 
-Once you've finished testing on staging and the client has approved the changes you can destroy your staging environment to help infrastructure costs then rollout your changes into production.
+Once an environment has served its purpose, it may be destroyed.  Only pay for
+the environment for as long as you require and promote your release to
+production with confidence.
 
 ```bash
 $ fleet env destroy staging
@@ -200,7 +232,7 @@ Please review the details below:
 ----------------  -------------------------
 name              staging
 status            RUNNING
-whitelist         staging
+whitelist         office
 ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:33:02+00:00
