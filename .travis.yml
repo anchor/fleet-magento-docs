@@ -11,7 +11,7 @@ script:
   - "mkdocs build --clean -v"
 after_success:
   if [ "$TRAVIS_BRANCH" == "master" ]; then
-    chmod 0600 .travis/fleetdocsdeploy
+    chmod 0600 .travis/fleetdocsdeploy;
     rsync -C --delete -va -e 'ssh -i .travis/fleetdocsdeploy' ./site/ fleetdocs@torpedo210.anchor.net.au:/home/fleetdocs/public_html/fleet-magento-1/
   else
     echo "Not performing a deployment."
