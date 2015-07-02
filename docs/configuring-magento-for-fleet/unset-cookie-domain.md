@@ -14,6 +14,6 @@ domain:
  1. Ensure that the `Cookie Domain` field is empty, then save your changes.
 
 If you need a more specific cookie domain you could also set it on environment
-vreation via an SQL script. Note though that if the cookie domain is not set
+creation via an SQL script. Note though that if the cookie domain is not set
 correctly then *shopping cards and session-related functions will not work
 correctly.*
