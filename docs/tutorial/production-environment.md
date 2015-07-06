@@ -57,7 +57,7 @@ www       www.prod.ancora.f.nchr.io
 ```
 
 *Note* the autoscaling metrics in the prior description.  Fleet autoscales the
-application tier by default.
+front-end tier by default.
 
 To roll back, activate the previous release:
 ```bash
