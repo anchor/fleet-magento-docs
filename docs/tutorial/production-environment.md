@@ -1,27 +1,30 @@
-Rolling out your new release into production is as simple as loading the release into the production environment and activating it.
+Releasing code to production is as simple as loading the pre-built release into
+the environment and subsequently activating it.
 
 ## Rollout Changes
+
+Load and activate your release.
 
 ```bash
 $ fleet env prod load 8ef9d2f
 
 Release 8ef9d2f is now being loaded into environment prod
-Connection to aux.ancora.f.nchr.io closed.
 
 $ fleet env prod activate 8ef9d2f
 
 Release 8ef9d2f is now being activated for environment prod
-Connection to aux.ancora.f.nchr.io closed.
 ```
-
-You will notice that within your environment it lists *autoscaling min/max server of 2/10* which means elastic computing is built into Fleet by default.
 
 ## Rollback Changes
 
-The *exact same process* is used for rolling back releases as it is rolling out with Fleet - it's always good practice to leave the previous release loaded in production in the event that you need to
-rollback quickly.
+Activating a release will cause it to receive traffic.  Rolling back to a
+previous release is achieved by activating it again.
 
-You can describe the prod environment to see available releases:
+Rolling back is significantly quicker if the previous release is still loaded
+in the environment.  It is good practice to leave your previous release loaded
+until you are satisfied you do not require an immediate rollback.
+
+The production environment can be inspected to see available releases:
 ```bash
 $ fleet env describe prod
 
@@ -51,12 +54,13 @@ admin     admin.prod.ancora.f.nchr.io
 adminssh  adminssh.prod.ancora.f.nchr.io
 www       www.prod.ancora.f.nchr.io
 --------  ------------------------------
-Connection to aux.ancora.f.nchr.io closed.
 ```
-Then simply activate the previous release:
+
+*Note* the autoscaling metrics in the prior description.  Fleet autoscales the
+front-end tier by default.
+
+To roll back, activate the previous release:
 ```bash
 $ fleet env activate prod 037205f
 Release 037205f is now being activated for environment prod
-Connection to aux.ancora.f.nchr.io closed.
 ```
-There you have it you've completed using continuous delivery with Fleet for a Magento store.
