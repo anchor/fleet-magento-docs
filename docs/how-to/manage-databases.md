@@ -1,8 +1,9 @@
 Database management allows you to connect to and examine the state of an environment.
 This is also used to load your initial database when not using snapshots.
 
-Connecting to a database
-----
+## Connecting to a database
+
+### Using the Fleet CLI
 
 You can use the connect command to get a command line database shell for your environment.
 Note: if connecting over SSH, you may need to pass the -t option to get a prompt.
@@ -24,15 +25,42 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-Loading a database
----
+### Using an SSH tunnel
+
+You can also utilise an [SSH
+Tunnel](https://en.wikipedia.org/wiki/Tunneling_protocol#Secure_Shell_tunneling)
+to connect to an environment's database from an external location.  This can be
+be convenient when setting up external integrations that require direct
+database access.
+
+The SSH tunnel will allow you to connect to a remote Fleet environment's
+database through a local port on your machine.
+
+To set up an SSH tunnel:
+
+1. [Add the public key](manage-keys.md) that corresponds to the private key you
+   will utilise for the SSH connection.
+1. [Describe](manage-environments.md#describing-an-environment) the environment
+   in question to retrieve its `adminssh` address.  This will likely take the
+   form of `adminssh.{env}.{fleet-id}.f.nchr.io`.
+1. Create the SSH tunnel.  This example forwards local port `3333` to the
+   remote database server and uses the `mysql` [service
+   hostname](../configuring-magento-for-fleet/service-hostnames.md) that is
+   available in each environment:  
+   `ssh -L3333:mysql:3306 adminssh.{env}.{fleet-id}.f.nchr.io`
+
+You can now connect to the remote database instance by opening a connection to
+the local port you have specified.  For example, with the mysql command line
+client:  
+`mysql --protocol=TCP --host=localhost --port=3333 --user={USERNAME} --password {DBNAME}`
+
+## Loading a database
 
 ```
 $ fleet database connect <environment_name> <database_name> < database.sql
 ```
 
-Dumping a database
-----
+## Dumping a database
 
 You can dump the contents of a database in SQL format.
 
