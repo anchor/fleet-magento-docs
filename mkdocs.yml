@@ -38,6 +38,8 @@ pages:
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Media': 'faq/media.md'
+- Troubleshooting:
+  - 'Magento CMS Images': 'troubleshooting/cms-images.md'
 - Imagine Trial:
   - 'Introduction': 'trial/introduction.md'
   - 'Walkthrough with Portal': 'trial/walkthrough-portal.md'
