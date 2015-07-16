@@ -29,11 +29,11 @@ pages:
   - 'Manage Database Snapshots': 'how-to/manage-snapshots.md'
   - 'Manage IP Whitelists': 'how-to/manage-whitelists.md'
   - 'Manage Log Files': 'how-to/manage-logs.md'
+  - 'Manage Notifications': 'how-to/manage-notifications.md'
   - 'Manage Releases': 'how-to/manage-releases.md'
   - 'Manage SSH Keys': 'how-to/manage-keys.md'
   - 'Manage SSL Certificates': 'how-to/manage-certificates.md'
   - 'Manage SQL Scripts': 'how-to/manage-sql-scripts.md'
-  - 'Manage Notifications': 'how-to/manage-notifications.md'
   - 'Setup New Relic': 'how-to/newrelic.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
