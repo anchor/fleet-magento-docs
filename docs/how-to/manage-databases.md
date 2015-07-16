@@ -78,6 +78,8 @@ $ fleet env create --snapshot prod-db prod-db-dump
 
 $ fleet database dump prod-db-dump [db_name]  > dump.sql
 
+$ fleet env destory --no-confirm prod-db-dump
+
 $ fleet snapshot destroy prod-db
 Snapshot prod-db is now being destroyed
 ```
