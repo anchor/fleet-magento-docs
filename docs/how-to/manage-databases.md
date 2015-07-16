@@ -71,11 +71,13 @@ recommended**. You should first create a snapshot of production, then dump the
 database from there, as described below:
 
 ```
-$ fleet snapshot create prod --name prod-db-dump
-Snapshot prod-db-dump is now being created
+$ fleet snapshot create prod --name prod-db
+Snapshot prod-db is now being created
 
-$ fleet database dump prod-db-dump <db_name>  > dump.sql
+$ fleet env create --snapshot prod-db prod-db-dump
 
-$ fleet snapshot destroy prod-db-dump
-Snapshot prod-db-dump is not being destroyed
+$ fleet database dump prod-db-dump [db_name]  > dump.sql
+
+$ fleet snapshot destroy prod-db
+Snapshot prod-db is now being destroyed
 ```
