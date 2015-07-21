@@ -62,10 +62,49 @@ $ fleet database connect <environment_name> <database_name> < database.sql
 
 ## Dumping a database
 
-You can dump the contents of a database in SQL format.
+You can dump the contents of a database in SQL format. Note however that this
+locks the database, which can make it unavailable to your app for an extended
+period of time.
 
-This can lock the database, as such dumps will not work on production environments.
+For this reason, **dumping the database in the production environment is not
+recommended**. You should first create a snapshot of production, then dump the
+database from there, as described below:
 
 ```
-$ fleet database dump prod db_name > dump.sql
+$ fleet snapshot create prod --name prod-db
+Snapshot prod-db is now being created
+```
+
+It will take a few minutes for the snapshot to complete and become available
+for use. Check the listing and wait for its status to change from `CREATING` to
+`AVAILABLE`.
+
+```
+$ fleet snapshot list | grep prod-db
+```
+
+Now create a temporary fleet, using the snapshot you just created.
+```
+$ fleet env create --snapshot prod-db prod-db-dump
+Environment prod-db-dump is now being created
+```
+
+This will take some time, about 15-25 minutes. Check the environment listing
+and wait for your new fleet to appear.
+
+```
+$ fleet env list | grep prod-db-dump
+```
+
+Once the environment is `RUNNING`, you can dump the database from the temporary
+environment:
+
+```
+$ fleet database dump prod-db-dump [db_name]  > dump.sql
+
+$ fleet env destroy --no-confirm prod-db-dump
+Environment prod-db-dump is now being destroyed
+
+$ fleet snapshot destroy prod-db
+Snapshot prod-db is now being destroyed
 ```
