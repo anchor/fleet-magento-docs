@@ -40,6 +40,7 @@ pages:
   - 'Media': 'faq/media.md'
 - Troubleshooting:
   - 'Magento CMS Images': 'troubleshooting/cms-images.md'
+- Full migration process: 'migrating-to-fleet/migrating-to-fleet.md'
 - Imagine Trial:
   - 'Introduction': 'trial/introduction.md'
   - 'Walkthrough with Portal': 'trial/walkthrough-portal.md'
