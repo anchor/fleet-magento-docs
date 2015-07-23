@@ -15,7 +15,7 @@ Pants**. Best Pants has a Fleet named `bestpants`, and two environments: `prod`
 and `dev`. Best Pants uses bestpants.com for their website.
 
 
-The records needed
+DNS records in each environment
 ----
 
 Each environment has automatically-created internal DNS names. Using the `prod`
@@ -24,7 +24,7 @@ environment from *Best Pants* as our example, they are:
 ```
    admin.prod.bestpants.f.nchr.io
 adminssh.prod.bestpants.f.nchr.io
-    solr.prod.bestpants.f.nchr.io
+    solr.prod.bestpants.f.nchr.io  (only if you enable Solr)
      www.prod.bestpants.f.nchr.io
 ```
 
@@ -40,12 +40,13 @@ mapped to the internal names with `CNAME` DNS records:
 
 ```
    admin.bestpants.com  ->     admin.prod.bestpants.f.nchr.io
-adminssh.bestpants.com  ->  adminssh.prod.bestpants.f.nchr.io
-    solr.bestpants.com  ->      solr.prod.bestpants.f.nchr.io
      www.bestpants.com  ->       www.prod.bestpants.f.nchr.io
 
          bestpants.com  ->       www.prod.bestpants.f.nchr.io
 ```
+
+This is for the `prod` environment. Obviously this needs to be tweaked slightly
+for other environments.
 
 You might have noticed that the apex of the domain, `bestpants.com`, is a
 special case mapping. This is due to a specification limitation, that CNAME
@@ -64,8 +65,9 @@ These steps will need to be done for each environment that you wish to use.
 ### If you are making a new site
 
 If your site is new and living on Fleet from its inception, you can setup DNS
-records for the environment straight away, as described above in *Mapping real
-DNS names to internal DNS records*.
+records for the environment straight away, as described above in [Mapping real
+DNS names to internal DNS
+records](#mapping-real-dns-names-to-internal-dns-records).
 
 
 ### If you are migrating an existing site to Fleet
@@ -74,15 +76,16 @@ In this case you do **not** want to change the DNS for your `prod` environment,
 which will already be setup for your existing site. This will be one of the
 last steps of the migration.
 
-For other environments, such as `dev`, `testing`, and so on, these *should* be
-setup immediately for your own convenience.
+For other environments, such as `dev`, `testing`, and so on, DNS records
+*should* be setup as per [making a new site](#if-you-are-making-a-new-site), as
+these do not affect your live website.
 
-**TBC:** can you prepare here by dropping the TTLs?
+1. Reduce the TTL (Time To Live) on DNS records in your domain. This will help
+ensure that the changeover will be as seamless as possible.
 
-**TBC:** do XYZ before DNS during migration
+2. Add the DNS CNAME records as described above in [Mapping real
+DNS names to internal DNS
+records](#mapping-real-dns-names-to-internal-dns-records). Once the DNS
+changes have propagated, your new Fleet is now live.
 
-After doing XYZ, add the DNS CNAME records as described above in *Mapping real
-DNS names to internal DNS records*. Once the DNS changes have propaged, your
-new Fleet is now live.
-
-**TBC:** after making the DNS changes, do ABC to complete the work.
+3. Test the changes to ensure that traffic is being directed to your Fleet.
