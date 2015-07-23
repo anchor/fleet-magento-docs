@@ -34,6 +34,7 @@ pages:
   - 'Manage SSH Keys': 'how-to/manage-keys.md'
   - 'Manage SSL Certificates': 'how-to/manage-certificates.md'
   - 'Manage SQL Scripts': 'how-to/manage-sql-scripts.md'
+  - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Setup New Relic': 'how-to/newrelic.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
