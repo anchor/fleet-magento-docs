@@ -55,19 +55,19 @@ Once you've uploaded your configuration files, you can restart Solr.
 
 ### Starting and Stopping Solr
 
-ssh to the deploy user at your solr endpoint from `env describe`.
+ssh to the deploy user at your Solr endpoint from `env describe`.
 
  * to check the current status of Solr run `sudo allah status solr`
  * to start a stopped Solr run `sudo allah start solr`
- * to restart a running solr run `sudo allah restart solr`
+ * to restart a running Solr run `sudo allah restart solr`
  * to stop a running Solr run `sudo allah stop solr`
- * to view the log of the running solr run `sudo allah log solr`
+ * to view the log of the running Solr run `sudo allah log solr`
 
 ### Configuring Magento Enterprise to use Solr Search
 
 Now from Magento, you can configure it to point at your Solr instance.
 
- 1. Log into you Magento Admin.
+ 1. Log into your Magento Admin.
  1. System > Configuration > Catalog > Catalog > Catalog Search
      1. Set "Search Engine" to "Solr"
      1. Set "Solr Server Hostname" to "solr"
@@ -83,7 +83,7 @@ Now from Magento, you can configure it to point at your Solr instance.
      1. Set "Enabled" to "Yes"
      1. Set "Hostname or IP" to "solr"
      1. Press "Test Connection"
-        * If everything is working, you should "**Succes**"
+        * If everything is working, you should see "**Success**"
         * If not, check the Solr logs for errors and ensure you are using the correct Solr configuration files.
      1. Press "Save Config"
 
