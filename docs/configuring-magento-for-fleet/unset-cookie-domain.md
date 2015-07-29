@@ -10,7 +10,9 @@ The best way to do this is to tell Magento to automatically set the cookie
 domain:
 
  1. Login to Magento's admin interface.
- 1. Select `General`, then `Web`.
+ 1. Select `System`, then `Configuration` from the top bar.
+ 1. Select `General`, then `Web` from the left sidebar.
+ 1. Open the `Session Cookie Management` section.
  1. Ensure that the `Cookie Domain` field is empty, then save your changes.
 
 If you need a more specific cookie domain you could also set it on environment
