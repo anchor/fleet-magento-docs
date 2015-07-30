@@ -5,6 +5,7 @@ These are set in your `app/etc/local.xml` file
  * MySQL: `mysql`  
  * Redis (Cache): `redis-cache` 
  * Redis (Sessions): `redis-session`
+ * Solr: `solr` (if enabled)
 
 For configuring **Turpentine**:
 

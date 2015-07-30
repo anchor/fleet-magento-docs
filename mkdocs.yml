@@ -16,6 +16,7 @@ pages:
   - 'Service Hostnames': 'configuring-magento-for-fleet/service-hostnames.md'
   - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
+  - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'

@@ -211,3 +211,27 @@ By default a whitelist named 'allow-all' is used which gives unrestricted access
 $ fleet env whitelist <environment_name> <whitelist_name>
 ```
 
+Enabling and disabling Solr for an environment
+----
+
+Solr can be enabled or disabled on a per environment basis.
+
+
+```
+$ fleet env solr <environment_name> ON
+Solr for Environment <environment_name> is now being turned ON
+```
+
+When Solr is ON a instance will be created in the specified environment
+which can be accessed via the `solr` endpoint which will available to all
+releases loaded after Solr is enabled.
+
+```
+$ fleet env solr <environment_name> OFF
+Solr for Environment <environment_name> is now being turned OFF
+```
+
+This will disable Solr and destroy the environment's Solr instance.
+
+See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
+
