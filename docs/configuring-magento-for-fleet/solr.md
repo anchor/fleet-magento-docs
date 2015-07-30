@@ -8,6 +8,9 @@ To enable Solr on an Environment run `fleet env solr <environment> ON`
 A new Solr instance will be created, this will take
 a few minutes before it's ready.
 
+**Note:** Only releases loaded *after* Solr is enabled will be able to access
+Solr.
+
 Later if you wish to disable Solr, you can run `fleet env solr <environment> OFF`
 
 
