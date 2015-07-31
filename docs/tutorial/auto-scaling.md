@@ -38,7 +38,7 @@ In the event that you need to serve more traffic you can simply expand your serv
 $ fleet env autoscaling limits prod 4 10
 ```
 
-There are resources limits in place on your Fleet account for the total number of instances yo ucan run. At any point you see for yourself how many instances you are running and what the current max amount is set to by running:
+There are resources limits in place on your Fleet account for the total number of instances you can run. At any point you see for yourself how many instances you are running and what the current max amount is set to by running:
 
 ```bash
 $ fleet limits
@@ -56,9 +56,9 @@ You have the option rather than waiting for your infrastructure to elastically s
 $ fleet env autoscaling desired prod 6
 ```
 
-## Health Checks
+## Recycling
 
-Within each environment you have the option to turn 'ON' healthchecks which will turn instance recycling - in the event that any frontend node fails the healthcheck it will be recycled.
+Within each environment you have the option to turn 'ON' health checks which will turn instance recycling - in the event that any frontend node fails the healthcheck it will be recycled.
 
 ```bash
 $ fleet env prod heathcheck ON
@@ -90,7 +90,7 @@ www       www.prod.ancora.f.nchr.io
 --------  ------------------------------
 ```
 
-We have a standard healthcheck script stored on your frontends which for reference can be viewed on the admin node:
+We have a standard health check script stored on your frontends which for reference can be viewed on the admin node:
 
 ```bash
 
