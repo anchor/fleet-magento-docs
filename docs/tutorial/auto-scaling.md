@@ -10,7 +10,7 @@ whitelist         allow-all
 ssl certificate   prod
 created           2015-03-24 23:06:21+00:00
 updated           2015-06-30 05:53:09+00:00
-health check      ON
+recycling         ON
 tracked branches  fleet-deploy
 previous release
 'autoscaling min   2'
@@ -58,10 +58,10 @@ $ fleet env autoscaling desired prod 6
 
 ## Recycling
 
-Within each environment you have the option to turn 'ON' health checks which will turn instance recycling - in the event that any frontend node fails the healthcheck it will be recycled.
+Within each environment you have the option to turn 'ON' instance recycling which in the event that any frontend node fails a health check it will be recycled.
 
 ```bash
-$ fleet env prod heathcheck ON
+$ fleet env prod recycling ON
 $ fleet env describe prod
 ----------------  -------------------------
 name              prod
@@ -70,7 +70,7 @@ whitelist         allow-all
 ssl certificate   prod
 created           2015-03-24 23:06:21+00:00
 updated           2015-07-02 04:29:25+00:00
-health check      'ON'
+recycling         'ON'
 tracked branches  fleet-deploy
 previous release
 autoscaling min   2
