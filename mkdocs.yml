@@ -38,6 +38,7 @@ pages:
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Media': 'faq/media.md'
+  - 'SSL Certificates': 'faq/ssl-certificates.md'
 - Troubleshooting:
   - 'Magento CMS Images': 'troubleshooting/cms-images.md'
 - Imagine Trial:
