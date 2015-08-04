@@ -10,6 +10,69 @@ Our current versions of relevant software follow.
  - Varnish: 3.0.x
  - Redis: 2.8.x
 
+### Which PHP modules are available?
+
+The following modules are currently available.
+
+ - bcmath
+ - bz2
+ - calendar
+ - Core
+ - ctype
+ - curl
+ - date
+ - dba
+ - dom
+ - ereg
+ - exif
+ - fileinfo
+ - filter
+ - ftp
+ - gd
+ - gettext
+ - hash
+ - iconv
+ - imagick
+ - imap
+ - intl
+ - ionCube Loader
+ - json
+ - libxml
+ - mbstring
+ - mcrypt
+ - mhash
+ - mysql
+ - mysqli
+ - mysqlnd
+ - newrelic
+ - openssl
+ - pcntl
+ - pcre
+ - PDO
+ - pdo_mysql
+ - Phar
+ - posix
+ - Reflection
+ - session
+ - shmop
+ - SimpleXML
+ - soap
+ - sockets
+ - SPL
+ - standard
+ - sysvmsg
+ - sysvsem
+ - sysvshm
+ - tokenizer
+ - wddx
+ - xml
+ - xmlreader
+ - xmlwriter
+ - xsl
+ - zip
+ - zlib
+
+
 ### How are software updates rolled out?
 
 New images are generated weekly including any released updates to packages. These
