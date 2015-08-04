@@ -1,4 +1,4 @@
-Fleet allows you to easily manage your auto-scaling group whereby you can set a min/max of servers for a paritcular environment.
+Fleet allows you to easily manage your auto-scaling group whereby you can set a min/max of servers for a particular environment.
 
 When you describe an environment you can see min/max server pool limits in place as well as how many frontends a particular release is currently running:
 ```bash
