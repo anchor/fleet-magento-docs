@@ -63,7 +63,7 @@ whitelist         allow-all
 ssl certificate   self-signed
 created           2015-04-30 14:34:55+10:00
 updated           2015-05-13 20:36:18+10:00
-health check      ON
+recycling         ON
 tracked branches  fleet-deploy
 previous release  f7ac77a
 autoscaling min   1
@@ -165,14 +165,14 @@ is taken.
 
 You can either have the instance removed from the load balancer, or have the instance destroyed and recreated.
 
-To turn on instance recycling for an environment (the default):
+To turn on instance recycling for an environment:
 ```
-$ fleet env healthcheck <environment_name> ON
+$ fleet env recycling <environment_name> ON
 ```
 
 To turn off instance recycling
 ```
-$ fleet env healthcheck <environment_name> OFF
+$ fleet env recycling <environment_name> OFF
 ```
 
 Changing autoscaling limits
