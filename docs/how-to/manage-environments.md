@@ -235,3 +235,14 @@ This will disable Solr and destroy the environment's Solr instance.
 
 See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
 
+Flushing caches for an environment
+----
+
+Caches are maintained on a per environment basis and can be flushed
+for all releases in an environment.
+
+```
+$ fleet env cache flush <environment_name>
+Caches flushed for environment <environment_name>
+```
+
