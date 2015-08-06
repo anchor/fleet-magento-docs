@@ -17,6 +17,7 @@ pages:
   - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
+  - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'
