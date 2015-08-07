@@ -1,8 +1,10 @@
 You can sign up for notifications to events releated to your Fleet.
 
 The notifications will be delivered by email on important events such as:
+
  - Creating a frontend instance
  - Terminating a frontend instance
+ - SQL script failure
 
 Adding a notification recipient
 ----

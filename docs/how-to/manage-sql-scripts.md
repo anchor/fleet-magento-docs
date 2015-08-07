@@ -1,6 +1,9 @@
 SQL scripts configured here will be automatically run on new environments when they are
 cloned from a snapshot.
 
+If one of your scripts causes an error during environment creation, an error message will be sent
+to the [Notification Queue](manage-notifications), and the environment creation will fail.
+
 Templating
 ----
 
