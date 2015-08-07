@@ -1,3 +1,7 @@
+SSL certificates are a vital part of online business, to protects your
+customers' information and comply with security standards. Fleet provides a way
+to manage your SSL certificates and apply them on a per-environment basis.
+
 Listing available certificates
 ----
 
@@ -52,5 +56,4 @@ Using a certificate for an environment
 fleet env cert <env_name> <cert_name>
 
 $ fleet env cert prod wildcard-15-jan
-
 ```

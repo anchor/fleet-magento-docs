@@ -41,6 +41,7 @@ pages:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Media': 'faq/media.md'
   - 'Software Versions': 'faq/software-versions.md'
+  - 'SSL Certificates': 'faq/ssl-certificates.md'
 - Troubleshooting:
   - 'Magento CMS Images': 'troubleshooting/cms-images.md'
 - Imagine Trial:
