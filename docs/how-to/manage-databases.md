@@ -83,7 +83,7 @@ for use. Check the listing and wait for its status to change from `CREATING` to
 $ fleet snapshot list | grep proddb
 ```
 
-Now create a temporary fleet, using the snapshot you just created.
+Now create a temporary environment, using the snapshot you just created.
 ```
 $ fleet env create --snapshot proddb proddbdump
 Environment proddbdump is now being created
