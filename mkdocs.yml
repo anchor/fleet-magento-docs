@@ -43,6 +43,7 @@ pages:
   - 'Media': 'faq/media.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
+  - 'Error Pages': 'faq/error-pages.md'
 - Troubleshooting:
   - 'Magento CMS Images': 'troubleshooting/cms-images.md'
   - 'Database Performance': 'troubleshooting/database.md'
