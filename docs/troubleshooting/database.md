@@ -18,5 +18,13 @@ mysql> SELECT query_time, sql_text FROM mysql.slow_log;
 | 00:00:40   | select * from catalog_product_entity |
 +------------+--------------------------------------+
 1 row in set (0.00 sec)
+```
 
+The MySQL slow query log table is managed automatically but you can
+trigger a log rotation manually if required:
+
+```
+$ fleet database connect <environment>
+mysql> CALL mysql.rds_rotate_slow_log;
+Query OK, 0 rows affected (0.03 sec)
 ```
