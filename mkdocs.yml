@@ -45,6 +45,7 @@ pages:
   - 'SSL Certificates': 'faq/ssl-certificates.md'
 - Troubleshooting:
   - 'Magento CMS Images': 'troubleshooting/cms-images.md'
+  - 'Database Performance': 'troubleshooting/database.md'
 - Imagine Trial:
   - 'Introduction': 'trial/introduction.md'
   - 'Walkthrough with Portal': 'trial/walkthrough-portal.md'
