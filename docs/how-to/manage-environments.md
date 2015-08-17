@@ -11,7 +11,7 @@ Environments can be created either as a copy of an existing environment, or as a
 You can also specify a specific snapshot to be used to seed the database for the environment.
 
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] NAME
 ```
 
 To create an environment 'staging' as a copy of 'prod' with the latest snapshot of 'prod'
@@ -28,6 +28,12 @@ To create an environment 'test' as a copy of 'staging' with the latest snapshot 
 and using the 'devs' whitelist.
 ```
 $ fleet env create --source-environment staging --whitelist devs test
+```
+
+To create an environment 'test' as a copy of 'prod' with the latest snapshot of 'prod',
+with high availability disabled
+```
+$ fleet env create --no-ha test
 ```
 
 Destroying an environment
