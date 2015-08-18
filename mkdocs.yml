@@ -42,6 +42,7 @@ pages:
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Media': 'faq/media.md'
+  - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
   - 'Error Pages': 'faq/error-pages.md'
