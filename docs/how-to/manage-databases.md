@@ -108,3 +108,15 @@ Environment proddbdump is now being destroyed
 $ fleet snapshot destroy proddb
 Snapshot proddb is now being destroyed
 ```
+
+### Using a GUI to access the database
+
+Fleet provides an instance of **Adminer** WebUI (similar to **PHPMyAdmin**)
+available for you to use.
+
+You can access it at `https://adminer.<fleetname>.f.nchr.io/`
+
+**Note: This uses a self-signed certificate, so you will receive a warning**
+
+It requires a password to access, please contact us via the [Fleet Support Desk](http://support.anchorfleet.com)
+to request access.
