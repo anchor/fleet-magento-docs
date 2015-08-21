@@ -28,3 +28,24 @@ $ fleet database connect <environment>
 mysql> CALL mysql.rds_rotate_slow_log;
 Query OK, 0 rows affected (0.03 sec)
 ```
+
+Database deadlocks
+------------------
+
+Some query patterns can trigger deadlocks in the database. This can
+present as slow page loads or errors. Database deadlocks are recorded
+in the logs:
+
+```
+$ fleet log view fleet-database-deadlock
+Aug 21 03:19:17 aux-d47eca0a fleet-db-deadlocks: At 2015-08-20T23:09:25 mysql.<environment>.<fleet>.f.nchr.io deadlocked on magento.catalog (index: PRIMARY, user: master): update catalog set price = 10000;
+```
+
+You can also inspect the most recent deadlocks in an environment
+(subject to the limits on MySQL's retention of this information):
+
+```
+$ fleet database deadlocks <environment>
+ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
+2015-08-20T23:09:25	mysql.<environment>.benchmark.f.nchr.io	test innodb_deadlock_maker	PRIMARY	master		0	24	UPDATE catalog SET price = 10000; 0
+```
