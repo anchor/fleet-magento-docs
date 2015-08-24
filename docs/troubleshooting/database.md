@@ -47,5 +47,23 @@ You can also inspect the most recent deadlocks in an environment
 ```
 $ fleet database deadlocks <environment>
 ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
-2015-08-20T23:09:25	mysql.<environment>.benchmark.f.nchr.io	test innodb_deadlock_maker	PRIMARY	master		0	24	UPDATE catalog SET price = 10000; 0
+2015-08-20T23:09:25	mysql.<environment>.<fleet>.f.nchr.io	test innodb_deadlock_maker	PRIMARY	master		0	24	UPDATE catalog SET price = 10000; 0
 ```
+
+Once it has occurred a deadlock will continue to be reported until
+another deadlock becomes the new "latest deadlock". The logging
+mechanism described above will automatically use this mechanism to
+ensure each deadlock is logged once. If you would like to clear a
+deadlock manually you can use the `--clear` argument:
+
+```
+$ fleet database deadlocks <environment>
+ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
+2015-08-20T23:09:25	mysql.<environment>.<fleet>.f.nchr.io	test innodb_deadlock_maker	PRIMARY	master		0	24	UPDATE catalog SET price = 10000; 0
+$ fleet database deadlocks <environment>  --clear
+ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
+2015-08-20T23:09:25	mysql.<environment>.<fleet>.f.nchr.io	test innodb_deadlock_maker	PRIMARY	master		0	24	UPDATE catalog SET price = 10000; 0
+$ fleet database deadlocks <environment>
+ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
+```
+
