@@ -59,3 +59,4 @@ pages:
   - 'Create a release': 'tutorial/create-release.md'
   - 'Staging environment': 'tutorial/staging-environment.md'
   - 'Production environment': 'tutorial/production-environment.md'
+- Changelog: 'changelog.md'
