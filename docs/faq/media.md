@@ -57,6 +57,11 @@ Our testing has shown that these tend to be slow (often significantly more so
 than MySQL), far too unreliable for production use and often unsuited for
 mounting on multiple servers simultaneously.
 
+### I want to store assets in S3, and have a plugin to allow Magento to make use of S3.
+You'll need to create an S3 bucket to use yourself, and configure Magento to make use of
+the bucket for asset storage. The particular steps to configure this will depend on how
+you have implemented S3 storage.
+
 ### Why are some images not appearing on my store?
 Make sure when you're using Fleet to upload/sync media directly from the admin
 node (`admin.{env}.{fleet-id}.f.nchr.io`) as opposed to through the application
