@@ -109,7 +109,7 @@ $ fleet snapshot destroy proddb
 Snapshot proddb is now being destroyed
 ```
 
-### Using a GUI to access the database
+## Using a GUI to access the database
 
 Fleet provides an instance of **Adminer** WebUI (similar to **PHPMyAdmin**)
 available for you to use.
