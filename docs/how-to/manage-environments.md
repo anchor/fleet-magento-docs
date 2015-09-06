@@ -36,6 +36,9 @@ with high availability disabled
 $ fleet env create --no-ha test
 ```
 
+_Please note creating a new environment will build a separate cluster of machine instances, be sure to
+[clean up](/getting-started/cleaning-up-environments/) environments to **save you money**._
+
 Destroying an environment
 ----
 
@@ -114,6 +117,9 @@ So to load the release '2efc12' to the environment 'staging'
 ```
 $ fleet env load staging 2efc12
 ```
+
+_Please note loading a new release into an environment will create a separate cluster of machine instances, be sure to
+[clean up](/getting-started/cleaning-up-releases/) inactive releases to **save you money**._
 
 Activating a release
 ----
@@ -251,4 +257,3 @@ for all releases in an environment.
 $ fleet env cache flush <environment_name>
 Caches flushed for environment <environment_name>
 ```
-

@@ -157,7 +157,8 @@ Releases:
 -------------  -----------------------------------------------------------------------
 
 ```
-
+_Please note loading a new release into an environment will create a separate front-end cluster of machine instances, be sure to
+[clean up](/getting-started/cleaning-up-releases/) releases to **save you money**._
 
 ## Testing!
 

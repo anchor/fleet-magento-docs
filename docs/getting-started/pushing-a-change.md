@@ -30,6 +30,9 @@ $ fleet env list
 Once the status has changed to `RUNNING` you can load the new release ready to test your site in
 staging.
 
+_Please note creating a new environment will build a separate cluster of machine instances, be sure to
+[clean up](/getting-started/cleaning-up-environments/) environments to **save you money**._
+
 ## Testing
 
 You can connect to your site via www.staging.myshop.f.nchr.io and confirm
@@ -133,6 +136,8 @@ d9dcdd7        RUNNING
 
 
 ```
+_Please note loading a new release into an environment will create a separate front-end cluster of machine instances, be sure to
+[clean up](/getting-started/cleaning-up-releases/) releases to **save you money**._
 
 ## Pushing change into production
 
