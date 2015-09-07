@@ -78,6 +78,8 @@ For example:
 */5 * * * * /usr/local/bin/is-fleet-node-active && /home/deploy/app/public/do-something
 ```
 
+All Fleet nodes use UTC time.
+
 Note that the standard Magento cron is invoked independently of any provided crontab, you do not need to invoke it yourself.
 
 Using a Fleet-specific local.xml
