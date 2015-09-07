@@ -41,6 +41,7 @@ pages:
   - 'Setup New Relic': 'how-to/newrelic.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
+  - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
   - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
