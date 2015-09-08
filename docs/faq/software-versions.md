@@ -9,6 +9,7 @@ Our current versions of relevant software follow.
  - Apache: 2.2.x
  - Varnish: 3.0.x
  - Redis: 2.8.x
+ - Solr: 3.6.x
 
 ### Which PHP modules are available?
 
