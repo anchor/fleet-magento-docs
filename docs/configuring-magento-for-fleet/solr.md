@@ -85,6 +85,8 @@ Now from Magento, you can configure it to point at your Solr instance.
  1. System > Configuration > Catalog > Solarium Search
      1. Set "Enabled" to "Yes"
      1. Set "Hostname or IP" to "solr"
+     1. Set "Port" to "8983"
+     1. Set "Path" to "/solr/"
      1. Press "Test Connection"
         * If everything is working, you should see "**Success**"
         * If not, check the Solr logs for errors and ensure you are using the correct Solr configuration files.
