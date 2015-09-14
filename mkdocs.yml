@@ -1,5 +1,6 @@
 site_name: Magento on Anchor Fleet
 theme: readthedocs
+google_analytics: ['UA-60495198-2', 'docs.anchorfleet.com']
 
 pages:
 - Introduction: 'index.md'
