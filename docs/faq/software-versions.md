@@ -31,6 +31,7 @@ The following modules are currently available.
  - ftp
  - gd
  - gettext
+ - geoip
  - hash
  - iconv
  - imagick
