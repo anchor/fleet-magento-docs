@@ -67,3 +67,8 @@ $ fleet database deadlocks <environment>
 ts	server	db	tbl	idx	user	hostname	txn_id	txn_time	query	victim
 ```
 
+Last Resort
+--------
+
+If none of the other troubleshooting steps are able to get things working
+again, you have the option to [reboot the database server](/how-to/manage-databases/#rebooting-a-database).
