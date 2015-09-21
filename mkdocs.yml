@@ -38,6 +38,7 @@ pages:
   - 'Manage SSL Certificates': 'how-to/manage-certificates.md'
   - 'Manage SQL Scripts': 'how-to/manage-sql-scripts.md'
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
+  - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Setup New Relic': 'how-to/newrelic.md'
 - FAQ:
