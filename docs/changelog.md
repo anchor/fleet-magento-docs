@@ -1,6 +1,14 @@
 Change Log
 ----------
 
+2015-09-21
+----------
+
+* Install rsync on frontend nodes.
+* Document default maintenance and backup windows. [link](faq/updates-and-maintenance)
+* Bugfix for `fleet env create --no-snapshot`.
+* Validate SSH keys on 'key add' using 'ssh-keygen'.
+
 2015-09-14
 ----------
 
