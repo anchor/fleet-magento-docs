@@ -120,3 +120,14 @@ You can access it at `https://adminer.<fleetname>.f.nchr.io/`
 
 It requires a password to access, please contact us via the [Fleet Support Desk](http://support.anchorfleet.com)
 to request access.
+
+## Rebooting a database
+
+In case of any problems with the database which can't be resolved, rebooting the database is an option.
+
+```
+$ fleet database reboot <environment_name>
+Rebooting database for <environment_name> environment
+```
+
+**Note: if you do not have a Multi-AZ Fleet, this will involve a short period of downtime.**
