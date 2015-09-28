@@ -269,8 +269,6 @@ Maintenance Mode for Environment <environment_name> is now being turned OFF
 When Maintenance Mode is OFF, frontends and admin nodes will remove `maintenance.flag` in the
 Document Root.
 
-See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
-
 Flushing caches for an environment
 ----
 
