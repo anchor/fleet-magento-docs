@@ -261,7 +261,7 @@ Maintenance Mode for Environment <environment_name> is now being turned ON
 When Maintenance Mode is ON, frontends and admin nodes will create `maintenance.flag` in the
 Document Root.
 
-This change change take up to a minute to apply to all nodes, ensure you wait
+This change may take up to a minute to apply to all nodes, ensure you wait
 until this has applied before performing maintenance.
 
 
@@ -273,7 +273,7 @@ Maintenance Mode for Environment <environment_name> is now being turned OFF
 When Maintenance Mode is OFF, frontends and admin nodes will remove `maintenance.flag` in the
 Document Root.
 
-This change change take up to a minute to apply to all nodes.
+This change may take up to a minute to apply to all nodes.
 
 Flushing caches for an environment
 ----
