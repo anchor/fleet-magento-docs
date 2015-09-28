@@ -247,6 +247,34 @@ This will disable Solr and destroy the environment's Solr instance.
 
 See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
 
+Enabling and disabling Maintenance Mode for an environment
+----
+
+Maintenance Mode can be enabled or disabled on a per environment basis.
+
+
+```
+$ fleet env maintenance <environment_name> ON
+Maintenance Mode for Environment <environment_name> is now being turned ON
+```
+
+When Maintenance Mode is ON, frontends and admin nodes will create `maintenance.flag` in the
+Document Root.
+
+This change change take up to a minute to apply to all nodes, ensure you wait
+until this has applied before performing maintenance.
+
+
+```
+$ fleet env maintenance <environment_name> OFF
+Maintenance Mode for Environment <environment_name> is now being turned OFF
+```
+
+When Maintenance Mode is OFF, frontends and admin nodes will remove `maintenance.flag` in the
+Document Root.
+
+This change change take up to a minute to apply to all nodes.
+
 Flushing caches for an environment
 ----
 
