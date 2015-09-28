@@ -70,10 +70,7 @@ Your full_page_cache section in app/etc/enterprise.xml should be updated to matc
     <port>6379</port>
     <database>0</database>
     <force_standalone>0</force_standalone>
-    <automatic_cleaning_factor>0</automatic_cleaning_factor>
-    <compress_data>1</compress_data>
-    <compress_tags>1</compress_tags>
-    <compress_threshold>20480</compress_threshold>
+    <compress_data>0</compress_data>
     <compression_lib>gzip</compression_lib>
   </backend_options>
 </full_page_cache>
