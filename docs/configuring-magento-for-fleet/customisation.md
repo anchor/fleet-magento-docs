@@ -80,7 +80,11 @@ For example:
 
 All Fleet nodes use UTC time.
 
-Note that the standard Magento cron is invoked independently of any provided crontab, you do not need to invoke it yourself.
+Note that the standard Magento cron is invoked independently of any provided crontab, you do not need to invoke it yourself. By default, Magento cron runs on the admin node and reads as follows:
+
+```
+*/5 * * * *    deploy    /usr/local/bin/is-fleet-node-active && /bin/sh /home/deploy/.fleet-webroot/cron.sh
+```
 
 Using a Fleet-specific local.xml
 ----
