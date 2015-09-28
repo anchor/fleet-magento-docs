@@ -1,4 +1,4 @@
-In this step we'll configure Magento to store its sessions and cache in [Redis](http://redis.io), a fast key-value store. Using Redis, Magento will be able to share its cache and sessions between multiple application servers. As an added benefit, storing the cache and sessions in Redis provides a notable speed boost.
+In this step we'll configure Magento to store its sessions and cache in [Redis](http://redis.io), a fast key-value store, using the [Credis client](https://github.com/colinmollenhour/credis). Using Redis, Magento will be able to share its cache and sessions between multiple application servers. As an added benefit, storing the cache and sessions in Redis provides a notable speed boost.
 
 ### Prerequisites
 

@@ -23,6 +23,7 @@ These should be sufficient for most stores.
    * [mysqlnd](http://php.net/manual/en/book.mysqlnd.php)
    * [xsl](http://php.net/manual/en/book.xsl.php)
 
+Please see the full [listing of installed PHP modules](/faq/software-versions/#which-php-modules-are-available).
 
 ### Can I SSH into the servers?
 No. We can understand that this might seem like an unpleasant change to some
@@ -34,3 +35,6 @@ monitoring alerts or physical hardware maintenance.
 
 This means that any changes you are able to apply manually to an individual
 application server should not be expected to persist.
+
+### Are Redis client libraries installed?
+No. Only the [Credis library](https://github.com/colinmollenhour/credis)—as bundled with [Cm_Cache_Backend_Redis](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis) and [Cm_RedisSession](https://github.com/colinmollenhour/Cm_RedisSession)—is available for your Magento store to communicate with Redis. The predis and phpredis libraries are not currently supported on fleet.
