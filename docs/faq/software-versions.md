@@ -54,6 +54,7 @@ The following modules are currently available.
  - pdo_mysql
  - Phar
  - posix
+ - redis
  - Reflection
  - session
  - shmop
