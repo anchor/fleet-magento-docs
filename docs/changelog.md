@@ -7,8 +7,8 @@ Change Log
 * Prevent reporting data to NewRelic from healthcheck.
 * HTTP Authorization headers now passed through to PHP.
 * Documented multisite configuration.
-* Implemented Magento [Maintenance Mode](http://docs.anchorfleet.com/fleet-magento-1/how-to/manage-environments/#enabling-and-disabling-maintenance-mode-for-an-environment).
-* Added ability to [reboot database server](http://docs.anchorfleet.com/fleet-magento-1/how-to/manage-databases/#rebooting-a-database).
+* Implemented Magento [Maintenance Mode](how-to/manage-environments/#enabling-and-disabling-maintenance-mode-for-an-environment).
+* Added ability to [reboot database server](how-to/manage-databases/#rebooting-a-database).
 * Send notification on creating an environment or loading a release.
 * Endpoints for inactive releases are now available.
 * Installed xcache (PHP opcode cache).
