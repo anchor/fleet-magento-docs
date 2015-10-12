@@ -73,10 +73,14 @@ ssl certificate   self-signed
 created           2015-04-30 14:34:55+10:00
 updated           2015-05-13 20:36:18+10:00
 recycling         ON
+solr              OFF
+maintenance mode  OFF
 tracked branches  fleet-deploy
 previous release  f7ac77a
 autoscaling min   1
 autoscaling max   2
+ha                ON
+workers/instance  100
 ----------------  -------------------------
 
 Releases:
@@ -274,6 +278,17 @@ When Maintenance Mode is OFF, frontends and admin nodes will remove `maintenance
 [Document Root](../configuring-magento-for-fleet/customisation.md#using-a-custom-document-root).
 
 This change may take up to a minute to apply to all nodes.
+
+Set worker counts per instance
+----
+
+Set the number of application worker processes per instance.
+
+```
+$ fleet env workers <environment_name> <workers_per_instance>
+Workers per instance for Environment <environment_name> is set to <workers_per_instance>
+This affects newly loaded releases only.
+```
 
 Flushing caches for an environment
 ----
