@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2015-10-12
+----------
+
+* Support for setting the number of [PHP workers per frontend](how-to/manage-environments/#set-worker-counts-per-instance).
+
 2015-10-06
 ----------
 
