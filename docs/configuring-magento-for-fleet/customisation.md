@@ -86,6 +86,21 @@ Note that the standard Magento cron is invoked independently of any provided cro
 */5 * * * *    deploy    /usr/local/bin/is-fleet-node-active && /bin/sh /home/deploy/.fleet-webroot/cron.sh
 ```
 
+Running scripts on instance boot
+----
+
+You can supply a script to be run at instance startup.
+
+If you include an executable `.fleet/onboot` this will be executed when each instance is booted.
+
+You have access to the following environment variables:
+
+ * `ROLE` (eg. fe, admin, varnish)
+ * `ENVIRONMENT` (eg. prod)
+ * `RELEASE` (the Release ID)
+ * `DOMAIN` (myfleet.f.nchr.io)
+
+
 Using a Fleet-specific local.xml
 ----
 
