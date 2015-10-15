@@ -99,11 +99,13 @@ name    status     loaded     updated   frontends
 037205f * ACTIVE * 2015-03-26 2015-06-03 2
 
 Endpoints:
--------- ------------------------------
-admin    admin.prod.ancora.f.nchr.io
-adminssh adminssh.prod.ancora.f.nchr.io
-www      www.prod.ancora.f.nchr.io
--------- ------------------------------
+--------       ---------------------------------
+admin          admin.staging.ancora.f.nchr.io
+adminssh       adminssh.staging.ancora.f.nchr.io
+adminwildcard  *.admin.staging.ancora.f.nchr.io
+www            www.staging.ancora.f.nchr.io
+wwwwildcard    *.www.staging.ancora.f.nchr.io
+--------       ---------------------------------
 ```
 
 Fleet is now configured.  You have established that your production environment

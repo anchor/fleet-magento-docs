@@ -188,11 +188,13 @@ name     status      loaded                     updated                      fro
 8ef9d2f  ACTIVATING  2015-06-09 01:16:22+00:00  2015-06-09 01:22:52+00:00            2
 
 Endpoints:
---------  ---------------------------------
-admin     admin.staging.ancora.f.nchr.io
-adminssh  adminssh.staging.ancora.f.nchr.io
-www       www.staging.ancora.f.nchr.io
---------  ---------------------------------
+--------       ---------------------------------
+admin          admin.staging.ancora.f.nchr.io
+adminssh       adminssh.staging.ancora.f.nchr.io
+adminwildcard  *.admin.staging.ancora.f.nchr.io
+www            www.staging.ancora.f.nchr.io
+wwwwildcard    *.www.staging.ancora.f.nchr.io
+--------       ---------------------------------
 ```
 
 Fleet exposes a www endpoint for your staging environment.  In this case:
@@ -249,11 +251,13 @@ name     status      loaded                     updated                      fro
 8ef9d2f  * ACTIVE *  2015-06-09 01:16:22+00:00  2015-06-09 01:22:52+00:00            2
 
 Endpoints:
---------  ---------------------------------
-admin     admin.staging.ancora.f.nchr.io
-adminssh  adminssh.staging.ancora.f.nchr.io
-www       www.staging.ancora.f.nchr.io
---------  ---------------------------------
+--------       ---------------------------------
+admin          admin.staging.ancora.f.nchr.io
+adminssh       adminssh.staging.ancora.f.nchr.io
+adminwildcard  *.admin.staging.ancora.f.nchr.io
+www            www.staging.ancora.f.nchr.io
+wwwwildcard    *.www.staging.ancora.f.nchr.io
+--------       ---------------------------------
 Enter the environments name to proceed or anything else to abort
 > staging
 Environment staging is now being destroyed
