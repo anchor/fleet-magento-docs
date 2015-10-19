@@ -89,11 +89,13 @@ name     status      loaded                     updated                      fro
 c341606  * ACTIVE *  2015-05-07 16:54:34+10:00  2015-05-12 16:25:58+10:00            1
 
 Endpoints:
---------  ---------------------------------
-admin     admin.prod.example.f.nchr.io
-adminssh  adminssh.prod.example.f.nchr.io
-www       www.prod.example.f.nchr.io
---------  ---------------------------------
+--------       ---------------------------------
+admin          admin.prod.example.f.nchr.io
+adminssh       adminssh.prod.example.f.nchr.io
+adminwildcard  *.admin.prod.example.f.nchr.io
+www            www.prod.example.f.nchr.io
+wwwwildcard    *.www.prod.example.f.nchr.io
+--------       ---------------------------------
 ```
 
 Managing releases within an environment
