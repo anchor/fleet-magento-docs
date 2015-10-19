@@ -31,3 +31,18 @@ Removing a notification recipient
 ```
 $ fleet notifications remove <address>
 ```
+
+Sending a notification
+----
+
+You can manually send a notification to all notification recipients.
+
+```
+$fleet notifications send <subject>
+Enter the body of the message to send
+End with EOF (^D)
+----------%<-----------
+    ...
+^D
+---------->%-----------
+```
