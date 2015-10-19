@@ -284,8 +284,9 @@ Set worker counts per instance
 
 Set the number of application worker processes per instance.
 
-You can additionally set this to `AUTO` which will dynamically set the worker
-counter based on load.
+You can additionally set this to `AUTO` which will use a default based on the
+instance type, which should be suitable for most Magento installations, but
+may require tuning for your particular application.
 
 ```
 $ fleet env workers <environment_name> <workers_per_instance>
