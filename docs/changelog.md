@@ -7,7 +7,7 @@ Change Log
 * Now uses ALIAS records instead of CNAMEs reducing the number of DNS lookups.
 * Wildcard endpoints are now available `*.www` and `*.admin`.
 * Simplified health check to reduce unnecessary recycling.
-* Added ability to [run scripts on instance boot](/customisation/#running-scripts-on-instance-boot).
+* Added ability to [run scripts on instance boot](configuring-magento-for-fleet/customisation/#running-scripts-on-instance-boot).
 * Now shows which environments releases are loaded in `fleet release list`.
 * Fixed conflicting documentation about Environment name limits.
 * Fixed loading VCL on release loading when using custom document root.
