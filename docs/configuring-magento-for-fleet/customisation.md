@@ -80,6 +80,12 @@ For example:
 
 All Fleet nodes use UTC time.
 
+**Warning:** Do not use the `@reboot` cron time specification.  The instance
+your job executes on may not have been fully initialised when this schedule
+fires; this may result in unreliable behaviour.  Instead, use the Fleet feature
+to [run scripts on instance
+boot](customisation#running-scripts-on-instance-boot).
+
 Note that the standard Magento cron is invoked independently of any provided crontab, you do not need to invoke it yourself. By default, Magento cron runs on the admin node and reads as follows:
 
 ```
