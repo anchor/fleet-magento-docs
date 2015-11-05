@@ -200,7 +200,7 @@ Fleet exposes a www endpoint for your staging environment.  In this case:
 
 ## Unit/User/Load Testing
 
-Given *environents are all built off the same infrastructure template and machine image* you are guaranteed any unit/user or loading testing performed in staging will behave ecactly the same as in
+Given *environments are all built off the same infrastructure template and machine image* you are guaranteed any unit/user or loading testing performed in staging will behave exactly the same as in
 production. Further to that each environment is totally independent of one another and you can create/destroy them on demand so testing seamlessly becomes part of the deployment process.
 
 Fleet instantiates environments using an identical blueprint to that of
