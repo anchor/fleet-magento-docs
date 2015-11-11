@@ -4,7 +4,7 @@ Change Log
 2015-11-10
 ----------
 
-* Support for [custom health checks](http://docs.anchorfleet.com/fleet-magento-1/configuring-magento-for-fleet/health-check/).
+* Support for [custom health checks](configuring-magento-for-fleet/health-check/).
 * Added warning when loading a third release into an environment.
 * Fleet cron fragments (under /etc/cron.d/) are now readable by the deploy user.
 * Weekly Fleet usage reports now sent.
