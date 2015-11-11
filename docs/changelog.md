@@ -10,6 +10,8 @@ Change Log
 * Weekly Fleet usage reports now sent.
 * Autoscaling history now exposed as a [log](how-to/manage-logs/).
 * NewRelic license can now be unset if it was previously set.
+* Performance improvements to [env describe](how-to/manage-environments/#describing-an-environment).
+* Version number (--version) now has meaningful output.
 
 2015-10-20
 ----------
