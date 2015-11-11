@@ -8,6 +8,7 @@ Change Log
 * Added warning when loading a third release into an environment.
 * Fleet cron fragments (under /etc/cron.d/) are now readable by the deploy user.
 * Weekly Fleet usage reports now sent.
+* Autoscaling history now exposed as a [log](how-to/manage-logs/).
 * NewRelic license can now be unset if it was previously set.
 
 2015-10-20
