@@ -167,13 +167,3 @@ Your site should now be live at ``http://www.prod.{fleet-id}.f.nchr.io/``.
 You can now log into the admin at ``http://admin.prod.{fleet-id}.f.nchr.io/``
 and make sure everything is working as expected and make any changes you need to
 for production.
-
-If you need to load data into your database you can connect to
-``http://adminer.prod.{fleet-id}.f.nchr.io/`` and upload your SQL.
-
-If you're familiar with PhpMyAdmin, [Adminer](http://www.adminer.org/) works in much the same way.
-
- * Click **Import**
- * Choose Files: Select your SQL file.
- * Click **Execute**
- * Wait for the upload to complete
