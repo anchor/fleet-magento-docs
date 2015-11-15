@@ -69,7 +69,7 @@ Change Log
 * Errors reports for created releases are now more compact
 * Bugfix for rate limiting retries
 * `fleet release create` reports an error if public key is denied
-* Log [Database deadlocks](troubleshooting/database/#database-deadlocks)
+* Log Database deadlocks
 
 2015-08-25
 ----------
