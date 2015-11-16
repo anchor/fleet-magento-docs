@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2015-11-16
+----------
+
+* Added [billing report](how-to/access-reports/#viewing-current-billing-estimate)
+
 2015-11-10
 ----------
 
