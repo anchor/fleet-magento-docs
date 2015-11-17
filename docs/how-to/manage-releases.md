@@ -149,5 +149,8 @@ Once the error has been corrected, you can create a new release with fixed
 code.
 
 If there is an internal Fleet problem causing the release to fail, no
-notification will be sent. In this case, you should contact [support](/support/)
-to investigate the issue.
+notification will be sent to you. Anchor will automatically be notified,
+and will resolve the issue.
+
+If you would like status updates in the rare case that this happens, you can
+contact [support](/support/).
