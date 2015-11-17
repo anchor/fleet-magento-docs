@@ -23,5 +23,7 @@ During a maintenance window, automated upgrades to the underlying infrastructure
 
 This includes such things as MySQL or Redis software version updates.
 
+Maintenance may not be performed every week, it will only be performed when necessary.
+
 As these upgrades can require a restart of the services, if the environment undergoing maintenance
 is not HA there may be short periods of downtime as the services are rebooted.
