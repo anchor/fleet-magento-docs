@@ -7,18 +7,21 @@ Listing log groups
 $ fleet log list
 -----------  -------  ---------------------------
 Environment  Release  Group
+                      fleet-logs
 prod         5d5350b  apache-000-deploy-access
 prod         5d5350b  apache-000-deploy-error
 prod         5d5350b  magento-magento-report
 prod         5d5350b  magento-magento-system
 prod         5d5350b  phpfpm-master-deploy-access
 prod         5d5350b  phpfpm-master-deploy-slow
+prod         5d5350b  autoscaling-logs
 test         5d5350b  apache-000-deploy-access
 test         5d5350b  apache-000-deploy-error
 test         5d5350b  magento-magento-report
 test         5d5350b  magento-magento-system
 test         5d5350b  phpfpm-master-deploy-access
 test         5d5350b  phpfpm-master-deploy-slow
+test         5d5350b  autoscaling-logs
 -----------  -------  ---------------------------
 ```
 
