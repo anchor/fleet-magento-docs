@@ -18,7 +18,7 @@ These will report with the Application Name: `fleet-<fleet name>-<environment>-<
 You can disable New Relic for newly loaded releases with:
 
 ```
-fleet config newrelic ''
+fleet config newrelic --unset
 Removed NewRelic licence.
 This will apply only to newly loaded releases.
 ```
