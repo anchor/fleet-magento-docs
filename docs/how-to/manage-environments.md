@@ -202,6 +202,8 @@ into an environment.
 This will not change the number of frontends currently active, unless the current number lies outside
 the new limits.
 
+Note that you can [view autoscaling history through the logs](/how-to/manage-logs/#viewing-a-log).
+
 ```
 $ fleet env autoscaling limits <environment_name> <minimum> <maximum>
 ```
