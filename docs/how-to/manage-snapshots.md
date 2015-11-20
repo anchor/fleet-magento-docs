@@ -36,3 +36,28 @@ Deleting old snapshots
 $ fleet snapshot destroy <snapshot_name>
 Snapshot <snapshot_name> is now being destroyed
 ```
+
+Dumping the contents of a snapshot
+----
+
+While you cannot access the contents of a snapshot directly, you can create a new environment using the contents of a snapshot, then dump the database from that environment.
+
+1. Create the new environment from the snapshot.
+
+      ```
+      $ fleet env create <env_name> --snapshot <snapshot_id>
+      ```
+
+2. Dump the contents of the database
+
+      ```
+      $ fleet database dump <env_name> > <snapshot_id>.sql
+      ```
+
+3. Cleanup the environment you just created
+
+      ```
+      $ fleet env destroy <env_name>
+      ```
+
+See [Manage Databases](/how-to/manage-databases#dumping-a-database) for more information.
