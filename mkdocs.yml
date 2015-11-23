@@ -18,6 +18,7 @@ pages:
   - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
+  - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
 - Getting Started:
@@ -42,6 +43,7 @@ pages:
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Setup New Relic': 'how-to/newrelic.md'
+  - 'Reporting': 'how-to/access-reports.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'

@@ -3,7 +3,7 @@ A release corresponds to a single version of your site's code.
 Listing existing releases
 ----
 
-Releases will be either creating or available.
+Releases will be either creating, available or failed.
 
 ```
 
@@ -134,3 +134,23 @@ This will delete the underlying images used and remove the release from your lis
 $ fleet release destroy 33516fa
 Release '33516fa' is being destroyed
 ```
+
+Handling failed releases
+----
+
+When a release fails, it can be because of a number of reasons.
+
+If there is a problem in the code being bundled into the release, a
+[notification](/how-to/manage-notifications/) will be sent containing
+an error message which should point to which part of the release process
+failed.
+
+Once the error has been corrected, you can create a new release with fixed
+code.
+
+If there is an internal Fleet problem causing the release to fail, no
+notification will be sent to you. Anchor will automatically be notified,
+and will resolve the issue.
+
+If you would like status updates in the rare case that this happens, you can
+contact [support](/support/).

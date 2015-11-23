@@ -30,7 +30,7 @@ Viewing a key
 ----
 
 ```
-$ fleet key show Alex
+$ fleet key describe Alex
 ---------------
 name      Alex
 modified  2015-01-05 04:41:17+00:00
