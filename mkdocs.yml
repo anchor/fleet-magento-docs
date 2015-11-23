@@ -44,6 +44,7 @@ pages:
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Setup New Relic': 'how-to/newrelic.md'
   - 'Reporting': 'how-to/access-reports.md'
+  - 'Updates': 'how-to/updates.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
