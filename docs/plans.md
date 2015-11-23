@@ -30,9 +30,9 @@ Fleet plans hardware specification page.
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c3.large | 2 | 3.75 | Y |
-| Frontend | 2 | c3.large  | 2 | 3.75 | Y |
-| Admin | 1 | c3.large | 2 | 3.75 | N |
+| Varnish | 2 | c4.large | 2 | 3.75 | Y |
+| Frontend | 2 | c4.large  | 2 | 3.75 | Y |
+| Admin | 1 | c4.large | 2 | 3.75 | N |
 | Aux | 1 | t2.small | 1  | 2 | N |
 | Cache | 2 | cache.m3.medium | 1 | 2.78 | Y |
 | Session | 2 | cache.m3.medium | 1 | 2.78  | Y |
@@ -42,9 +42,9 @@ Fleet plans hardware specification page.
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c3.xlarge | 4 | 7.5 | Y |
-| Frontend | 2 | c3.xlarge | 4 | 7.5  | Y |
-| Admin | 1 | c3.xlarge | 4 | 7.5 | N |
+| Varnish | 2 | c4.xlarge | 4 | 7.5 | Y |
+| Frontend | 2 | c4.xlarge | 4 | 7.5  | Y |
+| Admin | 1 | c4.xlarge | 4 | 7.5 | N |
 | Aux | 1 | t2.small | 1  | 2 | N |
 | Cache | 2 | cache.m3.medium | 1 | 2.78 | Y |
 | Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
@@ -54,9 +54,9 @@ Fleet plans hardware specification page.
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c3.2xlarge | 8 | 28  | Y |
-| Frontend | 2 | c3.2xlarge | 8 | 28 | Y |
-| Admin | 1 | c3.2xlarge | 8 | 28 | N |
+| Varnish | 2 | c4.2xlarge | 8 | 28  | Y |
+| Frontend | 2 | c4.2xlarge | 8 | 28 | Y |
+| Admin | 1 | c4.2xlarge | 8 | 28 | N |
 | Aux | 1 | t2.small | 1  | 2 | N |
 | Cache | 2 | cache.m3.medium  | 1 | 2.78 | Y |
 | Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
