@@ -18,6 +18,12 @@ Assets uploaded via the catalogue editor in Magento's admin panel will automatic
 
 **Note**: We have configured a script that will run periodically to add new media from the **admin** node to the media database. This script will log to Magento's `var/log/media_sync.log`.
 
+You can disable this process via the `.fleet/config` file in the root of your repository, you can create it yourself if it does not exist.
+
+```INI
+media_sync = False
+```
+
 **Warning**: There is an issue with Magento's media database where it uses **case-insensitive** columns for file names, this means that if you have two files that have the same path other than the case.  
 eg. `media/A/B.JPG` and `media/a/b.jpg` only one of these will be stored in the media database and when magento tries to load the other one it will result in an exception.  
 You can avoid this issue by ensuring that there are no files with the same names with differing case, alternatively **ALTER** the `core_file_storage` and `core_directory_storage` table to use **BINARY** columns for `name`,`filename`,`directory` and `path`.
