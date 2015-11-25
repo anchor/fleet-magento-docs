@@ -3,7 +3,7 @@ Change Log
 
 2015-11-25
 ----------
-* Added `fleet updates` commands. Allows [scheduling updates for fleet components](http://docs.anchorfleet.com/fleet-magento-1/how-to/updates/), at this point, only RDS.
+* Added `fleet updates` commands. Allows [scheduling updates for fleet components](how-to/updates/), at this point, only RDS.
 
 2015-11-16
 ----------
