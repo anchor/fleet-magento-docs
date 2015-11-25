@@ -56,6 +56,35 @@ You can also have this report sent out via the notification channel:
 fleet report billing --output_mode notification
 ```
 
+Setting a billing alarm
+-----------------------
+
+If you can't monitor the billing report yourself, Fleet can send you a [notification](/how-to/manage-notifications)
+when your usage exceeds a threshold in USD.
+
+The billing run is executed daily, and will notify you if the estimated current
+spend exceeds the threshold you have configured.
+
+The notification will be sent only the first time you exceed the threshold
+each month, unless you have changed the threshold since being notified.
+
+```
+$ fleet config billing-alarm
+No billing alarm has been set
+
+$ fleet config billing-alarm 1000
+Set billing alarm threshold to '1000'
+
+$ fleet config billing-alarm
+The current alarm threshold is '1000'
+
+$ fleet config billing-alarm --unset
+Removed billing alarm
+
+$ fleet config billing-alarm
+No billing alarm has been set
+```
+
 Viewing current usage
 ----
 
