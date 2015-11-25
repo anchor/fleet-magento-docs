@@ -7,3 +7,4 @@
  - Make sure your environment whitelist is not blocking end-user traffic.
  - Configure instance recycling to be ON.
  - Make sure your autoscaling configuration is appropriate for the expected traffic levels.
+ - Ensure you have set up an appropriate [health check](/configuring-magento-for-fleet/health-check) for your application.
