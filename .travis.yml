@@ -15,6 +15,11 @@ after_success:
   if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
     chmod 0600 .travis/fleetdocsdeploy;
     rsync -C --delete -va -e 'ssh -i .travis/fleetdocsdeploy' ./site/ fleetdocs@sail.anchor.net.au:/home/fleetdocs/public_html/fleet-magento-1/;
+    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+      -H "X-Auth-Email: ${CF_USER}" \
+      -H "X-Auth-Key: ${CF_API_KEY}" \
+      -H "Content-Type: application/json" \
+      --data '{"purge_everything":true}';
   else
     echo "Not performing a deployment.";
   fi
@@ -22,3 +27,8 @@ notifications:
   slack:
     rooms:
       - secure: "KJVw2IzoY36JNjdtKsPV9uAfxYGR95zIiX+XmEe9pyotlilNxWke8nDBXYkt5/i+OdA+VaqXUvOqfyU8zGVXE4YwZRsDDtx4Qvjf86aq3GeFFvJRqkiDIZrR5NTYphLhGO3p4rLEXTObEyrB0t9o6C9R4ujjyidV9QmtD8DtNbyL6VUrUT3TO26Kdq8KEKgO7A6LylfsDsoca51F/yVl0DdFrzgLEpILdx4SOWKGfyijyCZE16xi3GkHuAOHaxhgVLfLqMPEeSp/Z8ntkR3h2FF9irkRnoEYEclqkp9evCW+4SOfl+CKakDX9GlSQ0hua9gaX9+95a435ymQr4MG2wYZGp4Sh1BsEmG3nvNIEPmERXrke2Mg3ElaS2KY2dAMquSs+aL039LjC1fE707qhkjCWDQLnqpHvxyqUi08f1Acll1f/F7n1QFv/Q2IW1aw0Wjf6Him4stzKOiuvHsGvb4s5EhzzKXEwFqLrbx/qsTNBUEtka4m7UeDAwHiDHv8fkvH9aOx7mfi8khafrtQO8SDQTUXk0Q3XhFSHKJEBYay19ATzFTEF5k2ho2mdBeA9PdJz7DKtg3zYYgYlY+ajafg11mW0uS6No/7NJjNFL0WDYRPfZjFHjlEB6Ovgs9Xdme4NbwsGY8NP1HFmSkHFTi2fTZdB8JBtVFbYVKuHZ8="
+env:
+  global:
+  - secure: x9CVyhcAGPaVBCBDNxqJqbH+MFQDvNG6VdTf8LWjZrbAu6EPohyyBOoTuXsg5Si35h6IiJsB1urv68h5ixo5LaiyRFt+hVCvn+KNi0xpF+rhe2CEQ4U6y8uy38Elt+0oiLR3Wqjm34l5lqjfsNVJ+YfS24wfCQD9sM7/rLVUwAOji+M4VIOwEAfOPc7yNMGpsbeWMAQG7jOCwPoX+IdOJ3EvhRgNwIFUcoAMV7KUn3cFRhx9JSmuxqdS5dWHb3J1EETjVpunOd3teCNq8tTyxjbrjyxgNNRiZVwtYjhTSiIQXWrACf8mQkAGBZXnZiNawzq/fK2qWXfPIeONj4hSHtlMUOMxNDVDR3XQMoXYWGMl/Y0WBRCZIfHQtwExO7jZKRtqOFib2VIX5al3O8rN+5a/24q+4+C0dwDWCaOtgxEy4tyjx9mLKIxKjF43pArWeNo6GBo+2JpQVu4viX2V8U/eU0rQ4yVzuu5jSh+/ChEXYriD9VG71gyGD4Wi5W8CA9F+rbZYWWVcn4EFYHCiYin0XeE71Q50JNd/7tBGbwRdNuavDhZA0TAKVvbEZ1MdK7XPW9NziDlsD2GZHuuxeWobdrgnHx8NA1BxswAfDYZ+cC9r1yVI6uhjvDtWm20Hh8jHMfObV2y9iTRxo+U+twocn/7ck5fi/9IWv5iFwZY=
+  - secure: xwMaqQRQGYr4t5aAsX+9B1dqrnDbF2WzhPRmzroUXc0UlpVbVt7yoWZoxsZbheB1K1mQyvA48BwtGEm9bR/fIXzDnlsud9b0npRGsrEn12kar8VdS5KkjgzRwTdcndH3TYHB3tP/OP3WXBz6BUHfycsTjaYHXpKb6kX06aMZa/XJOto3kJ6I78uf8hVKjZ+0mCZGuNfJGv6nSJbW+Vit8K8Vli2CC6/Y/vK2Y1QytL4q2tAcrFc+Ghlfg+jKAj4QUJp2f+oxo6BFfv3Ey+hZKnk6CVyssocfUijFPzJv3f9H6Iz3zHldVya+AFmihdlcH9LfQcNIMCxvu558oMPex869R3cfK0EPo4CEegt04QZ0la9f2UdTaJXKMJmWVIVWJLvrEmfyLOX/weJaT3Z8lZsd3ud/yby/+pQUQ7NlUFbpb1vA8vhp24ZWKVNFXrb5DKsuw4fD2In21ukUcgYZA+W15bS5OPozfbuxUKpAwXJQqmvstULopOQknwN6gVGUH2FrMy3ZO+YuVqYBIB7d7g83Mw+N5FRJ0o3aaogwt2GHe3YKyZyZwVVYpwKyBtyydOTLtYa4EVb5DOpb9LFeTq1drxp6xuiZ0HrdvX2Z5vK9r5skMhA8pIpI4avfZndtUL50nECS4z6+zFsy2Uu9bQPubc6p6QComUZfO+O6Ve4=
+  - secure: QPhtwnOPW/kU0vET+GgxQKGTEhaulL0hluToXjQGsfWBvjR5QGhUHBZAi7kPsw+AyKqE0epn2sVfx3QPj0qdyhOmiR36UFKWa6V1MMUiodDJfRrEMd/r6Wa2ksmkfH3AKocyFq36c5xiASJ/vRGLd7zN5MqTjpIiuukUBVDEsZ/PcGGtHO8RMHbQQCNFS5xgG3Mj4mFGyE7ehB/4XBsMfrco85IKTEuMCUaz6kfqpJD+HF3GNXa0ynsDNFzlggstpHNnE69rYbk4Nh5ZNeHFSibL9bCi3/ZE49azQrQmaLO3sFQ9CqOhcHOr//m5/b5vHAp2upioUXka8fbmAezBWk84WTUlsfQv+27te1ne1pjoExEGPl3Rcjvv0ecMMt2kLaefUiW0IqSOmo9tavOL3E7eKiv9WESRiKNLjrqmzFzOnY1z2oRWTmqgOI8dQINvQreNXUmnsMu+qyuIAjZs03ELpZe2iG/qDOPpZ4xGoYzzHmQI6S/2wudTrDUQg3rnwD8+Wnd5JFyUEU+F7sHT1jIelbjgKdAAwBAnbuI2TsPvVnigUD87NR/ufDX1f6VRhuOqXNiz5DU1etfPpYV+yoQkFfFFJeQnBwej+W8mr2xDjMnYAjFzUvgXqvhKuxnY8Py8bSwotBpTRZ9JBkS3z6BJwHVapZA+kIKHVtVnxfA=
