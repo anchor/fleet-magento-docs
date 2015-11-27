@@ -65,4 +65,5 @@ pages:
   - 'Staging environment': 'tutorial/staging-environment.md'
   - 'Production environment': 'tutorial/production-environment.md'
 - Support: 'support.md'
+- Plans: 'plans.md'
 - Changelog: 'changelog.md'
