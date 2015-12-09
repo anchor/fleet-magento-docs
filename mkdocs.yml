@@ -42,7 +42,6 @@ pages:
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
-  - 'Setup New Relic': 'how-to/newrelic.md'
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
