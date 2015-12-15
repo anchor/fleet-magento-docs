@@ -113,3 +113,8 @@ Using a Fleet-specific local.xml
 You can supply a local.xml which will only be used by Fleet if you prefer to keep different settings for different environments.
 
 If under app/etc/ you name a file *local.xml-fleet* it will be renamed to *local.xml* on deployment.
+
+Server and Daemon Configurations
+----
+
+At present Anchor is not accepting any customisations for Apache, PHP, MySQL, or Redis other than what is permitted in a `.htaccess` file.
