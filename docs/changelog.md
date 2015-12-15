@@ -1,13 +1,21 @@
 Change Log
 ----------
 
+2015-12-15
+----------
+
+* Prefix log entries with identifier to help identify different instances
+* Display subscription status in notifications list
+
 2015-11-30
 ----------
+
 * Added JSON output for billing report
 * Added Billing alarm configuration
 
 2015-11-25
 ----------
+
 * Added `fleet updates` commands. Allows [scheduling updates for fleet components](how-to/updates/), at this point, only RDS.
 
 2015-11-16
