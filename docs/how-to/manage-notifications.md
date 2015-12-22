@@ -2,9 +2,18 @@ You can sign up for notifications to events releated to your Fleet.
 
 The notifications will be delivered by email on important events such as:
 
- - Creating a frontend instance
- - Terminating a frontend instance
+ - Weekly usage report
+ - Billing alarm threshold exceeded
+ - Release creation failure
+ - Creating an environment
+ - Loading a release
  - SQL script failure
+
+People who should be subscribed to notifications:
+
+ - Developers who are creating new releases
+ - The person paying the bills
+ - Anyone pushing new releases into production
 
 Adding a notification recipient
 ----
