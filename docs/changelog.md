@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2015-12-22
+----------
+
+* Increase PHP's max_input_vars setting to 10000
+
 2015-12-15
 ----------
 
