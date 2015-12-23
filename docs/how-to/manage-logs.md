@@ -1,5 +1,15 @@
 Fleet provides a log aggregation facility which allows you to view logs by environment and release.
 
+Log Retention
+----
+
+The default retention period for all logs is 1 year.
+
+Per-release logs (eg. apache/magento logs) are purged when the release is unloaded.
+If you want to store logs after a release has been unloaded, you should first download
+the logs before unloading the release.
+
+
 Listing log groups
 ----
 
