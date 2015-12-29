@@ -20,6 +20,7 @@ pages:
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
   - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
+  - 'Logging': 'configuring-magento-for-fleet/logging.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
@@ -48,6 +49,7 @@ pages:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
+  - 'Monitoring': 'faq/monitoring.md'
   - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'

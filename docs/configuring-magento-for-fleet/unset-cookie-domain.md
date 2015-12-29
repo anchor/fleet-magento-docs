@@ -15,5 +15,5 @@ domain:
 
 If you need a more specific cookie domain you could also set it on environment
 creation via an SQL script. Note though that if the cookie domain is not set
-correctly then *shopping cards and session-related functions will not work
+correctly then *shopping carts and session-related functions will not work
 correctly.*

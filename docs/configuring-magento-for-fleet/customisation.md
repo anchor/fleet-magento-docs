@@ -113,3 +113,10 @@ Using a Fleet-specific local.xml
 You can supply a local.xml which will only be used by Fleet if you prefer to keep different settings for different environments.
 
 If under app/etc/ you name a file *local.xml-fleet* it will be renamed to *local.xml* on deployment.
+
+Platform customisations
+----
+
+Fleet is a platform, as such customisations of certain configuration cannot be done on a per-Fleet basis.
+
+In general, custom server configuration cannot be supported, however if there is some configuration change which would improve the platform for all users we are open to suggestions.

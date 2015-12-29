@@ -11,7 +11,7 @@ Environments can be created either as a copy of an existing environment, or as a
 You can also specify a specific snapshot to be used to seed the database for the environment.
 
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] NAME
 ```
 
 To create an environment 'staging' as a copy of 'prod' with the latest snapshot of 'prod'
@@ -73,6 +73,7 @@ ssl certificate   self-signed
 created           2015-04-30 14:34:55+10:00
 updated           2015-05-13 20:36:18+10:00
 recycling         ON
+size              f1-large
 solr              OFF
 maintenance mode  OFF
 tracked branches  fleet-deploy

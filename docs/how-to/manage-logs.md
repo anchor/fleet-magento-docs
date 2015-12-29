@@ -1,5 +1,16 @@
 Fleet provides a log aggregation facility which allows you to view logs by environment and release.
 
+Log Retention
+----
+
+The default retention period for all logs is infinite.
+
+Per-release logs (eg. apache/magento logs) are retained when the release is unloaded.
+
+You should delete logs for releases once they have been unloaded and you have no
+further use for the logs.
+
+
 Listing log groups
 ----
 
@@ -35,4 +46,18 @@ $ fleet log view <environment> <release> <group> [--start-time YYYY-MM-DDTHH:MM:
 
 $ fleet log view prod 5d5350b apache-000-deploy-access
 ...
+```
+
+Deleting a log
+----
+
+You can delete a log once you have no further use for it.
+
+If you delete a log while the release which is pushing data to it is still loaded
+it will be recreated automatically, but the data it previously had will have been purged.
+
+```
+$ fleet log delete [<environment>] [<release>] <group>
+
+$ fleet log delete prod 5d5350b apache-000-deploy-access
 ```
