@@ -1,6 +1,14 @@
 Change Log
 ----------
 
+2015-12-29
+----------
+* NewRelic licences are now [per-environment](/how-to/manage-environments/#set-up-new-relic-integration) instead of global to a Fleet
+* Syslog messages now available in logs
+* Logs are now retained when unloading releases
+* [Custom log files](/configuring-magento-for-fleet/logging/) can now be defined for Magento
+* Show first/last log times for each log in log list
+
 2015-12-22
 ----------
 
