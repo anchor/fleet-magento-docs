@@ -343,3 +343,17 @@ fleet env describe '<env_name'>
 newrelic          <key>
 ...
 ```
+
+Controlling Protected status
+----------------------------
+
+The protected status is used to protect against destroying an environment or
+removing the last active release for an environment. It should generally be
+set to ON for the environment serving your production traffic.
+
+You must turn the protected state to OFF before you can destroy an environment.
+
+```
+fleet env protected <environment_name> ON
+The protected state for Environment <environment_name> is now being set to ON
+```
