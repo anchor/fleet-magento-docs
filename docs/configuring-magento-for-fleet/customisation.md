@@ -114,6 +114,21 @@ You can supply a local.xml which will only be used by Fleet if you prefer to kee
 
 If under app/etc/ you name a file *local.xml-fleet* it will be renamed to *local.xml* on deployment.
 
+If you need more customisation of which *local.xml* is used, you can use the onboot script to drop in a new *local.xml* file.
+This can be used to use a different *local.xml* for each environment, or to modify the *local.xml* based on the domain being served.
+
+For example:
+```
+cat .fleet/onboot
+#!/bin/bash
+if [[ -e "/home/deploy/app/public/app/etc/local.xml.${ENVIRONMENT}" ]]; then
+  mv "/home/deploy/app/public/app/etc/local.xml.${ENVIRONMENT}" /home/deploy/app/public/app/etc/local.xml
+fi
+```
+
+In general this is discouraged, as it breaks the guarantee that code deployed in one environment will
+behave the same when deployed in another environment.
+
 Platform customisations
 ----
 
