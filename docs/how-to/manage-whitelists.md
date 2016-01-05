@@ -53,3 +53,10 @@ If a whitelist is no longer needed, you can remove it. You cannot remove a white
 $ fleet whitelist destroy whitelist_name
 Destroyed whitelist whitelist_name
 ```
+
+Limitations
+----
+
+Due to the way IP whitelisting works, the whitelist also applies to connections made from within the Fleet to the external endpoints of the Fleet. Due to a quirk of Magento, the Magento API relies on being able to connect to the public endpoint in order to function. As such, Magento's API will not work correctly if whitelisting is in use.
+
+If usage of the API for a site is required and the site needs to have restricted access, you should instead look at configuring access controls in your .htaccess file.

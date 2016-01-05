@@ -20,6 +20,7 @@ pages:
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
   - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
+  - 'Logging': 'configuring-magento-for-fleet/logging.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
@@ -42,13 +43,13 @@ pages:
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
-  - 'Setup New Relic': 'how-to/newrelic.md'
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
+  - 'Monitoring': 'faq/monitoring.md'
   - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
@@ -65,4 +66,5 @@ pages:
   - 'Staging environment': 'tutorial/staging-environment.md'
   - 'Production environment': 'tutorial/production-environment.md'
 - Support: 'support.md'
+- Plans: 'plans.md'
 - Changelog: 'changelog.md'

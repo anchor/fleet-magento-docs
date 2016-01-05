@@ -1,8 +1,34 @@
 Change Log
 ----------
 
+2015-12-29
+----------
+* NewRelic licences are now [per-environment](/how-to/manage-environments/#set-up-new-relic-integration) instead of global to a Fleet
+* Syslog messages now available in logs
+* Logs are now retained when unloading releases
+* [Custom log files](/configuring-magento-for-fleet/logging/) can now be defined for Magento
+* Show first/last log times for each log in log list
+
+2015-12-22
+----------
+
+* Increase PHP's max_input_vars setting to 10000
+
+2015-12-15
+----------
+
+* Prefix log entries with identifier to help identify different instances
+* Display subscription status in notifications list
+
+2015-11-30
+----------
+
+* Added JSON output for billing report
+* Added Billing alarm configuration
+
 2015-11-25
 ----------
+
 * Added `fleet updates` commands. Allows [scheduling updates for fleet components](how-to/updates/), at this point, only RDS.
 
 2015-11-16

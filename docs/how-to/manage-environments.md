@@ -11,7 +11,7 @@ Environments can be created either as a copy of an existing environment, or as a
 You can also specify a specific snapshot to be used to seed the database for the environment.
 
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] NAME
 ```
 
 To create an environment 'staging' as a copy of 'prod' with the latest snapshot of 'prod'
@@ -73,6 +73,7 @@ ssl certificate   self-signed
 created           2015-04-30 14:34:55+10:00
 updated           2015-05-13 20:36:18+10:00
 recycling         ON
+size              f1-large
 solr              OFF
 maintenance mode  OFF
 tracked branches  fleet-deploy
@@ -307,4 +308,38 @@ for all releases in an environment.
 ```
 $ fleet env cache flush <environment_name>
 Caches flushed for environment <environment_name>
+```
+
+Set up New Relic Integration
+---------------------
+
+Fleet can integrate with your New Relic account to provide you
+with insight into your application's performance.
+
+You can set your New Relic licence for an environment with:
+
+```
+fleet env newrelic '<env_name>' --newrelic-licence '<your newrelic licence key>'
+Set NewRelic licence for '<env_name>' to '<your newrelic licence key>'.
+This will apply only to newly loaded releases.
+```
+
+Any new releases loaded after this will report to NewRelic using the given licence key.
+These will report with the Application Name: `fleet-<fleet name>-<environment>-<role>`.
+
+You can disable New Relic for newly loaded releases with:
+
+```
+fleet env newrelic '<env_name>' --clear-newrelic-licence
+Removed NewRelic licence.
+This will apply only to newly loaded releases.
+```
+
+You can check the current licence key for an environment with:
+
+```
+fleet env describe '<env_name'>
+...
+newrelic          <key>
+...
 ```
