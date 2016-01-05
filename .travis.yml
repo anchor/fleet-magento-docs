@@ -15,10 +15,10 @@ after_success:
   if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
     chmod 0600 .travis/fleetdocsdeploy;
     rsync -C --delete -va -e 'ssh -i .travis/fleetdocsdeploy' ./site/ fleetdocs@sail.anchor.net.au:/home/fleetdocs/public_html/fleet-magento-1/;
-    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
-      -H "X-Auth-Email:${CF_USER}" \
-      -H "X-Auth-Key:${CF_API_KEY}" \
-      -H "Content-Type:application/json" \
+    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" 
+      -H "X-Auth-Email:${CF_USER}" 
+      -H "X-Auth-Key:${CF_API_KEY}" 
+      -H "Content-Type:application/json" 
       --data '{"purge_everything":true}';
   else
     echo "Not performing a deployment.";
