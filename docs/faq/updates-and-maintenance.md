@@ -1,3 +1,32 @@
+## How are Fleet platform updates performed?
+
+Fleet platform updates are in three parts, base image, CLI and infrastructure.
+
+Keep an eye on the [changelog](/changelog) to see if there is any special handling you need to do
+in order to receive a new feature or fix.
+
+### Base images
+
+These are the machine images used to build your releases.
+
+The base images are rebuilt weekly to include security fixes and any new or changed features.
+
+In order for your running sites to receive the updated images, you must create and load a new release.
+
+### The Fleet CLI
+
+This is updated automatically when a new version of Fleet is released.
+
+Nothing needs to be done to receive updates to this component.
+
+### Infrastructure
+
+Infrastructure updates are rolled out with each Fleet release.
+
+Where there are environment-level changes, we will update your prod environment automatically,
+but any other environments must be destroyed and recreated in order to receive the updates.
+
+Release-level changes will be received with the next loaded release.
 
 ## When are backups performed?
 
