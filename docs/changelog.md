@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2016-01-11
+----------
+* Notifications sent on environment destruction and release unload
+* Protected flag is now user-configurable
+
 2015-12-29
 ----------
 * NewRelic licences are now [per-environment](/how-to/manage-environments/#set-up-new-relic-integration) instead of global to a Fleet
