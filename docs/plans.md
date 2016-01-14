@@ -2,7 +2,7 @@
 
 Fleet plans hardware specification page.
 
-## Flotilla
+## Flotilla (f1-small)
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
@@ -14,7 +14,7 @@ Fleet plans hardware specification page.
 | Sessions | 1 | cache.m3.medium | 1 | 2.78 | N |
 | Database | 1 | db.t2.medium  | 2 | 4 | N |
 
-## Convoy
+## Convoy (f1-small)
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
@@ -26,7 +26,7 @@ Fleet plans hardware specification page.
 | Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
 | Database | 2 | db.t2.medium | 2 | 4 | Y |
 
-## Squadron
+## Squadron (f1-medium)
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
@@ -38,7 +38,7 @@ Fleet plans hardware specification page.
 | Session | 2 | cache.m3.medium | 1 | 2.78  | Y |
 | Database | 2 | db.r3.large | 2 | 15 | Y |
 
-## Armada
+## Armada (f1-large)
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
@@ -50,7 +50,7 @@ Fleet plans hardware specification page.
 | Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
 | Database | 2 | db.r3.xlarge | 4 | 30.5 | Y |
 
-## Navy
+## Navy (f1-xlarge)
 
 | Role | No |  Type | CPU | Mem | Multi-AZ |
 |----------|:---:|------|:---:|:---:|:---:|
