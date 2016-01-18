@@ -14,9 +14,23 @@ You can also specify a specific snapshot to be used to seed the database for the
 $ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] NAME
 ```
 
-To create an environment 'staging' as a copy of 'prod' with the latest snapshot of 'prod'
+To create an environment 'staging' as a copy of your "default environment" with its latest snapshot
 ```
 $ fleet env create staging
+```
+
+By default your "default environment" is 'prod', you change change this with
+
+```
+$ fleet config default-env prod2
+Set default environment to 'prod2'
+```
+
+and check the current default with
+
+```
+$ fleet config default-env
+Default environment is 'prod2'
 ```
 
 To create an environment 'test' as a copy of 'staging' with a specific snapshot of 'prod'
@@ -30,7 +44,7 @@ and using the 'devs' whitelist.
 $ fleet env create --source-environment staging --whitelist devs test
 ```
 
-To create an environment 'test' as a copy of 'prod' with the latest snapshot of 'prod',
+To create an environment 'test' as a copy of 'prod' with the latest snapshot of your default environment,
 with high availability disabled
 ```
 $ fleet env create --no-ha test
@@ -150,7 +164,7 @@ Deactivating a release
 
 Deactivating a release will allow you to disable the active release for an environment from receiving traffic.
 
-This operation cannot be performed on your production environment.
+This operation cannot be performed on a protected environment.
 
 ```
 $ fleet env deactivate <environment_name>
@@ -163,7 +177,7 @@ Unloading a release will release all the resources used to run that release.
 Until a release is unloaded, it is still running and consuming resources.
 
 If the release to be unloaded is active, it will first be deactivated automatically.
-You cannot unload the active release for your production environment.
+You cannot unload the active release for a protected environment.
 
 ```
 $ fleet env unload <environment_name> <release_id>
