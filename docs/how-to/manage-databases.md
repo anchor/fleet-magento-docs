@@ -47,12 +47,14 @@ To set up an SSH tunnel:
    remote database server and uses the `mysql` [service
    hostname](../configuring-magento-for-fleet/service-hostnames.md) that is
    available in each environment:  
-   `ssh -L3333:mysql:3306 deploy@adminssh.{env}.{fleet-id}.f.nchr.io`
+   `ssh -N -L3333:mysql:3306 deploy@adminssh.{env}.{fleet-id}.f.nchr.io`
 
 You can now connect to the remote database instance by opening a connection to
 the local port you have specified.  For example, with the mysql command line
 client:  
 `mysql --protocol=TCP --host=localhost --port=3333 --user={USERNAME} --password {DBNAME}`
+
+**Note: The mysql command must be run locally, not from the admin node.**
 
 ## Loading a database
 
