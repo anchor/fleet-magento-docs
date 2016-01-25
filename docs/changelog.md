@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2016-01-25
+----------
+* Fixed bug causing `whitelist destroy` to error
+* Fixed report output when no environments/releases were running
+
 2016-01-11
 ----------
 * Notifications sent on environment destruction and release unload
