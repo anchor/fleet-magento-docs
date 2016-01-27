@@ -21,7 +21,6 @@ pages:
   - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
   - 'Logging': 'configuring-magento-for-fleet/logging.md'
-  - 'Sitemaps': 'configuring-magento-for-fleet/sitemaps.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
