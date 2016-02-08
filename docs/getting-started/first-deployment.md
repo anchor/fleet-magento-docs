@@ -5,17 +5,6 @@ to a working site.
 
 This document is not intended to be a substitute for proper git documentation. It's highly recommended that you read [Pro Git](http://git-scm.com/book), available both in print and for free online.
 
-## Push code to deployment branch
-
-```bash
-git checkout fleet-deploy
-git merge master
-git push origin fleet-deploy
-```
-
-When you push a commit to your **fleet-deploy branch**, the **hook** sends off a request
-to the **aux node** to start it building a new **release** based off that code.
-
 ## Log in to the aux node
 
 In order to complete Fleet operations, you'll need to test you can log into the **aux node**.
@@ -76,6 +65,12 @@ use application;
 
 $ fleet database connect prod < database.sql
 
+```
+
+## Create your first release
+
+```bash
+$ fleet release create master
 ```
 
 ## Loading the first release
