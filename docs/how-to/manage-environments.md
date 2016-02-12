@@ -10,8 +10,15 @@ Creating a new environment
 Environments can be created either as a copy of an existing environment, or as a fresh environment.
 You can also specify a specific snapshot to be used to seed the database for the environment.
 
+The size of the environment can be specified with `--size` followed by one of the [plan names](/plans).
+
+You can choose whether a new environment will be HA (Multi-AZ) with `--ha` or
+`--no-ha`.  
+Multi-AZ environments are recommended only for production and mission critical
+environments, as this significantly increases costs.
+
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] [--protected] NAME
 ```
 
 To create an environment 'staging' as a copy of 'prod' with the latest snapshot of 'prod'
@@ -35,6 +42,9 @@ with high availability disabled
 ```
 $ fleet env create --no-ha test
 ```
+
+Passing `--protected` will prevent the environment from being accidentally
+destroyed, and having the active release unloaded. This is useful for production environments.
 
 _Please note creating a new environment will build a separate cluster of machine instances, be sure to
 [clean up](/getting-started/cleaning-up-environments/) environments to **save you money**._

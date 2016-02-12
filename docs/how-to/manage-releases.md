@@ -19,46 +19,14 @@ name     status     modified                   message
 Creating a release
 ----
 
-There are three ways of registering a release with fleet.
+There are two ways of registering a release with fleet.
 
- 1. Automatically via the special *fleet-deploy* branch
- 2. From a git object
- 3. From an archive
-
-### Via the fleet-deploy branch
-
-If you've set up the fleet webhook in your git repository then releases will
-automatically be created whenever code is pushed to the *fleet-deploy* branch.
-
-For example, the following sequence of commands would merge code from the
-*master* branch into the *fleet-deploy* branch and push it.
-
-```bash
-$ git checkout master
-$ git commit -m 'Pushing out release 1.0.1' .
-$ git checkout fleet-deploy
-$ git merge master
-$ git push
-```
-
-Once Fleet receives the webhook request it will pull your repository, make
-an archive of the *fleet-deploy* branch and use that to create a release.
-
-Please note that there are a few caveats to this method.
-
- * If multiple commits are pushed at the same time, only the latest will be
-   registered as a release. If you need a release created from specific git
-   revision then use the 'From a git object' method detailed below.
- * Transient errors on your git host, Fleet or the network inbetween may cause
-   the webhook request to be missed. If this happens, you'll need to create the
-   release manually. See 'From a git object' below.
- * Your code is archived directly from the contents of the repository. If your
-   application requires a specific build process then you'll need to use the
-   'From an archive' method detailed below.
+ 1. From a git object
+ 2. From an archive
 
 ### From a git object
 
-Releases can also be created directly from specific git objects. This method is
+Releases can be created directly from specific git objects. This method is
 useful if you host your repository somewhere that doesn't support webhooks, or
 if you want more fine-grained control over which revisions are made into
 releases.
@@ -77,8 +45,7 @@ including:
  * [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) like `v1.0.1`
  * branches like `cool-new-feature`
 
-The release will be created from an archive of your codebase, in exactly the
-same way as it would with the *fleet-deploy* branch method. If your application
+The release will be created from an archive of your codebase. If your application
 requires a specific build process then you'll need to use the 'From an archive'
 method detailed below.
 
@@ -121,6 +88,38 @@ static, so we'd instead recommend one of the following solutions:
 In order to prevent your codebase being intercepted or modified before it gets
 to fleet, we **strongly** recommend that you use HTTPS in your URL.
 
+### Via the fleet-deploy branch
+
+**Note:** This method has been **deprecated** and will be removed after **7th March 2016**. If you are currently using this method, you should plan your transition away before this date.
+
+If you've set up the fleet webhook in your git repository then releases will
+automatically be created whenever code is pushed to the *fleet-deploy* branch.
+
+For example, the following sequence of commands would merge code from the
+*master* branch into the *fleet-deploy* branch and push it.
+
+```bash
+$ git checkout master
+$ git commit -m 'Pushing out release 1.0.1' .
+$ git checkout fleet-deploy
+$ git merge master
+$ git push
+```
+
+Once Fleet receives the webhook request it will pull your repository, make
+an archive of the *fleet-deploy* branch and use that to create a release.
+
+Please note that there are a few caveats to this method.
+
+ * If multiple commits are pushed at the same time, only the latest will be
+   registered as a release. If you need a release created from specific git
+   revision then use the 'From a git object' method detailed above.
+ * Transient errors on your git host, Fleet or the network inbetween may cause
+   the webhook request to be missed. If this happens, you'll need to create the
+   release manually. See 'From a git object' above.
+ * Your code is archived directly from the contents of the repository. If your
+   application requires a specific build process then you'll need to use the
+   'From an archive' method detailed above.
 
 Destroying an existing release
 ----
