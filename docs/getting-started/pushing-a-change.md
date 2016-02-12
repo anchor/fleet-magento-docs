@@ -48,8 +48,9 @@ staging environment.
 edit file.php
 git add file.php
 git commit -m 'fixed things in file.php!'
-git push origin fleet-deploy
+git push
 # pushed commit d9dcdd7
+fleet release create d9dcdd7
 ```
 
 This will trigger the creation of a new **release** for commit `d9dcdd7`.

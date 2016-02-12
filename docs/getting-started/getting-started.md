@@ -20,8 +20,8 @@ You'll then need to walk through:
 
 ## Summary
 
- * Push your code to BitBucket or GitHub on the **fleet-deploy** branch to create a new **Release**
  * SSH to the **Aux node** to
+   * Create a new release `fleet release create COMMIT`
    * View your Releases `fleet release list`
    * View your Environments `fleet env list`
    * Inspect an Environment `fleet env describe ENVNAME`
