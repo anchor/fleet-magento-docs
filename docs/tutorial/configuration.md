@@ -25,25 +25,11 @@ private key.
 
 ## Repository
 
-Fleet is compatible with [Github](https://github.com/),
+Fleet is compatible with any ssh-accessible git
+repository, including [Github](https://github.com/),
 [Stash](https://www.atlassian.com/software/stash) and
 [Bitbucket](https://bitbucket.org).  This tutorial assumes that you are using
-[Bitbucket](https://bitbucket.org/). There are only two (2) configurations
-required to setup Fleet within your repository on Bitbucket.
-
-*For this tutorial we have pre-configured this on our repository for you*.
-
-### Web Hook
-
-You will need to setup a POST receive hook within your repository like so:
-
- 1. Repository -> Settings -> Integrations -> Hooks
- 1. Select a hook: POST
- 1. URL: http://aux.ancora.f.nchr.io:5000/
- 1. Save
-
-![](/tutorial/bitbucket-webhook.png)
-
+[Bitbucket](https://bitbucket.org/).
 
 ### Deployment Key
 

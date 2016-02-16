@@ -31,23 +31,7 @@ $ vim index.php # change text from release 1.0.0 to 1.0.1
 8 * NOTICE OF LICENSE
 ```
 
-## Push Changes
-
-You have two (2) options here you can either push out a release automatically
-via the special *fleet-deploy* branch:
-
-You can create releases in one of two ways:
-
-Firstly, by committing to the `fleet-deploy` branch:
-
-```bash
-$ git commit -m 'Pushing out release 1.0.1' .
-$ git checkout fleet-deploy
-$ git merge master
-$ git push
-```
-
-Or manually like so:
+## Create the new release
 
 ```bash
 $ fleet release create {COMMIT_SHA}

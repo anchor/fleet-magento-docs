@@ -1,63 +1,56 @@
-# Plans
+# Fleet environment plans.
 
-Fleet plans hardware specification page.
 
-## Flotilla
+You can specify the environment size when creating a new environment.
+Once created an environment's size cannot be modified.
 
-| Role | No |  Type | CPU | Mem | Multi-AZ |
-|----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 1 | m3.medium | 1 | 3.75 | N |
-| Frontend | 2 |  m3.medium | 1 | 3.75 | Y |
-| Admin | 1 | m3.medium |  1 | 3.75 | N |
-| Aux | 1 | t2.small | 1 | 2 | N |
-| Cache | 1 | cache.m3.medium | 1 | 2.78 | N |
-| Sessions | 1 | cache.m3.medium | 1 | 2.78 | N |
-| Database | 1 | db.t2.medium  | 2 | 4 | N |
+See: [Managing Environments](how-to/manage-environments)
 
-## Convoy
+You can specify whether an environment is Multi-AZ (High Availablity) when creating it, note that this will increase the cost.
 
-| Role | No |  Type | CPU | Mem | Multi-AZ |
-|----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | m3.medium | 1 | 3.75 | Y |
-| Frontend | 2 | m3.medium  | 1 | 3.75 | Y |
-| Admin | 1 | m3.medium | 1 | 3.75 | N |
-| Aux | 1 | t2.small | 1  | 2 | N |
-| Cache | 2 | cache.m3.medium  | 1 | 2.78 | Y |
-| Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
-| Database | 2 | db.t2.medium | 2 | 4 | Y |
+Multi-AZ is recommended only for production or mission critical environments.
 
-## Squadron
+## f1-small (Flotilla/Convoy)
 
-| Role | No |  Type | CPU | Mem | Multi-AZ |
-|----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c4.large | 2 | 3.75 | Y |
-| Frontend | 2 | c4.large  | 2 | 3.75 | Y |
-| Admin | 1 | c4.large | 2 | 3.75 | N |
-| Aux | 1 | t2.small | 1  | 2 | N |
-| Cache | 2 | cache.m3.medium | 1 | 2.78 | Y |
-| Session | 2 | cache.m3.medium | 1 | 2.78  | Y |
-| Database | 2 | db.r3.large | 2 | 15 | Y |
+| Role     | Type            | VCPUs | RAM GiB |
+|----------|:---------------:|-------|:-------:|
+| Varnish  | m3.medium       | 1     | 3.75    |
+| Frontend | m3.medium       | 1     | 3.75    |
+| Admin    | m3.medium       | 1     | 3.75    |
+| Cache    | cache.m3.medium | 1     | 2.78    |
+| Sessions | cache.m3.medium | 1     | 2.78    |
+| Database | db.t2.medium    | 2     | 4       |
 
-## Armada
+## f1-medium (Squadron)
 
-| Role | No |  Type | CPU | Mem | Multi-AZ |
-|----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c4.xlarge | 4 | 7.5 | Y |
-| Frontend | 2 | c4.xlarge | 4 | 7.5  | Y |
-| Admin | 1 | c4.xlarge | 4 | 7.5 | N |
-| Aux | 1 | t2.small | 1  | 2 | N |
-| Cache | 2 | cache.m3.medium | 1 | 2.78 | Y |
-| Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
-| Database | 2 | db.r3.xlarge | 4 | 30.5 | Y |
+| Role     | Type            | VCPUs | RAM GiB |
+|----------|:---------------:|-------|:-------:|
+| Varnish  | c4.large        | 2     | 3.75    |
+| Frontend | c4.large        | 2     | 3.75    |
+| Admin    | c4.large        | 2     | 3.75    |
+| Cache    | cache.m3.medium | 1     | 2.78    |
+| Sessions | cache.m3.medium | 1     | 2.78    |
+| Database | db.r3.large     | 2     | 15      |
 
-## Navy
+## f1-large (Armada)
 
-| Role | No |  Type | CPU | Mem | Multi-AZ |
-|----------|:---:|------|:---:|:---:|:---:|
-| Varnish | 2 | c4.2xlarge | 8 | 28  | Y |
-| Frontend | 2 | c4.2xlarge | 8 | 28 | Y |
-| Admin | 1 | c4.2xlarge | 8 | 28 | N |
-| Aux | 1 | t2.small | 1  | 2 | N |
-| Cache | 2 | cache.m3.medium  | 1 | 2.78 | Y |
-| Sessions | 2 | cache.m3.medium | 1 | 2.78 | Y |
-| Database | 2 | db.r3.2xlarge | 8 | 61 | Y |
+| Role     | Type            | VCPUs | RAM GiB |
+|----------|:---------------:|-------|:-------:|
+| Varnish  | c4.xlarge       | 4     | 7.5     |
+| Frontend | c4.xlarge       | 4     | 7.5     |
+| Admin    | c4.xlarge       | 4     | 7.5     |
+| Cache    | cache.m3.medium | 1     | 2.78    |
+| Sessions | cache.m3.medium | 1     | 2.78    |
+| Database | db.r3.xlarge    | 4     | 30.5    |
+
+## f1-xlarge (Navy)
+
+| Role     | Type            | VCPUs | RAM GiB |
+|----------|:---------------:|-------|:-------:|
+| Varnish  | c4.2xlarge      | 8     | 28      |
+| Frontend | c4.2xlarge      | 8     | 28      |
+| Admin    | c4.2xlarge      | 8     | 28      |
+| Cache    | cache.m3.medium | 1     | 2.78    |
+| Sessions | cache.m3.medium | 1     | 2.78    |
+| Database | db.r3.2xlarge   | 8     | 61      |
+
