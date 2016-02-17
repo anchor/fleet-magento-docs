@@ -7,7 +7,7 @@ Database Setup
 * Tell Magento to use a custom admin url, as the Admin node is separate from your frontends.
 ```
 echo "UPDATE core_config_data SET value = 'http://admin.prod.myshop.f.nchr.io/' WHERE path = 'admin/url/custom'" | fleet database connect prod myshop
-echo "UPDATE core_config_data SET value = '1' WHERE path = 'admin/url/use_custom" | fleet database connect prod myshop
+echo "UPDATE core_config_data SET value = '1' WHERE path = 'admin/url/use_custom'" | fleet database connect prod myshop
 ```
 
 Once you've imported your database, loaded and activated an initial release
