@@ -266,6 +266,30 @@ This will disable Solr and destroy the environment's Solr instance.
 
 See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
 
+Enabling and disabling NFS for an environment
+----
+
+NFS can be enabled or disabled on a per environment basis.
+
+
+```
+$ fleet env nfs <environment_name> ON
+NFS for Environment <environment_name> is now being turned ON
+```
+
+When NFS is ON a instance will be created in the specified environment
+which which will be mounted at /nfs/shared for all releases loaded while
+NFS is enabled.
+
+```
+$ fleet env nfs <environment_name> OFF
+NFS for Environment <environment_name> is now being turned OFF
+```
+
+This will disable NFS and destroy the environment's NFS instance.
+
+See [Configuring NFS](../configuring-magento-for-fleet/nfs) for full NFS configuration instructions.
+
 Enabling and disabling Maintenance Mode for an environment
 ----
 
