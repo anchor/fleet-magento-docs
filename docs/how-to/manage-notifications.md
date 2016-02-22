@@ -5,8 +5,9 @@ The notifications will be delivered by email on important events such as:
  - Weekly usage report
  - Billing alarm threshold exceeded
  - Release creation failure
- - Creating an environment
- - Loading a release
+ - Creating or destroying an environment
+ - Loading or unloading a release
+ - Adding or removing keys
  - SQL script failure
 
 People who should be subscribed to notifications:
