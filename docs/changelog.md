@@ -1,6 +1,13 @@
 Change Log
 ----------
 
+2016-02-18
+----------
+* `fleet log list` now accepts environment and release filtering
+* Can set default environment when cloning environments. `fleet config default-env`
+* Can no longer load a release when near the maximum number of logs
+* Fixed environment creation when using Solr with an old AMI.
+
 2016-02-02
 ----------
 * Fixed bug causing whitelist operations to error
