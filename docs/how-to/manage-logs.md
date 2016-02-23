@@ -78,7 +78,7 @@ If you delete a log while the release which is pushing data to it is still loade
 it will be recreated automatically, but the data it previously had will have been purged.
 
 ```
-$ fleet log delete [<environment>] [<release>] <group>
+$ fleet log delete [--environment <environment>] [--release <release>] [--group <group>]
 
-$ fleet log delete prod 5d5350b apache-000-deploy-access
+$ fleet log delete --environment prod --release 5d5350b --group apache-000-deploy-access
 ```
