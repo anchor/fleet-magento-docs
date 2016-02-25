@@ -58,6 +58,15 @@ symbolic link, even if you haven't specified a custom root directory. The
 structure of your repository won't be changed, and all your other files will
 still be accessible at /home/deploy/app/public.
 
+Using a custom VCL
+----
+
+In the event you want to provide your own VCL for varnish, rather than allowing
+your Magento plugin to generate and apply the VCL, you can supply the file as
+part of your codebase.
+
+If the file '.fleet/varnish.vcl' exists in your codebase, it will be automatically
+loaded into Varnish and made the active VCL.
 
 Providing a crontab
 ----
