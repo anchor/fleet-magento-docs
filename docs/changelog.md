@@ -1,6 +1,13 @@
 Change Log
 ----------
 
+2016-02-29
+----------
+
+* Added NFS shared volume support
+* `fleet log list` now accepts environment and release filtering
+* Implemented bulk deletion of logs
+
 2016-02-18
 ----------
 * `fleet log list` now accepts environment and release filtering
