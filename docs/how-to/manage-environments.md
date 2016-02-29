@@ -59,8 +59,11 @@ saves a final snapshot in case you want to recreate the environment at a later
 time.
 
 ```
-$ fleet env destroy <environment_name>
+$ fleet env destroy <environment_name> [--delete-logs]
 ```
+
+You can pass the --delete-logs argument to also delete all logs associated with
+the environment when the environment is destroyed.
 
 Describing an environment
 ----
@@ -176,8 +179,11 @@ If the release to be unloaded is active, it will first be deactivated automatica
 You cannot unload the active release for your production environment.
 
 ```
-$ fleet env unload <environment_name> <release_id>
+$ fleet env unload <environment_name> <release_id> [--delete-logs]
 ```
+
+You can pass the --delete-logs argument to also delete all logs associated with
+the release when the release is unloaded.
 
 Changing the SSL certificate used
 ----
