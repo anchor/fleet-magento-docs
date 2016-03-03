@@ -296,6 +296,34 @@ This will disable NFS and destroy the environment's NFS instance.
 
 See [Configuring NFS](../configuring-magento-for-fleet/nfs) for full NFS configuration instructions.
 
+Enabling and disabling Varnish for an environment
+----
+
+Varnish can be enabled or disabled on a per environment basis.
+This state will take effect for each newly loaded release within
+the environment.
+
+Use of Varnish is highly recommended as correct use will both
+improve site performance and reduce the required infrastructure
+to sustain a given level of traffic.
+
+```
+$ fleet env varnish <environment_name> ON
+Varnish for environment <environment_name> is now being turned ON
+```
+
+When Varnish is ON each loaded release will include a varnish layer for
+use in caching traffic.
+
+```
+$ fleet env varnish <environment_name> OFF
+Varnish for environment <environment_name> is now being turned OFF
+```
+
+This will disable Varnish for newly loaded releases.
+
+See [Configuring Varnish](../configuring-magento-for-fleet/varnish) for full Varnish configuration instructions.
+
 Enabling and disabling Maintenance Mode for an environment
 ----
 
