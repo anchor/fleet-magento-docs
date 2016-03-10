@@ -40,11 +40,9 @@ http://en.wikipedia.org/wiki/Server_Message_Block) unreliable.
 
 ### Why not use S3?
 The ideal solution to the media problem would be to place media into an object
-store, such as [Anchor Object Storage](
-http://www.anchor.com.au/other-services/cloud-storage/), [Amazon S3](
-http://aws.amazon.com/s3/) or [Google Cloud Storage](
-https://cloud.google.com/storage/), but Magento provides no support out of the
-box for storing media in an external object store.
+store, such as [Amazon S3](http://aws.amazon.com/s3/) or [Google Cloud
+Storage](https://cloud.google.com/storage/), but Magento provides no support
+out of the box for storing media in an external object store.
 
 ### Why not use an S3-backed filesystem?
 There are numerous implementations of S3-backed filesystems. These include
