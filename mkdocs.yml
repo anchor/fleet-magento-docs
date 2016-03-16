@@ -34,7 +34,7 @@ pages:
 - How To:
   - 'Manage Environments': 'how-to/manage-environments.md'
   - 'Manage Databases': 'how-to/manage-databases.md'
-  - 'Manage Database Snapshots': 'how-to/manage-snapshots.md'
+  - 'Manage Snapshots': 'how-to/manage-snapshots.md'
   - 'Manage IP Whitelists': 'how-to/manage-whitelists.md'
   - 'Manage Log Files': 'how-to/manage-logs.md'
   - 'Manage Notifications': 'how-to/manage-notifications.md'
