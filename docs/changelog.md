@@ -1,6 +1,12 @@
 Change Log
 ----------
 
+2016-03-16
+---------
+* Snapshotting support for NFS
+* Provisioning of Varnish nodes is now optional
+* Add --delete-logs option to env destroy and env unload
+
 2016-02-18
 ----------
 * `fleet log list` now accepts environment and release filtering
