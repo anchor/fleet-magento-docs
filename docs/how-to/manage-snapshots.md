@@ -1,6 +1,9 @@
 Snapshots represent the state of an environment at a particular time.
 They are used when creating a new environment to provide a known initial state.
 
+Database snapshots are always taken. If you have NFS enabled for an environment
+NFS snapshots will also be taken.
+
 Automated snapshots are taken daily.
 
 Snapshots are also saved whenever you destroy an environment, in case you want
@@ -10,7 +13,7 @@ Listing existing snapshots
 ----
 
 ```
-$ fleet snapshot list
+$ fleet snapshot list [--type {database,nfs}]
 name                      environment    status     size    type       created
 ------------------------  -------------  ---------  ------  ---------  -------------------------
 1421200800                prod           AVAILABLE  100GB   AUTOMATED  2015-01-14 23:58:43+11:00
@@ -25,7 +28,7 @@ Creating a new snapshot
 You can manually create new snapshots of an environment at any time.
 
 ```
-$ fleet snapshot create <environment> --name <snapshot_name>
+$ fleet snapshot create <environment> --name <snapshot_name> --type {database,nfs}
 Snapshot <snapshot_name> is now being created
 ```
 
@@ -33,7 +36,7 @@ Deleting old snapshots
 ----
 
 ```
-$ fleet snapshot destroy <snapshot_name>
+$ fleet snapshot destroy <snapshot_name> --type {database,nfs}
 Snapshot <snapshot_name> is now being destroyed
 ```
 
