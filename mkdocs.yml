@@ -55,6 +55,7 @@ pages:
   - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
+  - 'Performance': 'faq/performance.md'
   - 'Error Pages': 'faq/error-pages.md'
   - 'Updates and Maintenance': 'faq/updates-and-maintenance.md'
 - Troubleshooting:
