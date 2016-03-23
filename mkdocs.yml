@@ -36,7 +36,6 @@ pages:
   - 'Service Hostnames': 'configuring-magento-2-for-fleet/service-hostnames.md'
   - 'Sending Mail': 'configuring-magento-2-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-2-for-fleet/customisation.md'
-  - 'Configuring Solr': 'configuring-magento-2-for-fleet/solr.md'
   - 'Configuring NFS': 'configuring-magento-2-for-fleet/nfs.md'
   - 'Health Check': 'configuring-magento-2-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-2-for-fleet/multisite.md'
