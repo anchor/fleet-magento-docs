@@ -1,6 +1,6 @@
 # Architecture Overview
 
-![](/configuring-magento-for-fleet/architecture-overview.png)
+![](/configuring-magento-2-for-fleet/architecture-overview.png)
 
  1. Each Fleet can contain multiple environments.
  1. Each Environment can contain multiple releases.
