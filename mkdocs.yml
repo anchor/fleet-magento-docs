@@ -24,7 +24,7 @@ pages:
   - 'Logging': 'configuring-magento-for-fleet/logging.md'
   - 'Sitemaps': 'configuring-magento-for-fleet/sitemaps.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
-- Configuring Magento 2 for Fleet:
+- Configuring Magento 2 for Fleet (Beta):
   - 'Introduction': 'configuring-magento-2-for-fleet/introduction.md'
   - 'Architecture Overview': 'configuring-magento-2-for-fleet/architecture-overview.md'
   - 'Database Setup': 'configuring-magento-2-for-fleet/database-setup.md'
