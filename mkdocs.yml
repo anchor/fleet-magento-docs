@@ -1,5 +1,7 @@
 site_name: Magento on Anchor Fleet
 theme: readthedocs
+extra_css: [extra.css]
+extra_javascript: [extra.js]
 google_analytics: ['UA-60495198-2', 'docs.anchorfleet.com']
 
 pages:

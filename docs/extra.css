@@ -1,0 +1,34 @@
+ul.subnav.collapsed li:first-child {
+	display: block;
+}
+
+ul.subnav.collapsed li {
+	display: none;
+}
+
+.wy-menu-vertical .subnav a.collapse-control {
+	display: inline;
+	padding: 0 !important;
+	position: absolute;
+	left: -0.75em;
+}
+
+.wy-menu-vertical .subnav a.collapse-control:hover {
+	background-color: transparent;
+}
+
+a.collapse-control span {
+	display: inline;
+}
+
+a.collapse-control.collapsed span.expanded {
+	display: none;
+}
+
+a.collapse-control.collapsed span.collapsed {
+	display: inline;
+}
+
+a.collapse-control span.collapsed {
+	display: none;
+}
