@@ -1,6 +1,10 @@
 Change Log
 ----------
 
+2016-03-29
+----------
+* Prevent destroying a release if there are already too many snapshots created
+
 2016-03-16
 ---------
 * Snapshotting support for NFS
