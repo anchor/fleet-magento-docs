@@ -10,14 +10,14 @@ ul.subnav.collapsed li {
 	display: block;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-    margin-left: -0.75em;
-    font-weight: bold;
-    padding-top: 1ex;
-    padding-bottom: 1ex;
+	margin-left: -0.75em;
+	font-weight: bold;
+	padding-top: 1ex;
+	padding-bottom: 1ex;
 }
 
 .subnav {
-    border-bottom: 1px dashed #666;
+	border-bottom: 1px dashed #666;
 }
 
 .wy-menu-vertical .subnav a.collapse-control:hover {
@@ -26,8 +26,8 @@ ul.subnav.collapsed li {
 
 a.collapse-control span {
 	display: inline;
-    width: 1.2em;
-    overflow: hidden;
+	width: 1.2em;
+	overflow: hidden;
 }
 
 a.collapse-control.collapsed span.expanded {
