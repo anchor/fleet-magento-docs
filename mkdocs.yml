@@ -29,6 +29,7 @@ pages:
 - Configuring Magento 2 for Fleet (Beta):
   - 'Introduction': 'configuring-magento-2-for-fleet/introduction.md'
   - 'Architecture Overview': 'configuring-magento-2-for-fleet/architecture-overview.md'
+  - 'Setup Cron': 'configuring-magento-2-for-fleet/cron.md'
   - 'Database Setup': 'configuring-magento-2-for-fleet/database-setup.md'
   - 'Disable Redirects': 'configuring-magento-2-for-fleet/disable-redirects.md'
   - 'Configure cache and sessions': 'configuring-magento-2-for-fleet/configure-cache-and-sessions.md'
