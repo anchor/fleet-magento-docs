@@ -1,9 +1,10 @@
 For Magento to work correctly on Fleet:
 
- 1. Disable automatic redirects
- 2. Configure Magento to store its cache and sessions in redis
- 3. Configure Magento to use varnish as a full-page cache
- 4. Push assets into the database
+ 1. Configure the Magento cron job
+ 2. Disable automatic redirects
+ 3. Configure Magento to store its cache and sessions in redis
+ 4. Configure Magento to use varnish as a full-page cache
+ 5. Push assets into the database
 
 As these steps are performed against Magento's database they do not need to be
 performed every time you create a new environment.
