@@ -16,12 +16,18 @@ Once there, ensure that the following are configured:
 
 Assets uploaded via the catalogue editor in Magento's admin panel will automatically be added to the database.
 
-**Note**: We have configured a script that will run periodically to add new media from the **admin** node to the media database. This script will log to Magento's `var/log/media_sync.log`.
+**Note**: We have supplied a script that will run periodically to add new media from the **admin** node to the media database. This script will log to stdout if you run it.
 
-You can disable this process via the `.fleet/config` file in the root of your repository, you can create it yourself if it does not exist.
+You can invoke this process via your crontab. Use 'get' mode for nodes serving media (frontends) and 'put' mode for nodes which will have new media uploaded to them (admin).
 
-```INI
-media_sync = False
+Do not use both get and put modes on a single node.
+
+```crontab
+*/5 * * * * /usr/local/bin/is-fleet-node-active && nice -n 19 flock -n /tmp/media_sync.lock -c '/usr/local/bin/magento_media_sync put > /home/deploy/media_sync.log'
+```
+
+```crontab
+*/5 * * * * /usr/local/bin/is-fleet-node-active && nice -n 19 flock -n /tmp/media_sync.lock -c '/usr/local/bin/magento_media_sync get > /home/deploy/media_sync.log'
 ```
 
 **Warning**: There is an issue with Magento's media database where it uses **case-insensitive** columns for file names, this means that if you have two files that have the same path other than the case.  
