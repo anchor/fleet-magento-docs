@@ -31,3 +31,9 @@ directories are on the shared volume.
 
 Any required subdirectories within the NFS volume should be configured
 using [boot scripts](/configuring-magento-for-fleet/customisation/#running-scripts-on-instance-boot).
+
+### Backups
+
+The NFS volume is snapshotted daily via the [snapshot](/how-to/manage-snapshots) mechanism. You can additionally call the snapshot command to create snapshots manually if you would like snapshots taken more often or at a particular time.
+
+To recover to a particular snapshot for an environment, you will need to first disable NFS for that environment, then enable it again, passing the snapshot to use to restore. This process should take 15 minutes or so, during which NFS storage would not be available.
