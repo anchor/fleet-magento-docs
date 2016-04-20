@@ -116,22 +116,22 @@ You have access to the following environment variables:
  * `DOMAIN` (myfleet.f.nchr.io)
 
 
-Using a Fleet-specific local.xml
+Using a Fleet-specific env.php
 ----
 
-You can supply a local.xml which will only be used by Fleet if you prefer to keep different settings for different environments.
+You can supply an env.php which will only be used by Fleet if you prefer to keep different settings for different environments.
 
-If under app/etc/ you name a file *local.xml-fleet* it will be renamed to *local.xml* on deployment.
+If under app/etc/ you name a file *env.php-fleet* it will be renamed to *env.php* on deployment.
 
-If you need more customisation of which *local.xml* is used, you can use the onboot script to drop in a new *local.xml* file.
-This can be used to use a different *local.xml* for each environment, or to modify the *local.xml* based on the domain being served.
+If you need more customisation of which *env.php* is used, you can use the onboot script to drop in a new *env.php* file.
+This can be used to use a different *env.php* for each environment, or to modify the *env.php* based on the domain being served.
 
 For example:
 ```
 cat .fleet/onboot
 #!/bin/bash
-if [[ -e "/home/deploy/app/public/app/etc/local.xml.${ENVIRONMENT}" ]]; then
-  mv "/home/deploy/app/public/app/etc/local.xml.${ENVIRONMENT}" /home/deploy/app/public/app/etc/local.xml
+if [[ -e "/home/deploy/app/public/app/etc/env.php.${ENVIRONMENT}" ]]; then
+  mv "/home/deploy/app/public/app/etc/env.php.${ENVIRONMENT}" /home/deploy/app/public/app/etc/env.php
 fi
 ```
 

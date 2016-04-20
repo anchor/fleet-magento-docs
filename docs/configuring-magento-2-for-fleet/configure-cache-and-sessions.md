@@ -47,6 +47,45 @@ Add the following stanza to the configuration in `env.php`. Be sure to **replace
   ),
 ```
 
+### Setting a cache prefix
+
+You should configure a per-release cache prefix so that new releases come up with a clean cache in case of compatability problems between different releases.
+
+You can do this by supplying an 'id_prefix' to your cache configuration. We drop in a PHP file `fleet-release-id.php` which returns your release ID and which is suitable for including from `env.php`.
+
+Finding the release ID (place at the top of `env.php`)
+```php
+$cache_prefix = FALSE;
+$cache_file = dirname(__FILE__) . '/fleet-release-id.php';
+if (is_file($cache_file)) {
+  $cache_prefix = include($cache_file);
+}
+if ($cache_prefix === FALSE) {
+  $cache_prefix = '';
+}
+```
+
+Applying the cache prefix
+```php
+  array (
+    'frontend' =>
+    array (
+      'default' =>
+      array (
+        ...
+        'id_prefix' => $cache_prefix,
+      ),
+    ),
+    'page_cache' =>
+    array (
+      'default' =>
+      array (
+        ...
+        'id_prefix' => $cache_prefix,
+      ),
+    )
+```
+
 ### Magento Full Page Cache
 
 If you use Magento Enterprise and make use of the Full Page Cache functionality, you will need to
