@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2016-05-02
+----------
+* SSH host keys are now generated once for the life of an environment. If you would like to make host keys for an existing environment fixed, you can either destroy and recreate the environment, or open a support ticket.
+* CLI now prints a warning loading a release when the number of log groups is approaching the limit.
+
 2016-03-29
 ----------
 * Prevent destroying a release if there are already too many snapshots created
