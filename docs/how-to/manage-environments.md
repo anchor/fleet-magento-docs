@@ -93,10 +93,10 @@ tracked branches                  fleet-deploy
 previous release                  f7ac77a
 autoscaling min                   1
 autoscaling max                   2
-autoscaling scale down threshold  20
-autoscaling scale up threshold    80
-autoscaling scale down rate       -1
-autoscaling scale up rate         10
+autoscaling scale down threshold  20%
+autoscaling scale up threshold    80%
+autoscaling scale down rate       -1/period
+autoscaling scale up rate         10%/period
 ha                                ON
 workers/instance                  100
 ----------------                  -------------------------
