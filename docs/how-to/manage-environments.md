@@ -97,6 +97,7 @@ autoscaling scale down threshold  20%
 autoscaling scale up threshold    80%
 autoscaling scale down rate       -1/period
 autoscaling scale up rate         10%/period
+autoscaling grace period          600s
 ha                                ON
 workers/instance                  100
 ----------------                  -------------------------
@@ -262,6 +263,19 @@ Each change in the number of instances will be followed by a grace period defaul
 
 ```
 $ fleet env autoscaling rates <environment_name> <instance_reduction_rate> <instance_addition_rate>
+```
+
+Changing the autoscaling grace period
+---
+
+The autoscaling grace period is the time after a scaling operation during which additional scaling operations are blocked.
+
+This is designed to allow metrics to stabilise after a scaling operation so that scaling does not overreact to high or low load.
+
+The minimum value you can set is 60 seconds.
+
+```
+$ fleet env autoscaling grace-period <environment_name> <grace_period>
 ```
 
 Setting the number of active frontends
