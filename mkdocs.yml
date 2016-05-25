@@ -66,6 +66,7 @@ pages:
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
+  - 'Migrate Between Plans': 'how-to/migrate-between-plans.md'
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
