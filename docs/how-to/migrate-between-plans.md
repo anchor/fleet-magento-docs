@@ -135,7 +135,7 @@ The idea with this approach is to create a new environment in parallel to the ex
       Now that the new environment is ready to process traffic, turn off maintenance mode.
 
       ```
-         $ fleet env maintenance <dest_env> ON
+         $ fleet env maintenance <dest_env> OFF
       ```
 
 1. Mark the new environment as your default source environment
