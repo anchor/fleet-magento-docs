@@ -115,6 +115,14 @@ The idea with this approach is to create a new environment in parallel to the ex
 
       Make sure to clear the caches on the destination environment once the database has been loaded.
 
+1. Turn off maintenance mode for the new environment
+
+      Now that the new environment is ready to process traffic, turn off maintenance mode.
+
+      ```
+         $ fleet env maintenance <dest_env> OFF
+      ```
+
 1. Test to be sure the new environment is working as expected
 
       At this point you need to make the decision as to whether the new environment is ready to
@@ -129,14 +137,6 @@ The idea with this approach is to create a new environment in parallel to the ex
 1. Switch DNS to point at the new environment
 
       This will depend on your DNS provider. You will need to change your DNS to point at the endpoints for the new environment.
-
-1. Turn off maintenance mode for the new environment
-
-      Now that the new environment is ready to process traffic, turn off maintenance mode.
-
-      ```
-         $ fleet env maintenance <dest_env> OFF
-      ```
 
 1. Mark the new environment as your default source environment
 
