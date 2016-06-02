@@ -9,6 +9,9 @@ By default, revoked certs are not shown.
 
 ```
 $ fleet auth cert list
+email             label
+----------------  ---------
+test@example.com  HomeComputer
 ```
 
 Creating an auth cert
@@ -38,6 +41,9 @@ Revoke a user's auth cert by label:
 
 ```
 $ fleet auth cert remove test@example.com HomeComputer
+Revoked label: HomeComputer for email: test@example.com
+$ fleet auth cert remove test@example.com 'Work Computer'
+Revoked label: Work Computer for email: test@example.com
 ```
 
 Expiry

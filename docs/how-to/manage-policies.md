@@ -34,6 +34,10 @@ Listing Policies
 
 ```
 $ fleet auth policy list
+Name
+--------
+AllowAll
+DenyProdEnv
 ```
 
 Only policy names are listed. To see the JSON object representing the policy use the describe command.
@@ -42,7 +46,17 @@ Describing Policies
 ----
 
 ```
-$ fleet auth policy describe DenyProdEnv
+$ fleet auth policy describe AllowAll
+{
+  "resource": [
+    "*"
+  ],
+  "method": [
+    "*"
+  ],
+  "name": "AllowAll",
+  "effect": "Allow"
+}
 ```
 
 Adding Policies
@@ -51,7 +65,19 @@ Adding Policies
 Policies are added by redirecting a JSON policy object into the command:
 
 ```
+$ cat > policy.json
+{
+  "resource": [
+    "*"
+  ],
+  "method": [
+    "*"
+  ],
+  "name": "DenyAll",
+  "effect": "deny"
+}
 $ fleet auth policy add < policy.json
+Added policy: DenyAll
 ```
 
 If what you redirect in isn't valid JSON it'll be rejected.
@@ -61,4 +87,5 @@ Removing Policies
 
 ```
 $ fleet auth policy remove DenyProdEnv
+Removed policy: DenyAll
 ```

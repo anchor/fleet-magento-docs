@@ -5,6 +5,10 @@ Listing roles
 
 ```
 $ fleet auth role list
+Name       Policies
+---------  ----------
+Admin      AllowAll
+JuniorDev  AllowAll, DenyProdEnv
 ```
 
 Creating a role
@@ -13,9 +17,12 @@ Creating a role
 You can optionally provide policies with a comma separated list to include in a role when you create it or you can add them later.
 
 ```bash
-$ fleet auth role create Admin
-$ fleet auth role create Admin --policies AllowAll
-$ fleet auth role create JuniorDev --policies "AllowEnvironments, AllowReleases, DenyProdEnv"
+$ fleet auth role add Admin
+Added role: Admin
+$ fleet auth role add Admin --policies AllowAll
+Added role: Admin
+$ fleet auth role add JuniorDev --policies "AllowEnvironments, AllowReleases, DenyProdEnv"
+Added role: JuniorDev
 ```
 
 Removing a role
@@ -23,6 +30,7 @@ Removing a role
 
 ```
 $ fleet auth role remove Admin
+Removed role: Admin
 ```
 
 Adding Policies to a role
@@ -30,6 +38,7 @@ Adding Policies to a role
 
 ```
 $ fleet auth role add_policies JuniorDev AllowWhitelists,AllowSnapshots
+Added policies: AllowWhitelists, AllowSnapshots to role: JuniorDev
 ```
 
 Removing Policies from a role
@@ -37,4 +46,5 @@ Removing Policies from a role
 
 ```
 $ fleet auth role remove_policies JuniorDev DenyProdEnv
+Removed policies: DenyProdEnv from role: JuniorDev
 ```

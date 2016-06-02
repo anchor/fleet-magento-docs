@@ -5,6 +5,9 @@ Listing existing users
 
 ```
 $ fleet auth user list
+UUIDs                                 Emails            Roles
+------------------------------------  ----------------  -------
+4bb1538b-30f1-4017-9d82-6a5b3a407534  test@example.com  Admin
 ```
 
 The UUID is a unique identity generated for each user that never changes. However most actions accept an email as that is more readable.
@@ -16,6 +19,7 @@ You can add [roles](/how-to/manage-roles) to a user when you create them, or you
 
 ```
 $ fleet auth user add test@example.com
+Added user: test@example.com
 ```
 
 When adding roles use a comma separated list:
@@ -33,4 +37,5 @@ When a user is destroyed all of their [authentication certificates](/how-to/mana
 
 ```
 $ fleet auth user remove test@example.com
+Removed user: test@example.com and revoked certificates
 ```
