@@ -43,4 +43,4 @@ $ fleet auth cert remove test@example.com HomeComputer
 Expiry
 ----
 
-Auth certs expire two years after being signed and will eventually need to be rotated. Additionally a user with permission can revoke auth certs at any time.
+Auth certs expire two years after being signed and will eventually need to be rotated.
