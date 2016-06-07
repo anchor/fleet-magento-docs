@@ -89,7 +89,6 @@ recycling                         ON
 size                              f1-large
 solr                              OFF
 maintenance mode                  OFF
-tracked branches                  fleet-deploy
 previous release                  f7ac77a
 autoscaling min                   1
 autoscaling max                   2
