@@ -30,7 +30,7 @@ would be to create symbolic links in your codebase controlling which
 directories are on the shared volume.
 
 Any required subdirectories within the NFS volume should be configured
-using [boot scripts](/configuring-magento-for-fleet/customisation/#running-scripts-on-instance-boot).
+using [boot scripts](/configuring-magento-2-for-fleet/customisation/#running-scripts-on-instance-boot).
 
 ### Backups
 

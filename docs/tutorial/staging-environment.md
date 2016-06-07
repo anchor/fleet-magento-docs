@@ -52,7 +52,6 @@ ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:10:35+00:00
 health check      OFF
-tracked branches  fleet-deploy
 previous release
 autoscaling min   2
 autoscaling max   2
@@ -140,7 +139,6 @@ ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:10:35+00:00
 health check      OFF
-tracked branches  fleet-deploy
 previous release
 autoscaling min   2
 autoscaling max   2
@@ -176,7 +174,6 @@ ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:33:02+00:00
 health check      OFF
-tracked branches  fleet-deploy
 previous release  None
 autoscaling min   2
 autoscaling max   2
@@ -239,7 +236,6 @@ ssl certificate   self-signed
 created           2015-06-09 00:34:51+00:00
 updated           2015-06-09 01:33:02+00:00
 health check      OFF
-tracked branches  fleet-deploy
 previous release  None
 autoscaling min   2
 autoscaling max   2

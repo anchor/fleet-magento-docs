@@ -1,6 +1,22 @@
 Change Log
 ----------
 
+2016-05-30
+----------
+* Autoscaling now has more configuration options available:
+  * Setting high and low CPU thresholds for initiating scaling
+  * Setting the rate at which instances are added and removed in response to scaling events
+  * Setting the grace period between successive scaling operations
+
+2016-05-02
+----------
+* SSH host keys are now generated once for the life of an environment. If you would like to make host keys for an existing environment fixed, you can either destroy and recreate the environment, or open a support ticket.
+* CLI now prints a warning loading a release when the number of log groups is approaching the limit.
+
+2016-03-29
+----------
+* Prevent destroying a release if there are already too many snapshots created
+
 2016-03-16
 ---------
 * Snapshotting support for NFS

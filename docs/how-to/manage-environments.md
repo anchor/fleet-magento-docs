@@ -78,24 +78,28 @@ $ fleet env describe <environment_name>
 
 ```
 $ fleet env describe prod
-----------------  -------------------------
-name              prod
-status            RUNNING
-whitelist         allow-all
-ssl certificate   self-signed
-created           2015-04-30 14:34:55+10:00
-updated           2015-05-13 20:36:18+10:00
-recycling         ON
-size              f1-large
-solr              OFF
-maintenance mode  OFF
-tracked branches  fleet-deploy
-previous release  f7ac77a
-autoscaling min   1
-autoscaling max   2
-ha                ON
-workers/instance  100
-----------------  -------------------------
+----------------                  -------------------------
+name                              prod
+status                            RUNNING
+whitelist                         allow-all
+ssl certificate                   self-signed
+created                           2015-04-30 14:34:55+10:00
+updated                           2015-05-13 20:36:18+10:00
+recycling                         ON
+size                              f1-large
+solr                              OFF
+maintenance mode                  OFF
+previous release                  f7ac77a
+autoscaling min                   1
+autoscaling max                   2
+autoscaling scale down threshold  20%
+autoscaling scale up threshold    80%
+autoscaling scale down rate       -1/period
+autoscaling scale up rate         10%/period
+autoscaling grace period          600s
+ha                                ON
+workers/instance                  100
+----------------                  -------------------------
 
 Releases:
 name     status      loaded                     updated                      frontends
@@ -223,6 +227,54 @@ Note that you can [view autoscaling history through the logs](/how-to/manage-log
 
 ```
 $ fleet env autoscaling limits <environment_name> <minimum> <maximum>
+```
+
+Changing the autoscaling thresholds
+---
+
+You can change the CPU thresholds at which scaling actions take place.
+
+Each threshold is compared against the average CPU usage percentage across all active frontends.
+
+For the high threshold, this is measured over a two minute window.
+
+For the low threshold, this is measured over a six minute window.
+
+You should make sure to leave appropriate margins at the top and bottom of the ranges in which
+scaling takes place, as instances will rarely report exactly 0% or 100% CPU usage for the
+entirety of the sampling period.
+
+```
+$ fleet env autoscaling thresholds <environment_name> <scale_down_threshold> <scale_up_threshold>
+```
+
+Changing the autoscaling rate
+---
+
+You can change the rate at which frontends are added/removed in response to a scaling action.
+
+The reduction rate is specified in instances, that is an absolute number of instances to remove per scaling period.
+
+The increase rate is specified as a percentage of the number of running instances at the time the scaling action
+occurs, rounded down to a minimum of 1.
+
+Each change in the number of instances will be followed by a grace period defaulting to 300 seconds.
+
+```
+$ fleet env autoscaling rates <environment_name> <instance_reduction_rate> <instance_addition_rate>
+```
+
+Changing the autoscaling grace period
+---
+
+The autoscaling grace period is the time after a scaling operation during which additional scaling operations are blocked.
+
+This is designed to allow metrics to stabilise after a scaling operation so that scaling does not overreact to high or low load.
+
+The minimum value you can set is 60 seconds.
+
+```
+$ fleet env autoscaling grace-period <environment_name> <grace_period>
 ```
 
 Setting the number of active frontends
