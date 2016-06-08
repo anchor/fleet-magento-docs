@@ -22,7 +22,7 @@ are to either remove a set number of instances at the low watermark, or to
 increase the number of instances by a percentage at the high watermark.
 
 Calculation of the CPU thresholds for purposes of comparison against the
-watermarks are performed over a five minute average, with samples taken
+watermarks are performed over a fixed period average, with samples taken
 once per minute. This gives some protection against bursty traffic triggering
 unnecessary scaling, but also means the system cannot quickly respond to
 sudden traffic spikes without manual intervention.
