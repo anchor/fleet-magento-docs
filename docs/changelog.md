@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2016-06-08
+----------
+* Fix --delete-logs option to env unload
+* Fix log view only returning the most recent 10,000 entries per server
+
 2016-05-30
 ----------
 * Autoscaling now has more configuration options available:
