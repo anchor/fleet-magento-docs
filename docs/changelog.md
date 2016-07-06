@@ -1,6 +1,12 @@
 Change Log
 ----------
 
+2016-07-06
+----------
+* Deleting logs now archives them to long term storage instead.
+* Support unicode in log messages
+* Support 'active' as alias for the active release in 'log view' command
+
 2016-06-08
 ----------
 * Fix --delete-logs option to env unload
