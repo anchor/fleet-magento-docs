@@ -30,6 +30,43 @@ $ fleet auth user add test@example.com --roles Developer
 $ fleet auth user add test@example.com --roles "Developer, CertManager"
 ```
 
+When you create a new user a verification email will be sent to their email address. The user needs to verify their account before they can do anything.
+
+Verifying a user
+----
+
+Verifying a user will also create a [certificate](/how-to/manage-certs) for them. Thus verification requires an email address, a label for the certificate, and a [private key file](/how-to/manage-certs#creating-an-auth-cert).
+
+```
+$ fleet auth user verify test@example.com mylabel key.pem
+Please enter the verification token. End with EOF.
+----------%<----------
+```
+
+You will then need to paste your verification token into the cli and a certificate will be printed out, e.g.:
+```
+$ fleet auth user verify test@example.com mylabel key.pem
+Please enter the verification token. End with EOF.
+----------%<----------
+Cnm98A.ppWmKt7GNSA6hWxpjR1y_v6VIuk
+---------->%-----------
+Verified user: test@example.com
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+...
+```
+
+If you want to write the certificate directly to file you can redirect the output and the prompt text will be silenced:
+
+```
+$ fleet auth user verify test@example.com mylabel key.pem > cert.pem
+<paste token: Cnm98A.ppWmKt7GNSA6hWxpjR1y_v6VIuk, and press ctrl+D>
+$ openssl x509 -text -noout -in cert.pem
+```
+
 Destroying a user
 ----
 
