@@ -48,6 +48,8 @@ pages:
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'
+  - 'Installing Fleet Tool': 'getting-started/installing-fleet-tool.md'
+  - 'Creating Users': 'getting-started/creating-users.md'
   - 'First Deployment': 'getting-started/first-deployment.md'
   - 'Pushing Out a Change': 'getting-started/pushing-a-change.md'
   - 'Cleaning Up Environments': 'getting-started/cleaning-up-environments.md'

@@ -29,7 +29,7 @@ This creates a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/
 You can generate an RSA key file using openssl like so:
 
 ```
-$ openssl genrsa -out key.pem 1024
+$ openssl genrsa -out key.pem 4096
 ```
 
 NB: the CSR is generated using your local installation of openssl. If openssl is not installed it won't work.
