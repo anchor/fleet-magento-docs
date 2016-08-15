@@ -46,7 +46,7 @@ If it worked you now have a key and cert file in the configuration directory men
 
 ### Set up a configuration directory
 
-It can be annoying to always add the `--host` flag at the begining of every command. Likewise for adding `--key-file` and `--cert-file` which we'll have to do for all future commands. That's why the fleet tool creates a configuration directory in `~/.config/anchorfleet/`.
+It can be annoying to always add the `--host` flag at the begining of every command. Likewise for adding `--key-file` and `--cert-file` which we would have to do for all future commands. That's why the fleet tool creates a configuration directory in `~/.config/anchorfleet/`.
 
 Next we can create a config file so we don't have to specify:
 

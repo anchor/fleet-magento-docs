@@ -5,9 +5,9 @@ Listing existing users
 
 ```
 $ fleet auth user list
-UUIDs                                 Emails            Roles
-------------------------------------  ----------------  -------
-4bb1538b-30f1-4017-9d82-6a5b3a407534  test@example.com  Admin
+UUID                                 Email            Roles
+-----------------------------------  ---------------  -------
+4bb1538b-30f1-4017-9d82-6a5b3a407534 test@example.com Admin
 ```
 
 The UUID is a unique identity generated for each user that never changes. However most actions accept an email as that is more readable.
