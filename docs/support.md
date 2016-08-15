@@ -62,13 +62,6 @@ to this service when your Fleet was first provisioned.
 
 Requests submitted via any other medium will **not** be actioned.
 
-### Support Targets
-
-The Fleet support team aims to respond to all support requests within **one
-business day**.
-
-The Fleet support team operates Monday to Friday, 0900hrs - 1700hrs (UTC+11).
-
 ### Monitoring
 
 #### Covered

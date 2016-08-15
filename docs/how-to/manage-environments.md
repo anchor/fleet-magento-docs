@@ -8,7 +8,7 @@ Creating a new environment
 ----
 
 Environments can be created either as a copy of an existing environment, or as a fresh environment.
-You can also specify a specific snapshot to be used to seed the database for the environment.
+You can also specify a specific snapshot to be used to seed the database and/or NFS for the environment.
 
 The size of the environment can be specified with `--size` followed by one of the [plan names](/plans).
 
@@ -18,7 +18,7 @@ Multi-AZ environments are recommended only for production and mission critical
 environments, as this significantly increases costs.
 
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] [--protected] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--nfs-snapshot SNAPSHOT | --no-nfs-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] [--protected] NAME
 ```
 
 To create an environment 'staging' as a copy of your "default environment" with its latest snapshot
@@ -69,12 +69,15 @@ Destroying an environment
 When an environment is no longer needed, you can destroy it.
 
 This shuts down all the resources associated with the environment and
-saves a final snapshot in case you want to recreate the environment at a later
+saves a final database snapshot in case you want to recreate the environment at a later
 time.
 
 ```
-$ fleet env destroy <environment_name>
+$ fleet env destroy <environment_name> [--delete-logs]
 ```
+
+You can pass the --delete-logs argument to also delete all logs associated with
+the environment when the environment is destroyed.
 
 Describing an environment
 ----
@@ -89,24 +92,28 @@ $ fleet env describe <environment_name>
 
 ```
 $ fleet env describe prod
-----------------  -------------------------
-name              prod
-status            RUNNING
-whitelist         allow-all
-ssl certificate   self-signed
-created           2015-04-30 14:34:55+10:00
-updated           2015-05-13 20:36:18+10:00
-recycling         ON
-size              f1-large
-solr              OFF
-maintenance mode  OFF
-tracked branches  fleet-deploy
-previous release  f7ac77a
-autoscaling min   1
-autoscaling max   2
-ha                ON
-workers/instance  100
-----------------  -------------------------
+----------------                  -------------------------
+name                              prod
+status                            RUNNING
+whitelist                         allow-all
+ssl certificate                   self-signed
+created                           2015-04-30 14:34:55+10:00
+updated                           2015-05-13 20:36:18+10:00
+recycling                         ON
+size                              f1-large
+solr                              OFF
+maintenance mode                  OFF
+previous release                  f7ac77a
+autoscaling min                   1
+autoscaling max                   2
+autoscaling scale down threshold  20%
+autoscaling scale up threshold    80%
+autoscaling scale down rate       -1/period
+autoscaling scale up rate         10%/period
+autoscaling grace period          600s
+ha                                ON
+workers/instance                  100
+----------------                  -------------------------
 
 Releases:
 name     status      loaded                     updated                      frontends
@@ -190,8 +197,11 @@ If the release to be unloaded is active, it will first be deactivated automatica
 You cannot unload the active release for a protected environment.
 
 ```
-$ fleet env unload <environment_name> <release_id>
+$ fleet env unload <environment_name> <release_id> [--delete-logs]
 ```
+
+You can pass the --delete-logs argument to also delete all logs associated with
+the release when the release is unloaded.
 
 Changing the SSL certificate used
 ----
@@ -231,6 +241,54 @@ Note that you can [view autoscaling history through the logs](/how-to/manage-log
 
 ```
 $ fleet env autoscaling limits <environment_name> <minimum> <maximum>
+```
+
+Changing the autoscaling thresholds
+---
+
+You can change the CPU thresholds at which scaling actions take place.
+
+Each threshold is compared against the average CPU usage percentage across all active frontends.
+
+For the high threshold, this is measured over a two minute window.
+
+For the low threshold, this is measured over a six minute window.
+
+You should make sure to leave appropriate margins at the top and bottom of the ranges in which
+scaling takes place, as instances will rarely report exactly 0% or 100% CPU usage for the
+entirety of the sampling period.
+
+```
+$ fleet env autoscaling thresholds <environment_name> <scale_down_threshold> <scale_up_threshold>
+```
+
+Changing the autoscaling rate
+---
+
+You can change the rate at which frontends are added/removed in response to a scaling action.
+
+The reduction rate is specified in instances, that is an absolute number of instances to remove per scaling period.
+
+The increase rate is specified as a percentage of the number of running instances at the time the scaling action
+occurs, rounded down to a minimum of 1.
+
+Each change in the number of instances will be followed by a grace period defaulting to 300 seconds.
+
+```
+$ fleet env autoscaling rates <environment_name> <instance_reduction_rate> <instance_addition_rate>
+```
+
+Changing the autoscaling grace period
+---
+
+The autoscaling grace period is the time after a scaling operation during which additional scaling operations are blocked.
+
+This is designed to allow metrics to stabilise after a scaling operation so that scaling does not overreact to high or low load.
+
+The minimum value you can set is 60 seconds.
+
+```
+$ fleet env autoscaling grace-period <environment_name> <grace_period>
 ```
 
 Setting the number of active frontends
@@ -279,6 +337,58 @@ Solr for Environment <environment_name> is now being turned OFF
 This will disable Solr and destroy the environment's Solr instance.
 
 See [Configuring Solr](../configuring-magento-for-fleet/solr) for full Solr configuration instructions.
+
+Enabling and disabling NFS for an environment
+----
+
+NFS can be enabled or disabled on a per environment basis.
+
+
+```
+$ fleet env nfs <environment_name> ON
+NFS for Environment <environment_name> is now being turned ON
+```
+
+When NFS is ON a instance will be created in the specified environment
+which which will be mounted at /nfs/shared for all releases loaded while
+NFS is enabled.
+
+```
+$ fleet env nfs <environment_name> OFF
+NFS for Environment <environment_name> is now being turned OFF
+```
+
+This will disable NFS and destroy the environment's NFS instance.
+
+See [Configuring NFS](../configuring-magento-for-fleet/nfs) for full NFS configuration instructions.
+
+Enabling and disabling Varnish for an environment
+----
+
+Varnish can be enabled or disabled on a per environment basis.
+This state will take effect for each newly loaded release within
+the environment.
+
+Use of Varnish is highly recommended as correct use will both
+improve site performance and reduce the required infrastructure
+to sustain a given level of traffic.
+
+```
+$ fleet env varnish <environment_name> ON
+Varnish for environment <environment_name> is now being turned ON
+```
+
+When Varnish is ON each loaded release will include a varnish layer for
+use in caching traffic.
+
+```
+$ fleet env varnish <environment_name> OFF
+Varnish for environment <environment_name> is now being turned OFF
+```
+
+This will disable Varnish for newly loaded releases.
+
+See [Configuring Varnish](../configuring-magento-for-fleet/varnish) for full Varnish configuration instructions.
 
 Enabling and disabling Maintenance Mode for an environment
 ----

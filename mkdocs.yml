@@ -1,5 +1,7 @@
 site_name: Magento on Anchor Fleet
 theme: readthedocs
+extra_css: [extra.css]
+extra_javascript: [extra.js]
 google_analytics: ['UA-60495198-2', 'docs.anchorfleet.com']
 
 pages:
@@ -18,11 +20,31 @@ pages:
   - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
+  - 'Configuring NFS': 'configuring-magento-for-fleet/nfs.md'
   - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
   - 'Logging': 'configuring-magento-for-fleet/logging.md'
   - 'Sitemaps': 'configuring-magento-for-fleet/sitemaps.md'
   - 'Going Live': 'configuring-magento-for-fleet/going-live.md'
+- Configuring Magento 2 for Fleet (Beta):
+  - 'Introduction': 'configuring-magento-2-for-fleet/introduction.md'
+  - 'Architecture Overview': 'configuring-magento-2-for-fleet/architecture-overview.md'
+  - 'Setup Cron': 'configuring-magento-2-for-fleet/cron.md'
+  - 'Database Setup': 'configuring-magento-2-for-fleet/database-setup.md'
+  - 'Disable Redirects': 'configuring-magento-2-for-fleet/disable-redirects.md'
+  - 'Configure cache and sessions': 'configuring-magento-2-for-fleet/configure-cache-and-sessions.md'
+  - 'Unset cookie domain': 'configuring-magento-2-for-fleet/unset-cookie-domain.md'
+  - 'Store media in the database': 'configuring-magento-2-for-fleet/media-in-database.md'
+  - 'Configure Varnish': 'configuring-magento-2-for-fleet/varnish.md'
+  - 'Service Hostnames': 'configuring-magento-2-for-fleet/service-hostnames.md'
+  - 'Sending Mail': 'configuring-magento-2-for-fleet/mail.md'
+  - 'Customisation': 'configuring-magento-2-for-fleet/customisation.md'
+  - 'Configuring NFS': 'configuring-magento-2-for-fleet/nfs.md'
+  - 'Health Check': 'configuring-magento-2-for-fleet/health-check.md'
+  - 'Multisite': 'configuring-magento-2-for-fleet/multisite.md'
+  - 'Logging': 'configuring-magento-2-for-fleet/logging.md'
+  - 'Sitemaps': 'configuring-magento-2-for-fleet/sitemaps.md'
+  - 'Going Live': 'configuring-magento-2-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'
@@ -33,7 +55,7 @@ pages:
 - How To:
   - 'Manage Environments': 'how-to/manage-environments.md'
   - 'Manage Databases': 'how-to/manage-databases.md'
-  - 'Manage Database Snapshots': 'how-to/manage-snapshots.md'
+  - 'Manage Snapshots': 'how-to/manage-snapshots.md'
   - 'Manage IP Whitelists': 'how-to/manage-whitelists.md'
   - 'Manage Log Files': 'how-to/manage-logs.md'
   - 'Manage Notifications': 'how-to/manage-notifications.md'
@@ -44,9 +66,11 @@ pages:
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
+  - 'Migrate Between Plans': 'how-to/migrate-between-plans.md'
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
+  - 'Autoscaling': 'faq/autoscaling.md'
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
@@ -54,6 +78,7 @@ pages:
   - 'CORS': 'faq/cors.md'
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
+  - 'Performance': 'faq/performance.md'
   - 'Error Pages': 'faq/error-pages.md'
   - 'Updates and Maintenance': 'faq/updates-and-maintenance.md'
 - Troubleshooting:

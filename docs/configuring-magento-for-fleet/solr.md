@@ -25,7 +25,6 @@ created           2015-04-30 14:34:55+10:00
 updated           2015-07-23 16:31:53+10:00
 health check      OFF
 solr              ON                       # Solr now enabled
-tracked branches  fleet-deploy
 previous release  ecc1e5c
 autoscaling min   1
 autoscaling max   1

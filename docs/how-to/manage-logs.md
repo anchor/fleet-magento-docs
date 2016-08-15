@@ -36,6 +36,27 @@ test         5d5350b  autoscaling-logs
 -----------  -------  ---------------------------
 ```
 
+You can also view logs for a specific environment or environment and release.
+
+```
+$ fleet log list [env [release]]
+```
+
+```
+$ fleet log list prod
+-----------  -------  ---------------------------
+Environment  Release  Group
+                      fleet-logs
+prod         5d5350b  apache-000-deploy-access
+prod         5d5350b  apache-000-deploy-error
+prod         5d5350b  magento-magento-report
+prod         5d5350b  magento-magento-system
+prod         5d5350b  phpfpm-master-deploy-access
+prod         5d5350b  phpfpm-master-deploy-slow
+prod         5d5350b  autoscaling-logs
+-----------  -------  ---------------------------
+```
+
 Viewing a log
 ----
 
@@ -57,7 +78,7 @@ If you delete a log while the release which is pushing data to it is still loade
 it will be recreated automatically, but the data it previously had will have been purged.
 
 ```
-$ fleet log delete [<environment>] [<release>] <group>
+$ fleet log delete [--environment <environment>] [--release <release>] [--group <group>]
 
-$ fleet log delete prod 5d5350b apache-000-deploy-access
+$ fleet log delete --environment prod --release 5d5350b --group apache-000-deploy-access
 ```
