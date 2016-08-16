@@ -5,7 +5,7 @@ Listing roles
 
 ```
 $ fleet auth role list
-Name       Policies
+Role       Policies
 ---------  ----------
 Admin      AllowAll
 JuniorDev  AllowAll, DenyProdEnv

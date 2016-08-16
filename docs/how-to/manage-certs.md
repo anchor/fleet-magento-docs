@@ -49,4 +49,4 @@ Revoked label: Work Computer for email: test@example.com
 Expiry
 ----
 
-Auth certs expire two years after being signed and will eventually need to be rotated.
+Auth certs expire two years after being signed and will eventually need to be rotated. This means you'll need to create a new cert and then revoke the old cert.

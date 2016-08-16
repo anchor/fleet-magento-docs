@@ -1,20 +1,46 @@
 ## Getting the Fleet Tool
 
-Thee Fleet CLI tool uses the Fleet API (not currently documented) to control your fleet. To do so it requires that you:
+The Fleet CLI tool uses the Fleet API (not currently documented) to control your fleet. To do so it requires that you:
 
-1. specify the hostname/location of your fleet
-2. have an account with a verified email address and the requisite permissions
-3. authenticate your requests with an SSL client certificate
+1. Specify the hostname/location of your fleet.
+1. Have an account with a verified email address and the requisite permissions.
+1. Authenticate your requests with an SSL client certificate.
 
 This guide will show you:
 
 1. where to download the Fleet CLI tool
-2. how verify your email address and get a signed SSL client certificate
-3. how to set up a configuration file
+1. how verify your email address and get a signed SSL client certificate
+1. how to set up a configuration file
 
 ### Downloading Fleet CLI Tool
 
-Download the latest Fleet CLI tool from [HERE](TODO). For now add it to your PATH. In the future this may be available as a package on PyPI or something similar.
+Download the latest Fleet CLI tool from [HERE](TODO). It contains a [PEX](https://github.com/pantsbuild/pex) file that is run with the shebang `#!/usr/bin/env python2.7`. Run `env python2.7` to confirm you have a compatible version of python installed.
+
+#### On Linux
+
+Create a folder in `/opt` to store the fleet binary and add the location to PATH:
+
+```
+$ mkdir -p /opt/anchorfleet
+$ mv fleet /opt/anchorfleet/.
+$ echo 'export PATH=/opt/anchorfleet/:$PATH' >> ~/.bashrc
+```
+
+If you don't use bash remember to change the above commands to suit your shell, e.g. '~/.zshrc'.
+
+#### On OSX
+
+You can do the above for OSX if you wish however on OSX it is more conventional to put 3rd-party binaries in `/usr/local/bin`:
+
+```
+$ mkdir -p /usr/local/bin
+$ mv fleet /usr/local/bin/.
+$ echo $PATH | grep '/usr/local/bin' || echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
+```
+
+This only adds `/usr/local/bin` to PATH if it is not already in your PATH.
+
+If you don't use bash remember to change the above commands to suit your shell, e.g. '~/.zshrc'. If your terminal program doesn't run a login shell remember to use `~/.bashrc` instead.
 
 ### Verifying your email address and getting a Certificate
 

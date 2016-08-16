@@ -15,14 +15,14 @@ The UUID is a unique identity generated for each user that never changes. Howeve
 Creating a user
 ----
 
-You can add [roles](/how-to/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authentication certificates.
+You can add [roles](/how-to/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authorization privileges.
 
 ```
 $ fleet auth user add test@example.com
 Added user: test@example.com
 ```
 
-When adding roles use a comma separated list:
+When adding multiple roles use a comma separated list:
 
 ```
 $ fleet auth user add test@example.com --roles Developer,Accountant
@@ -35,7 +35,7 @@ When you create a new user a verification email will be sent to their email addr
 Verifying a user
 ----
 
-Verifying a user will also create a [certificate](/how-to/manage-certs) for them. Thus verification requires an email address, a label for the certificate, and a [private key file](/how-to/manage-certs#creating-an-auth-cert).
+Verifying a user will also create a [certificate](/how-to/manage-certs) for them. The user whose email is being used needs to verify themself, this cannot be done for them. Verification requires an email address, a label for the certificate, and a [private key file](/how-to/manage-certs#creating-an-auth-cert).
 
 ```
 $ fleet auth user verify test@example.com mylabel key.pem
