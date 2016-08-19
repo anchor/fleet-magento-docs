@@ -23,7 +23,7 @@ This will send a verification email to that address.
 There are four roles available by default. These are:
 
 * Admin - can do anything
-* Reports - can view billing reports and logs
+* Auditor - can view billing reports and logs
 * Developer - can view and modify fleet resources (environments, releases, etc)
 * NoProd - denies modification privileges to environment named 'prod', overriding any access previously granted
 * Manager - can create new users, roles and policies
