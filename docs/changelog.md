@@ -1,6 +1,11 @@
 Change Log
 ----------
 
+2016-08-23
+----------
+* PHP-FPM error logs are now included in the aggregated logs
+* Magento2 logs are now correctly aggregated from nodes
+
 2016-07-06
 ----------
 * Deleting logs now archives them to long term storage instead.
