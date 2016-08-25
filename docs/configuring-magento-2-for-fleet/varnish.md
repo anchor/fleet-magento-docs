@@ -16,25 +16,26 @@ Please follow the official Magento 2 Varnish documentation.
 http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish.html
 http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magento.html
 
-* Full Page Cache
- * Caching Application: Varnish Caching
- * Varnish Configuration
-  * Access list: 10.0.0.0/8
-  * Backend host: 127.0.0.1
-  * Backend port: 8080
- * Export VCL for Varnish 4
+### Magento Configuration
 
-This will download a file called `varnish.vcl`
+ * Full Page Cache
+ * Caching Application: **Varnish Caching**
+     * Varnish Configuration
+         * Access list: **10.0.0.0/8**
+         * Backend host: **127.0.0.1**
+         * Backend port: **8080**
+     * **Export VCL for Varnish 4**
 
-Place the this file in `.fleet/varnish.vcl` in your repository.
-The file placed here will be installed into Varnish when you load a release.
+This will download a file to your computer called `varnish.vcl`
+You should place the this file in `.fleet/varnish.vcl` in your repository.
+When loading a new release, Fleet will load this VCL file into Varnish.
 
 To ensure old cached content is not shown after updates, Magento must be
 configured to purge Varnish when changes are made.
 
 http://devdocs.magento.com/guides/v2.0/config-guide/varnish/use-varnish-cache.html
 
-Add the following section to `app/etc/env.php`:
+To make Magento aware of the Varnish servers, add the following section to `app/etc/env.php`:
 
 ```
   'http_cache_hosts' =>
