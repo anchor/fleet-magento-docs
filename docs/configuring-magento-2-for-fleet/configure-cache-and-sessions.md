@@ -15,7 +15,10 @@ Add the following stanza to the configuration in `env.php`. Be sure to **replace
   'session' =>
   array(
     'save' => 'redis',
-    'save_path' => 'redis-session:6379',
+    'redis' => array(
+      'host' => 'redis-session',
+      'port' => '6379',
+    ),
   ),
   'cache' =>
   array(
