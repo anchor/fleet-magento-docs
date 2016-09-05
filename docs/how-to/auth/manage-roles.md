@@ -1,4 +1,4 @@
-Roles are groupings of [policies](/how-to/manage-policies) that are assigned to [users](/how-to/manage-users) to manage authorization.
+Roles are groupings of [policies](/how-to/auth/manage-policies) that are assigned to [users](/how-to/auth/manage-users) to manage authorization.
 
 Listing roles
 ----

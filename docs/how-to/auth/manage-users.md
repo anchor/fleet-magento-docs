@@ -15,7 +15,7 @@ The UUID is a unique identity generated for each user that never changes. Howeve
 Creating a user
 ----
 
-You can add [roles](/how-to/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authorization privileges.
+You can add [roles](/how-to/auth/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authorization privileges.
 
 ```
 $ fleet auth user add test@example.com
@@ -35,7 +35,7 @@ When you create a new user a verification email will be sent to their email addr
 Verifying a user
 ----
 
-Verifying a user will also create a [certificate](/how-to/manage-certs) for them. The user whose email is being used needs to verify themself, this cannot be done for them. Verification requires an email address, a label for the certificate, and a [private key file](/how-to/manage-certs#creating-an-auth-cert).
+Verifying a user will also create a [certificate](/how-to/auth/manage-certs) for them. The user whose email is being used needs to verify themself, this cannot be done for them. Verification requires an email address, a label for the certificate, and a [private key file](/how-to/auth/manage-certs#creating-an-auth-cert).
 
 ```
 $ fleet auth user verify test@example.com mylabel key.pem
@@ -70,7 +70,7 @@ $ openssl x509 -text -noout -in cert.pem
 Destroying a user
 ----
 
-When a user is destroyed all of their [authentication certificates](/how-to/manage-certs) are revoked. This is not reversible.
+When a user is destroyed all of their [authentication certificates](/how-to/auth/manage-certs) are revoked. This is not reversible.
 
 ```
 $ fleet auth user remove test@example.com

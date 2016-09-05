@@ -2,7 +2,7 @@
 
 Fleet has a concept of Users, AuthCerts, Roles and Policies.
 
-AuthCerts are for authenticating users when they access their fleet to identify who they are. Your first AuthCert was creating in the [installing fleet](/getting-started/installing-fleet-tool) guide. For more info on creating and revoking your certs see [managing authentication certificates](/how-to/manage-certs).
+AuthCerts are for authenticating users when they access their fleet to identify who they are. Your first AuthCert was creating in the [installing fleet](/getting-started/installing-fleet-tool) guide. For more info on creating and revoking your certs see [managing authentication certificates](/how-to/auth/manage-certs).
 
 Roles and Policies are for authorizing users and dictating what they can and can't do. Policies are fine grained permissions which are grouped into Roles and applied to Users. For example you might have two policies ViewEnvironments and ModifyReleases which you combine into a role Developer, and apply to particular users.
 
@@ -30,10 +30,10 @@ There are four roles available by default. These are:
 
 You can give a user multiple roles, e.g. Developer and NoProd would allow them to modify most environments, but no the one named 'prod'.
 
-You can add a role to a user with the [user add_role command](/how-to/manage-roles):
+You can add a role to a user with the [user add_role command](/how-to/auth/manage-roles):
 
 ```
 $ fleet auth user add_role test@example.com Developer
 ```
 
-For more info on creating custom roles and policies or inspecting them see [here](/how-to/manage-roles) and [here](/how-to/manage-policies) respectively.
+For more info on creating custom roles and policies or inspecting them see [here](/how-to/auth/manage-roles) and [here](/how-to/auth/manage-policies) respectively.

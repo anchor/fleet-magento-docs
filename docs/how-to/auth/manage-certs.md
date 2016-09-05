@@ -1,4 +1,4 @@
-An authentication certificate ([ssl client certificate](https://en.wikipedia.org/wiki/Client_certificate)) is used by a [user](/how-to/manage-users) to identify who they are to fleet. A user can have multiple auth certs, for example one for their work computer, one for their home computer.
+An authentication certificate ([ssl client certificate](https://en.wikipedia.org/wiki/Client_certificate)) is used by a [user](/how-to/auth/manage-users) to identify who they are to fleet. A user can have multiple auth certs, for example one for their work computer, one for their home computer.
 
 Auth certs have have a label so you can easily remember which is which.
 
