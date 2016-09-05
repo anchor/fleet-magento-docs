@@ -22,7 +22,7 @@ Caches flushed for environment <environment_name>
 Alternatively, you can do it directly via the Redis command line.
 
 ```
-> ssh adminssh.prod.myfleet.f.nchr.io
+> ssh deploy@admin.prod.myfleet.f.nchr.io
 > telnet redis-cache 6379
 Trying 10.2.0.106...
 Connected to fleet-benc-0d034-a.txzear.0001.apse2.cache.amazonaws.com.
@@ -69,7 +69,7 @@ automatically be picked up by all the application servers. New servers spawned
 in response to autoscaling won't come up with an empty cache, meaning they won't
 be slow at serving the first set of requests.
 
-Using redis for cache and sessions also officially supported by Magento
+Using redis for cache and sessions also officially supported by Magento.
 
 
 ### Wouldn't using "sticky" load balancing solve the sessions problem?

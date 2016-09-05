@@ -1,6 +1,24 @@
 Change Log
 ----------
 
+2016-07-06
+----------
+* Deleting logs now archives them to long term storage instead.
+* Support unicode in log messages
+* Support 'active' as alias for the active release in 'log view' command
+
+2016-06-08
+----------
+* Fix --delete-logs option to env unload
+* Fix log view only returning the most recent 10,000 entries per server
+
+2016-05-30
+----------
+* Autoscaling now has more configuration options available:
+  * Setting high and low CPU thresholds for initiating scaling
+  * Setting the rate at which instances are added and removed in response to scaling events
+  * Setting the grace period between successive scaling operations
+
 2016-05-02
 ----------
 * SSH host keys are now generated once for the life of an environment. If you would like to make host keys for an existing environment fixed, you can either destroy and recreate the environment, or open a support ticket.

@@ -76,6 +76,7 @@ pages:
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
+  - 'Autoscaling': 'faq/autoscaling.md'
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
