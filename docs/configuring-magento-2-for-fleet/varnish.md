@@ -35,7 +35,9 @@ acl purge {
 }
 ```
 
-And modify the `vcl_recv` sub:
+You will also need to modify the `vcl_recv` sub to reject PURGE requests entering
+via the Load Balancer.
+These will appear to come from internal IPs but have the `X-Forwarded-For` header set:
 
 ```diff
  sub vcl_recv {
