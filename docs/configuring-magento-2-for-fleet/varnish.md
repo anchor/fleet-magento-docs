@@ -35,7 +35,27 @@ acl purge {
 }
 ```
 
-This allows Varnish to accept Purge commands from your Magento frontends.
+And modify the `vcl_recv` sub:
+
+```diff
+ sub vcl_recv {
+     if (req.method == "PURGE") {
+         if (client.ip !~ purge) {
+             return (synth(405, "Method not allowed"));
+         }
++        if (req.http.X-Forwarded-For) {
++            // Restrict Purging to requests without X-Forwared-For set
++            return (synth(405, "Method not allowed"));
++        }
+         if (!req.http.X-Magento-Tags-Pattern) {
+             return (synth(400, "X-Magento-Tags-Pattern header required"));
+         }
+         ban("obj.http.X-Magento-Tags ~ " + req.http.X-Magento-Tags-Pattern);
+         return (synth(200, "Purged"));
+     }
+```
+
+This allows Varnish to accept Purge commands from only your Magento frontends.
 
 You should place the this file in `.fleet/varnish.vcl` in your repository.
 When loading a new release, Fleet will load this VCL file into Varnish.
