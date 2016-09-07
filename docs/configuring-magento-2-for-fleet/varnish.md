@@ -27,11 +27,43 @@ http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magen
      * **Export VCL for Varnish 4**
 
 This will download a file to your computer called `varnish.vcl`
+Ensure that the `varnish.vcl` has the following in the `acl purge {` section:
+
+```
+acl purge {
+  "10.0.0.0"/8;
+}
+```
+
+You will also need to modify the `vcl_recv` sub to reject PURGE requests entering
+via the Load Balancer.
+These will appear to come from internal IPs but have the `X-Forwarded-For` header set:
+
+```diff
+ sub vcl_recv {
+     if (req.method == "PURGE") {
+         if (client.ip !~ purge) {
+             return (synth(405, "Method not allowed"));
+         }
++        if (req.http.X-Forwarded-For) {
++            // Restrict Purging to requests without X-Forwared-For set
++            return (synth(405, "Method not allowed"));
++        }
+         if (!req.http.X-Magento-Tags-Pattern) {
+             return (synth(400, "X-Magento-Tags-Pattern header required"));
+         }
+         ban("obj.http.X-Magento-Tags ~ " + req.http.X-Magento-Tags-Pattern);
+         return (synth(200, "Purged"));
+     }
+```
+
+This allows Varnish to accept Purge commands from only your Magento frontends.
+
 You should place the this file in `.fleet/varnish.vcl` in your repository.
 When loading a new release, Fleet will load this VCL file into Varnish.
 
 To ensure old cached content is not shown after updates, Magento must be
-configured to purge Varnish when changes are made.
+configured to send Purge commands to Varnish when changes are made.
 
 http://devdocs.magento.com/guides/v2.0/config-guide/varnish/use-varnish-cache.html
 
