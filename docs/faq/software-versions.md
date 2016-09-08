@@ -1,6 +1,8 @@
 ### What version(s) of software X are available?
 
-Debian Wheezy is used as the base for Fleet, and updates are tracked as released upstream.
+#### Magento 1.x
+
+Debian Wheezy is used as the base for Fleet Magento 1.x, and updates are tracked as released upstream.
 
 Our current versions of relevant software follow.
 
@@ -10,6 +12,18 @@ Our current versions of relevant software follow.
  - Varnish: 3.0.x
  - Redis: 2.8.x
  - Solr: 3.6.x
+
+#### Magento 2.x
+
+Debian Jessie is used as the base for Fleet Magento 2.x, and updates are tracked as released upstream.
+
+Our current versions of relevant software follow.
+
+ - PHP: 7.0.x
+ - MySQL: 5.6.x
+ - Apache: 2.4.x
+ - Varnish: 4.0.x
+ - Redis: 2.8.x
 
 ### Which PHP modules are available?
 
