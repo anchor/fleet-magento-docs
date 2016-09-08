@@ -65,6 +65,7 @@ pages:
   - 'Manage SQL Scripts': 'how-to/manage-sql-scripts.md'
   - 'Manage Code Repository': 'how-to/manage-code-repository.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
+  - 'Control Access': 'how-to/control-access.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Migrate Between Plans': 'how-to/migrate-between-plans.md'
   - 'Reporting': 'how-to/access-reports.md'
@@ -79,6 +80,7 @@ pages:
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
   - 'Performance': 'faq/performance.md'
+  - 'Real IP Addresses': 'faq/real-ips.md'
   - 'Error Pages': 'faq/error-pages.md'
   - 'Updates and Maintenance': 'faq/updates-and-maintenance.md'
 - Troubleshooting:
