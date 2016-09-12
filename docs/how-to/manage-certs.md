@@ -17,20 +17,14 @@ test@example.com  HomeComputer
 Creating an auth cert
 ----
 
-To create an auth cert you must specify an email corresponding to a user and redirect a key file into the command:
+To create an auth cert you must specify an email corresponding to a user and a label to identify the cert:
 
 ```
-$ fleet auth cert add test@example.com WorkComputer < key.pem > work.key
-$ fleet auth cert add test@example.com HomeComputer < key.pem > home.key
+$ fleet auth cert add test@example.com WorkComputer
+$ fleet auth cert add test@example.com HomeComputer
 ```
 
-This creates a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_sigining_request)), sends it to the fleet and returns a signed crt.pem file ([x509 client cert](https://en.wikipedia.org/wiki/X.509)) that you can use to authenticate yourself to fleet.
-
-You can generate an RSA key file using openssl like so:
-
-```
-$ openssl genrsa -out key.pem 1024
-```
+This will create a key and cert file in your config directory with the same name as the label provided. It does this by sending a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_sigining_request)), sends it to the fleet and returns a signed crt.pem file ([x509 client cert](https://en.wikipedia.org/wiki/X.509)) but all you need to know is that you can use the result to authenticate yourself to fleet.
 
 NB: the CSR is generated using your local installation of openssl. If openssl is not installed it won't work.
 
