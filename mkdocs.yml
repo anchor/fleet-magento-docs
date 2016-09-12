@@ -69,11 +69,13 @@ pages:
   - 'Manage Roles': 'how-to/manage-roles.md'
   - 'Manage Policies': 'how-to/manage-policies.md'
   - 'Access Inactive Releases': 'how-to/access-inactive-releases.md'
+  - 'Control Access': 'how-to/control-access.md'
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Migrate Between Plans': 'how-to/migrate-between-plans.md'
   - 'Reporting': 'how-to/access-reports.md'
   - 'Updates': 'how-to/updates.md'
 - FAQ:
+  - 'Autoscaling': 'faq/autoscaling.md'
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'
@@ -82,6 +84,7 @@ pages:
   - 'Software Versions': 'faq/software-versions.md'
   - 'SSL Certificates': 'faq/ssl-certificates.md'
   - 'Performance': 'faq/performance.md'
+  - 'Real IP Addresses': 'faq/real-ips.md'
   - 'Error Pages': 'faq/error-pages.md'
   - 'Updates and Maintenance': 'faq/updates-and-maintenance.md'
 - Troubleshooting:

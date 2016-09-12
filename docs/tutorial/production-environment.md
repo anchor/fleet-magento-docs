@@ -36,7 +36,6 @@ ssl certificate   prod
 created           2015-03-24 23:06:21+00:00
 updated           2015-06-09 02:49:21+00:00
 health check      OFF
-tracked branches  fleet-deploy
 previous release
 autoscaling min   2
 autoscaling max   10
