@@ -27,7 +27,7 @@ This is read as: "Do not allow any HTTP methods on the resource 'environments' w
 
 \*: *Although resource and method are optional, at least one of them must be present (either resource *or* method). When absent they both default to '\*'.*
 
-For documentation of what resources are available, what the HTTP methods do for a given resource, and what params each method for each resource is, see the API documentation (coming soon).
+For documentation of what resources are available, what the HTTP methods do for a given resource, and what params each method for each resource is, see the API documentation.
 
 Listing Policies
 ----
@@ -88,4 +88,55 @@ Removing Policies
 ```
 $ fleet auth policy remove DenyProdEnv
 Removed policy: DenyAll
+```
+
+
+Example Policies
+----
+
+Below are some example policies, showcasing what can be done with them.
+
+**Admin**, can access all resources through all methods:
+
+```
+{
+  "name": "Admin",
+  "effect": "Allow",
+  "resource": ["*"],
+  "method": ["*"]
+}
+```
+
+**Developer**, can edit just the resources needed for the day to day management of the fleet:
+
+```
+{
+  "name": "Developer",
+  "effect": "Allow",
+  "resource": ["environments", "releases", "whitelists", "snapshots", "certificates"],
+  "method": ["*"]
+}
+```
+
+**NoProd**, when combined with the above policy could prevent access to environments of a particular name, for example 'prod':
+
+```
+{
+  "name": "NoProd",
+  "effect": "Deny",
+  "resource": ["environments"],
+  "params": [{"env_name": "prod"}],
+  "method": ["*"]
+}
+```
+
+**Manager**, can create new users and permissions:
+
+```
+{
+  "name": "Manager",
+  "effect": "Allow",
+  "resource": ["auth_keys", "users", "roles", "policies"],
+  "method": ["*"]
+}
 ```

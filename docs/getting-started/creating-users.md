@@ -20,20 +20,12 @@ This will send a verification email to that address. Until the user is verified 
 
 ### Giving a User Permissions
 
-There are four roles available by default. These are:
-
-* Admin - can do anything
-* Auditor - can view billing reports and logs
-* Developer - can view and modify fleet resources (environments, releases, etc)
-* NoProd - denies modification privileges to environment named 'prod', overriding any access previously granted
-* Manager - can create new users, roles and policies
-
-You can give a user multiple roles, e.g. Developer and NoProd would allow them to modify most environments, but no the one named 'prod'.
-
 You can add a role to a user with the [user add_role command](/how-to/auth/manage-roles):
 
 ```
-$ fleet auth user add_role test@example.com Developer
+$ fleet auth user add_role test@example.com Admin
 ```
 
-For more info on creating custom roles and policies or inspecting them see [here](/how-to/auth/manage-roles) and [here](/how-to/auth/manage-policies) respectively.
+This will allow the user to do anything to the fleet. If you wish to restrict their permissions you'll need to create policies, put them in roles, then add the roles to the user.
+
+For more info on creating custom roles and policies, inspecting them and seeing example policies see [here](/how-to/auth/manage-roles) and [here](/how-to/auth/manage-policies) respectively.
