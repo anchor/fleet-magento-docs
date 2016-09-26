@@ -20,8 +20,8 @@ Creating an auth cert
 To create an auth cert you must specify an email corresponding to a user and a label to identify the cert:
 
 ```
-$ fleet auth cert add test@example.com WorkComputer
-$ fleet auth cert add test@example.com HomeComputer
+$ fleet auth cert create test@example.com WorkComputer
+$ fleet auth cert create test@example.com HomeComputer
 ```
 
 This will create a key and cert file in your config directory with the same name as the label provided. It does this by sending a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_sigining_request)), sends it to the fleet and returns a signed crt.pem file ([x509 client cert](https://en.wikipedia.org/wiki/X.509)) but all you need to know is that you can use the result to authenticate yourself to fleet.
@@ -34,9 +34,9 @@ Revoking an auth cert
 Revoke a user's auth cert by label:
 
 ```
-$ fleet auth cert remove test@example.com HomeComputer
+$ fleet auth cert destroy test@example.com HomeComputer
 Revoked label: HomeComputer for email: test@example.com
-$ fleet auth cert remove test@example.com 'Work Computer'
+$ fleet auth cert destroy test@example.com 'Work Computer'
 Revoked label: Work Computer for email: test@example.com
 ```
 

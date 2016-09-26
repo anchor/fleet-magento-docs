@@ -15,19 +15,19 @@ The UUID is a unique identity generated for each user that never changes. Howeve
 Creating a user
 ----
 
-You can add [roles](/how-to/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authentication certificates.
+You can create [roles](/how-to/manage-roles) to a user when you create them, or you can do that separately. A user with no roles will not be authorized to do anything and has no authentication certificates.
 
 ```
-$ fleet auth user add test@example.com
+$ fleet auth user create test@example.com
 Added user: test@example.com
 ```
 
-When adding roles use a comma separated list:
+When creating roles use a comma separated list:
 
 ```
-$ fleet auth user add test@example.com --roles Developer,Accountant
-$ fleet auth user add test@example.com --roles Developer
-$ fleet auth user add test@example.com --roles "Developer, CertManager"
+$ fleet auth user create test@example.com --roles Developer,Accountant
+$ fleet auth user create test@example.com --roles Developer
+$ fleet auth user create test@example.com --roles "Developer, CertManager"
 ```
 
 When you create a new user a verification email will be sent to their email address. The user needs to verify their account before they can do anything.
@@ -73,6 +73,6 @@ Destroying a user
 When a user is destroyed all of their [authentication certificates](/how-to/manage-certs) are revoked. This is not reversible.
 
 ```
-$ fleet auth user remove test@example.com
+$ fleet auth user destroy test@example.com
 Removed user: test@example.com and revoked certificates
 ```

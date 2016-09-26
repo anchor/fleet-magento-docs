@@ -17,19 +17,19 @@ Creating a role
 You can optionally provide policies with a comma separated list to include in a role when you create it or you can add them later.
 
 ```bash
-$ fleet auth role add Admin
+$ fleet auth role create Admin
 Added role: Admin
-$ fleet auth role add Admin --policies AllowAll
+$ fleet auth role create Admin --policies AllowAll
 Added role: Admin
-$ fleet auth role add JuniorDev --policies "AllowEnvironments, AllowReleases, DenyProdEnv"
+$ fleet auth role create JuniorDev --policies "AllowEnvironments, AllowReleases, DenyProdEnv"
 Added role: JuniorDev
 ```
 
-Removing a role
+Destroying a role
 ----
 
 ```
-$ fleet auth role remove Admin
+$ fleet auth role destroy Admin
 Removed role: Admin
 ```
 

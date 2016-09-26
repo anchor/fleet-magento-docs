@@ -62,7 +62,7 @@ $ fleet auth policy describe AllowAll
 Adding Policies
 ---
 
-Policies are added by redirecting a JSON policy object into the command:
+Policies are created by redirecting a JSON policy object into the command:
 
 ```
 $ cat > policy.json
@@ -76,16 +76,16 @@ $ cat > policy.json
   "name": "DenyAll",
   "effect": "deny"
 }
-$ fleet auth policy add < policy.json
+$ fleet auth policy create < policy.json
 Added policy: DenyAll
 ```
 
 If what you redirect in isn't valid JSON it'll be rejected.
 
-Removing Policies
+Destroying Policies
 ----
 
 ```
-$ fleet auth policy remove DenyProdEnv
+$ fleet auth policy destroy DenyProdEnv
 Removed policy: DenyAll
 ```
