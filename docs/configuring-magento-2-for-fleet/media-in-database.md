@@ -35,10 +35,10 @@ eg. `media/A/B.JPG` and `media/a/b.jpg` only one of these will be stored in the 
 You can avoid this issue by ensuring that there are no files with the same names with differing case, alternatively **ALTER** the `core_file_storage` and `core_directory_storage` table to use **VARCHAR BINARY** columns for `name`,`filename`,`directory` and `path`.
 
 ```
-ALTER TABLE core_file_storage MODIFY filename VARCHAR(255) BINARY
-ALTER TABLE core_file_storage MODIFY directory VARCHAR(255) BINARY
-ALTER TABLE core_directory_storage MODIFY name VARCHAR(255) BINARY
-ALTER TABLE core_directory_storage MODIFY path VARCHAR(255) BINARY
+ALTER TABLE media_storage_file_storage MODIFY filename VARCHAR(255) BINARY
+ALTER TABLE media_storage_file_storage MODIFY directory VARCHAR(255) BINARY
+ALTER TABLE media_storage_directory_storage MODIFY name VARCHAR(255) BINARY
+ALTER TABLE media_storage_directory_storage MODIFY path VARCHAR(255) BINARY
 ```
 
 **Warning**: Magento's `core_file_storage.filename` and `core_directory_storage.name` are limited to 100 characters.
