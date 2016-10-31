@@ -1,6 +1,12 @@
 Change Log
 ----------
 
+2016-10-31
+----------
+* Updated notification system - now notifications and subscriptions are distinguished
+  by type, so it is now possible to only subscribe to the notifications relevant to you.
+* Restore ability to flush cache through Fleet CLI
+
 2016-08-23
 ----------
 * PHP-FPM error logs are now included in the aggregated logs
