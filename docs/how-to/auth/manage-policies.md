@@ -76,7 +76,7 @@ $ cat > policy.json
   "name": "DenyAll",
   "effect": "deny"
 }
-$ fleet auth policy add < policy.json
+$ fleet auth policy create < policy.json
 Added policy: DenyAll
 ```
 
@@ -86,7 +86,7 @@ Removing Policies
 ----
 
 ```
-$ fleet auth policy remove DenyProdEnv
+$ fleet auth policy destroy DenyProdEnv
 Removed policy: DenyAll
 ```
 

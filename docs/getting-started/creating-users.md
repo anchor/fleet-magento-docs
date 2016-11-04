@@ -13,7 +13,7 @@ The first user created will have the Admin Role, which grants all privileges. Ev
 Create a new user like so:
 
 ```
-$ fleet auth user add test@example.com
+$ fleet auth user create test@example.com
 ```
 
 This will send a verification email to that address. Until the user is verified they will not be able to log in. Direct the new user to the docs on how to verify themselves [here](/how-to/auth/manage-users#verifying-a-user). For how to give them new permissions to work with the fleet once they _have_ logged in, read on.

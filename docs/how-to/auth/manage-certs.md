@@ -20,19 +20,12 @@ Creating an auth cert
 To create an auth cert you must specify an email corresponding to a user and redirect a key file into the command:
 
 ```
-$ fleet auth cert add test@example.com WorkComputer < key.pem > work.key
-$ fleet auth cert add test@example.com HomeComputer < key.pem > home.key
+$ fleet auth cert create test@example.com WorkComputer
 ```
 
-This creates a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_sigining_request)), sends it to the fleet and returns a signed crt.pem file ([x509 client cert](https://en.wikipedia.org/wiki/X.509)) that you can use to authenticate yourself to fleet.
+This creates a key at ~/.config/anchorfleet/WorkComputer.key and sends a CSR ([Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_sigining_request)) to the fleet and returns a signed crt.pem file ([x509 client cert](https://en.wikipedia.org/wiki/X.509)). The crt is written to ~/.config/anchorfleet/WorkComputer.crt.
 
-You can generate an RSA key file using openssl like so:
-
-```
-$ openssl genrsa -out key.pem 4096
-```
-
-NB: the CSR is generated using your local installation of openssl. If openssl is not installed it won't work.
+NB: the key and CSR are generated using your local installation of openssl. If openssl is not installed it won't work.
 
 Revoking an auth cert
 ----
@@ -40,10 +33,8 @@ Revoking an auth cert
 Revoke a user's auth cert by label:
 
 ```
-$ fleet auth cert remove test@example.com HomeComputer
+$ fleet auth cert revoke test@example.com HomeComputer
 Revoked label: HomeComputer for email: test@example.com
-$ fleet auth cert remove test@example.com 'Work Computer'
-Revoked label: Work Computer for email: test@example.com
 ```
 
 Expiry
