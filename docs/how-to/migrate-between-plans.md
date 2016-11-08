@@ -22,7 +22,7 @@ while maintaining the existing environment in a state ready to roll back if need
 1. Take a snapshot of production
 
       ```
-      $ fleet snapshot create <source_env> plan-migration
+      $ fleet snapshot create <source_env> --name plan-migration
       ```
 
 1. Create a new environment with the production snapshot
