@@ -12,6 +12,7 @@ See the instructions for your application below:
 
 You'll then need to walk through:
 
+ * [Accessing Your Fleet](accessing-your-fleet.md)
  * [Configuring Revision Control](configuring-revision-control.md)
  * [Your First Deployment](first-deployment.md)
  * [Pushing Out a Change](pushing-a-change.md)
