@@ -23,9 +23,7 @@ Once you're done with the test and alias setup above, you should be able to type
 fleet -h
 ```
 
-Should you need to add access to other people in your team, you can add their ssh keys with the following guide. If not, we'll move on to [configuring revision control](getting-started/configuring-revision-control/) so your fleet can access it.
-
-## Adding SSH Keys
+## Adding Additional SSH Keys
 
 We'll preload your first SSH key so you can get in, after that you can add and remove keys at any time.
 
