@@ -47,6 +47,7 @@ pages:
   - 'Going Live': 'configuring-magento-2-for-fleet/going-live.md'
 - Getting Started:
   - 'Getting Started': 'getting-started/getting-started.md'
+  - 'Accessing Your Fleet': 'getting-started/accessing-your-fleet.md'
   - 'Configuring Revision Control': 'getting-started/configuring-revision-control.md'
   - 'First Deployment': 'getting-started/first-deployment.md'
   - 'Pushing Out a Change': 'getting-started/pushing-a-change.md'
