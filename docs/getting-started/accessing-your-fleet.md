@@ -17,7 +17,7 @@ Future examples will assume you have aliased the `fleet` command
 alias fleet='ssh -t -o LogLevel=QUIET deploy@aux.{fleet-id}.f.nchr.io --'
 ```
 
-Once you're done with the test and alias setup above, you should be able to type the following in your terminal and get the list of available commands
+Once you're done with the test and alias setup above, you should be able to type the following in to your terminal and get the list of available commands
 
 ```bash
 fleet -h
