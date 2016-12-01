@@ -94,6 +94,7 @@ pages:
   - 'Create a release': 'tutorial/create-release.md'
   - 'Staging environment': 'tutorial/staging-environment.md'
   - 'Production environment': 'tutorial/production-environment.md'
+  - 'Autoscaling': 'tutorial/autoscaling.md'
 - Support: 'support.md'
 - Plans: 'plans.md'
 - Changelog: 'changelog.md'
