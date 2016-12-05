@@ -1,7 +1,6 @@
 # First Deployment
 
-This will walk you through the steps involved in going from an empty Fleet
-to a working site.
+This will walk you through the steps involved in going from an empty Fleet to a working site.
 
 This document is not intended to be a substitute for proper git documentation. It's highly recommended that you read [Pro Git](http://git-scm.com/book), available both in print and for free online.
 
@@ -34,10 +33,24 @@ $ fleet database connect prod < database.sql
 
 ## Create your first release
 
+A "release" is a combination of your codes and our base images. Once a release is created, it becomes an inmmutable artefacts and it will be consistent whenenver you load it into an environment.
+
+Depending on which application you are running, the recomended release creation method may be different.
+
+### Magento 1
+
+You can create a relese straight from your git repo. You can just simply run the following command:
 ```bash
 $ fleet release create master
 ```
 
+### Magento 2
+
+You will need to create an archive of your codes and import it directly into fleet. The format of the archive file should be tar.gz and once you created it, you will need to store in a location that's accessible by a url. Then you can create a release by running the following command:
+
+```bash
+$ fleet release create --url https://www.anchorfleet.com/foo.tar.gz master
+```
 ## Loading the first release
 
 Our Fleet's production environment is currently sitting there doing nothing, so
