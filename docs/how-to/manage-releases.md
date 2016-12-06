@@ -63,7 +63,7 @@ build process and import the resulting archive directly into Fleet.
 The archive doesn't need to have any special structure, Fleet will use the top
 level as the webroot by default. See [Customization](
 /configuring-magento-for-fleet/customisation/) if you wish to use a subdirectory
-as the webroot.
+as the webroot. You can read about archive creation on our [FAQ](/faq/archive-for-release) section.
 
 To create a release from an archive, provide the URL of a .tar.gz file to the
 `fleet release create` command.

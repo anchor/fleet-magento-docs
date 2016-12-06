@@ -73,6 +73,7 @@ pages:
   - 'Updates': 'how-to/updates.md'
 - FAQ:
   - 'Autoscaling': 'faq/autoscaling.md'
+  - 'Archive For Release': 'faq/archive-for-release.md'
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
   - 'Integrations': 'faq/integrations.md'
   - 'Media': 'faq/media.md'

@@ -48,7 +48,7 @@ Note that the "master" above refers to the name of a branch on git. You can use 
 
 ### Magento 2
 
-You will need to create an archive of your code and import it directly into fleet. The format of the archive file should be tar.gz and once you created it, you will need to store in a location that is accessible by a url. Then you can create a release by running the following command:
+You will need to create an archive of your code and import it directly into fleet. The format of the archive file should be tar.gz. You can read more about creating an archive in our [FAQ](/faq/archive-for-release/) section. Once you created it, you will need to store in a location that is accessible by a url. Then you can create a release by running the following command:
 
 ```bash
 $ fleet release create --url https://example.com/foo.tar.gz master
