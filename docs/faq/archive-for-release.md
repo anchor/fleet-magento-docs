@@ -1,7 +1,7 @@
 # What is an archive?
 An archive is your application code and all of depedencies required by the application, compiled into a single file. In practice, it is a compressed tarball of your application files.
 
-# How to create a release archive?
+# How to create a release archive
 The archive file format that is compatible with fleet is .tar.gz. The manual process to create the file in a unix base system is to run the following command in your terminal:
 
 `tar -C <path_to_your_code_directrory> -cvzf <archive_file_name> .`

@@ -44,15 +44,25 @@ You can create a release straight from your git repo. You can just simply run th
 $ fleet release create master
 ```
 
-Note that the "master" above refers to the name of a branch on git. You can use any branch to create a release.
+Note: "master" on the command above refers to the name of a branch on git. You can use any branch to create a release.
 
 ### Magento 2
 
-You will need to create an archive of your code and import it directly into fleet. The format of the archive file should be tar.gz. You can read more about creating an archive in our [FAQ](/faq/archive-for-release/) section. Once you created it, you will need to store in a location that is accessible by a url. Then you can create a release by running the following command:
+You will need to use an [archive to create a release](/how-to/manage-releases/#from-an-archive). The steps are as follow:
 
+1). Create an archive.
+<br/>The format of the archive file should be tar.gz. Guide on creating the archive is available in our [FAQ](/faq/archive-for-release/) section.
+
+2). Upload the archive.
+<br/>Store the archive in a location that is accessible by a url.
+
+3). Create your release.
+<br/>You can create a release by running the following command:
 ```bash
 $ fleet release create --url https://example.com/foo.tar.gz master
 ```
+Note: You will need to specify a git object when you try to create a release via an archive. In the above command, "master" refers to a branch in your git repo. Fleet will look at the latest commit in the specified branch and use that as the git object.
+
 ## Loading the first release
 
 Our Fleet's production environment is currently sitting there doing nothing, so
