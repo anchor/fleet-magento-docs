@@ -70,7 +70,6 @@ pages:
   - 'Configure DNS': 'how-to/configure-dns.md'
   - 'Migrate Between Plans': 'how-to/migrate-between-plans.md'
   - 'Reporting': 'how-to/access-reports.md'
-  - 'Updates': 'how-to/updates.md'
 - FAQ:
   - 'Autoscaling': 'faq/autoscaling.md'
   - 'Cache and Sessions': 'faq/cache-and-sessions.md'
