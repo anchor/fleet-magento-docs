@@ -20,6 +20,7 @@ pages:
   - 'Sending Mail': 'configuring-magento-for-fleet/mail.md'
   - 'Customisation': 'configuring-magento-for-fleet/customisation.md'
   - 'Configuring Solr': 'configuring-magento-for-fleet/solr.md'
+  - 'Configuring Solr (Jessie)': 'configuring-magento-for-fleet/solr-jessie.md'
   - 'Configuring NFS': 'configuring-magento-for-fleet/nfs.md'
   - 'Health Check': 'configuring-magento-for-fleet/health-check.md'
   - 'Multisite': 'configuring-magento-for-fleet/multisite.md'
