@@ -37,8 +37,8 @@ Multi-AZ is recommended only for production or mission critical environments.
 | Role     | Type            | VCPUs | RAM GiB |
 |----------|:---------------:|-------|:-------:|
 | Varnish  | c4.xlarge       | 4     | 7.5     |
-| Frontend | c4.xlarge       | 4     | 7.5     |
-| Admin    | c4.xlarge       | 4     | 7.5     |
+| Frontend | c4.large        | 2     | 3.75    |
+| Admin    | c4.large        | 2     | 3.75    |
 | Cache    | cache.m3.medium | 1     | 2.78    |
 | Sessions | cache.m3.medium | 1     | 2.78    |
 | Database | db.r3.xlarge    | 4     | 30.5    |
