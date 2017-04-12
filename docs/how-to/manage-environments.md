@@ -18,7 +18,7 @@ Multi-AZ environments are recommended only for production and mission critical
 environments, as this significantly increases costs.
 
 ```
-$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--nfs-snapshot SNAPSHOT | --no-nfs-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] [--protected] NAME
+$ fleet env create [--snapshot SNAPSHOT | --no-snapshot] [--nfs-snapshot SNAPSHOT | --no-nfs-snapshot] [--source-environment ENVIRONMENT | --no-source-environment] [--ssl-certificate CERT] [--whitelist WHITELIST] [--ha | --no-ha] [--size SIZE] [--protected] NAME [--sql-scripts SQL_SCRIPT [SQL_SCRIPT ...]]
 ```
 
 To create an environment 'staging' as a copy of your "default environment" with its latest snapshot
