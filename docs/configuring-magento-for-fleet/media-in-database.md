@@ -16,7 +16,34 @@ Once there, ensure that the following are configured:
 
 Assets uploaded via the catalogue editor in Magento's admin panel will automatically be added to the database.
 
-**Note**: We have configured a script that will run periodically to add new media from the **admin** node to the media database. This script will log to Magento's `var/log/media_sync.log`.
+Third-party Magento modules are not always compliant with these interfaces so
+we have provided a script that you can periodically via cron to add new media
+from the **admin** node to the media database, and copy media from the database
+to the **frontend** nodes.
+
+If you wish to alter the behaviour you can provide your own script along with
+your code instead.
+
+See the [crontab documentation](/configuring-magento-for-fleet/customisation/#providing-a-crontab)
+
+```no-highlight
+# .crontab-admin
+# This will copy updated files from admin's media directory to the database every minute
+* * * * *    deploy  /usr/local/bin/is-fleet-node-active && nice -n 19 flock -n /tmp/magento_media_sync.lock -c '/usr/local/bin/magento_media_sync put >> /home/deploy/.fleet-webroot/var/log/media_sync.log'
+```
+
+```no-highlight
+# .crontab-fe
+# This will copy updated files from the database to each frontend every 5 minutes
+*/5 * * * *    deploy  /usr/local/bin/is-fleet-node-active && nice -n 19 flock -n /tmp/magento_media_sync.lock -c '/usr/local/bin/magento_media_sync get >> /home/deploy/.fleet-webroot/var/log/media_sync.log'
+```
+
+**Warning**: If you use this script we recommend adding an index on `core_file_storage.upload_time` as this is used for finding the recently uploaded files and this can be slow without an index on this column.
+
+```
+CREATE INDEX IDX_CORE_FILE_STORAGE_UPLOAD_TIME ON core_file_storage (upload_time)
+```
+
 
 You can disable this process via the `.fleet/config` file in the root of your repository, you can create it yourself if it does not exist.
 
