@@ -89,6 +89,7 @@ The following modules are currently available.
  - zip
  - zlib
 
+Additional PHP module installation is not currently supported by Anchor.
 
 ### How are software updates rolled out?
 
