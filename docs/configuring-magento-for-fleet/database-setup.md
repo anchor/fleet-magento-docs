@@ -12,3 +12,18 @@ echo "UPDATE core_config_data SET value = '1' WHERE path = 'admin/url/use_custom
 
 Once you've imported your database, loaded and activated an initial release
 you'll be able to access Magento's admin panel at `https://admin.prod.myshop.f.nchr.io/admin/`.
+
+MySQL Configuration
+--------------
+
+To ensure your test and development environments behave similar to Fleet, use the following MySQL configurations:
+
+```
+ft_min_word_len=4
+innodb_io_capacity=200
+innodb_open_files=4096
+innodb_buffer_pool_instances=4
+query_cache_type=0
+query_cache_limit=0
+query_cache_size=0
+```
