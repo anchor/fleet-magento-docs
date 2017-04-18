@@ -203,6 +203,14 @@ $ fleet env unload <environment_name> <release_id> [--delete-logs]
 You can pass the --delete-logs argument to also delete all logs associated with
 the release when the release is unloaded.
 
+Accessing a release
+----
+
+A running release can be accessed using 
+```
+www.<releaseid>.<envname>.<fleetname>.f.nchr.io
+```
+
 Changing the SSL certificate used
 ----
 
