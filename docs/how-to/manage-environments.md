@@ -436,13 +436,9 @@ This affects newly loaded releases only.
 Flushing caches for an environment
 ----
 
-Caches are maintained on a per environment basis and can be flushed
+Caches are maintained on a per environment basis and [can be flushed](/faq/cache-and-sessions/)
 for all releases in an environment.
 
-```
-$ fleet env cache flush <environment_name>
-Caches flushed for environment <environment_name>
-```
 
 Set up New Relic Integration
 ---------------------

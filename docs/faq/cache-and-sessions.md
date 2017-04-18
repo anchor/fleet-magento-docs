@@ -10,14 +10,10 @@ You can clear the Magento Cache via the Magento Admin interface.
   * `System -> Cache -> Flush Cache Storage`
     * This will flush all cache entries from all releases in the curent Environment.
 
-You can also utilise the [Fleet
+<del>You can also utilise the [Fleet
 CLI](../how-to/manage-environments.md#flushing-caches-for-an-environment) to
-clear the cache for a particular environment:
+clear the cache for a particular environment:</del><ins>The `fleet env cache flush` command has been deprecated.</ins>
 
-```
-$ fleet env cache flush <environment_name>
-Caches flushed for environment <environment_name>
-```
 
 Alternatively, you can do it directly via the Redis command line.
 
