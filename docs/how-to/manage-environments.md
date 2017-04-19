@@ -478,6 +478,27 @@ newrelic          <key>
 ...
 ```
 
+Set up Section.io Integration
+---------------------
+
+Fleet can integrate with your Section.io account.
+
+```
+fleet env sectionio '<env_name>' '<api endpoint>' '<username>' '<password>'
+```
+
+The API endpoint (for production environments) should be your Production varnish Proxy API endpoint.
+Non production endpoints should be used for non-production environments.
+
+Any new releases loaded into this environment after this command will run a local varnish-cli-bridge that
+connects to your section.io endpoint using the given username and password.
+
+To disable section.io integration use:
+
+```
+fleet env sectionio '<env_name>' --clear
+```
+
 Controlling Protected status
 ----------------------------
 
