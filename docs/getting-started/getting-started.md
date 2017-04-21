@@ -7,6 +7,7 @@ Certain applications may require a specific configuration to work optimally on F
 See the instructions for your application below:
 
  * [Magento](../configuring-magento-for-fleet/introduction.md)
+ * [Magento 2](../configuring-magento-2-for-fleet/introduction.md)
 
 ## Next steps
 

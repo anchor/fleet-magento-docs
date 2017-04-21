@@ -1,7 +1,6 @@
 # First Deployment
 
-This will walk you through the steps involved in going from an empty Fleet
-to a working site.
+This will walk you through the steps involved in going from an empty Fleet to a working site.
 
 This document is not intended to be a substitute for proper git documentation. It's highly recommended that you read [Pro Git](http://git-scm.com/book), available both in print and for free online.
 
@@ -34,9 +33,35 @@ $ fleet database connect prod < database.sql
 
 ## Create your first release
 
+A "release" is a combination of your code and our base images. Once a release is created, it becomes an immutable artefact and it will be consistent whenever you load it into an environment.
+
+Depending on which application you are running, the recommended release creation method may be different.
+
+### Magento 1
+
+You can create a release straight from your git repo. You can just simply run the following command:
 ```bash
 $ fleet release create master
 ```
+
+Note: "master" on the command above refers to the name of a branch on git. You can use any branch to create a release.
+
+### Magento 2
+
+You will need to use an [archive to create a release](/how-to/manage-releases/#from-an-archive). The steps are as follow:
+
+1). Create an archive.
+<br/>The format of the archive file should be tar.gz. Guide on creating the archive is available in our [FAQ](/faq/archive-for-release/) section.
+
+2). Upload the archive.
+<br/>Store the archive in a location that is accessible by a url.
+
+3). Create your release.
+<br/>You can create a release by running the following command:
+```bash
+$ fleet release create --url https://example.com/foo.tar.gz master
+```
+Note: You will need to specify a git object when you try to create a release via an archive. In the above command, "master" refers to a branch in your git repo. Fleet will look at the latest commit in the specified branch and use that as the git object.
 
 ## Loading the first release
 
