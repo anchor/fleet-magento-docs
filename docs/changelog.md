@@ -1,6 +1,10 @@
 Change Log
 ----------
 
+2017-05-03
+----------
+* Support for section.io
+
 2016-10-31
 ----------
 * Updated notification system - now notifications and subscriptions are distinguished
