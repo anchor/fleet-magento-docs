@@ -1,5 +1,6 @@
-**Note:** This documentation applies only if you are using a Debian Wheezy-based Fleet.
-If you are using Jessie, see the [Solr (Jessie)](solr-jessie) page.
+**Note:** This documentation applies only if you are using a Debian Jessie-based Fleet.
+If you are not using Jessie, see the [Solr](solr) page.
+
 
 If you wish to use Magento Enterprise's [Solr](http://lucene.apache.org/solr/) Search on Fleet
 you can enable Solr for your environment and configure Magento to use it.
@@ -53,7 +54,7 @@ has fully booted. You can now log out.
 
 ### Configuring Solr
 
-You can now upload your Solr configuration files to `/home/deploy/solr/conf` via SFTP.
+You can now upload your Solr configuration files to `/etc/solr/conf` via SFTP.
 Once you've uploaded your configuration files, you can restart Solr.
 
 **Note**: Solr configuration and data will not be cloned when you create a new environment.
@@ -62,11 +63,11 @@ Once you've uploaded your configuration files, you can restart Solr.
 
 ssh to the deploy user at your Solr endpoint from `env describe`.
 
- * to check the current status of Solr run `sudo allah status solr`
- * to start a stopped Solr run `sudo allah start solr`
- * to restart a running Solr run `sudo allah restart solr`
- * to stop a running Solr run `sudo allah stop solr`
- * to view the log of the running Solr run `sudo allah log solr`
+ * to check the current status of Solr run `sudo systemctl status jetty8`
+ * to start a stopped Solr run `sudo systemctl start jetty8`
+ * to restart a running Solr run `sudo systemctl restart jetty8`
+ * to stop a running Solr run `sudo systemctl stop jetty8`
+ * to view the log of the running Solr run `journalctl -u jetty8`
 
 ### Configuring Magento Enterprise to use Solr Search
 
@@ -80,6 +81,7 @@ Now from Magento, you can configure it to point at your Solr instance.
         -------              | -----
         Search Engine        | `Solr`
         Solr Server Hostname | `solr`
+        Solr Server Port     | 8080
 
      1. Press "Test Connection"
         * If everything is working, you should see "**Successful! Test again?**"
@@ -97,7 +99,7 @@ Now from Magento, you can configure it to point at your Solr instance.
         -------        | -----
         Enabled        | `Yes`
         Hostname or IP | `solr`
-        Port           | `8983`
+        Port           | `8080`
         Path           | `/solr/`
 
      1. Press "Test Connection"
