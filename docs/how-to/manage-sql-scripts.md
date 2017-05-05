@@ -18,6 +18,10 @@ You can use the following variables in your templates:
 
 Each script must also specify the database to use before executing any queries.
 
+The default behaviour is to execute all configured scripts when creating an environment from a snapshot.
+
+You can configure this per environment when creating the environment. See the --sql-scripts option in [Manage Environments](manage-environments)
+
 Adding new scripts
 ----
 
